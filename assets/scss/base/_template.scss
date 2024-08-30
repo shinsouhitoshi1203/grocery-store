@@ -1,5 +1,8 @@
+::root {
+    --text-color: #1A162E;
+}
 html {font-size: 62.5%;}
-body {font: {family: 'Gordita'; weight: 300; size: 1.6rem}; color: black}
+body {font: {family: 'Gordita'; weight: 300; size: 1.6rem}; color: var(--text-color)}
 
 h1, h2, h3 {
     font-weight: 700;

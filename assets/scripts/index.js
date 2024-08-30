@@ -1,4 +1,4 @@
-var loadList = [
+var li = [
     {
         target : ".brand",
         preload: 1,
@@ -11,8 +11,9 @@ var loadList = [
     {
         target : "footer",
         src : "./assets/components/footer.html"
-    },
+    }
 ];
+
 document.addEventListener("DOMContentLoaded", () => {
-    load(loadList);
+    load(li);
 })
