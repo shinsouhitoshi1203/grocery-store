@@ -1,0 +1,11 @@
+@use "./../abstracts/mixin" as a;
+.brand {
+    @include a.flex-center(flex-start, 14px);
+    &__icon {
+        @include a.square-icon(32px);
+    }
+    &__text {
+        color: #1A162E;
+        font-size: 2.2rem;
+    }
+}

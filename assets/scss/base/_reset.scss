@@ -7,3 +7,6 @@ button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=
 p, li, ul {@extend %resetAll}
 a {text-decoration: none;}
 button, input {background: inherit; padding: 0;margin: 0; font: inherit; outline: none; border: none;}
+*, ::before, ::after {box-sizing: border-box;}
+
+button {cursor: pointer;}

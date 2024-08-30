@@ -1,0 +1,57 @@
+@use "./../abstracts" as a;
+.header {
+    background: #EEEEEE; 
+    position: sticky; top: 0;left: 0;z-index: 1111;
+    &__wrapper {
+        @include a.flex-center(space-between);
+        padding-top: 30px;padding-bottom: 30px;
+    }
+    &__main {
+        @include a.flex-center();
+    }
+    &__nav {
+        margin-left: 144px;
+        ul {
+            @include a.flex-center(null, 30px);
+            list-style-type: none; display: flex; 
+        }
+        a {
+            display: inline-flex; align-items: center;
+            @extend %md-15;
+            color: #1A162E;
+            img {
+                @include a.square-icon(12px); margin-left: 6px;
+            }
+        }
+    }
+    &__dashboard {
+        @include a.flex-center($g: 20px);
+        border-radius: 8px;
+        & > * {border-radius: inherit;}
+    }
+    &__user-avatar {
+        @include a.square-icon(50px);
+        box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+        img {border-radius: inherit;}
+    }
+    &__button {
+        padding: 10px 20px; height: 100%;
+        transition: background .3s;
+        @include a.flex-center($g: 10px);
+        img {@include a.square-icon(24px)}
+        span {@extend %md-15;}
+        &:hover {
+            background: #bbb;
+        }
+    }
+    &__button-container {
+        min-width: 50px; height: 50px;
+        background: #FFFFFF;
+        overflow: hidden;
+        box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.20);
+        @include a.flex-center(center);
+        &--long {@include a.flex-center()} 
+    }
+    &__search {padding: 0; @include a.square-icon(100%, $center: true)}
+    &__button-separate {width: 2px; height: 30px; background: #EDEDF6;}
+}

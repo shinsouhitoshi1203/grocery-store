@@ -1,0 +1,17 @@
+@mixin flex-center($jc: center, $g: null) {
+    display: flex; align-items: center;justify-content: $jc;
+    gap: $g;
+}
+@mixin square-icon($size, $bdrs: null, $center: false) {
+    width: $size; height: $size; 
+    border-radius: $bdrs;
+    @if $center==true {
+        @include flex-center()
+    }
+}
+
+// box-shadow {
+
+// text
+%md-15 {font-size: 1.5rem; font-weight: 500; line-height: 1.45;}
+
