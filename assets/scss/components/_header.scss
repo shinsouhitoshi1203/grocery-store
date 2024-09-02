@@ -1,7 +1,10 @@
 @use "./../abstracts" as a;
 .header {
-    background: #EEEEEE; 
+    background: var(--header-bg); 
     position: sticky; top: 0;left: 0;z-index: 1111;
+    * {
+        color: inherit;
+    }
     &__wrapper {
         @include a.flex-center(space-between);
         padding-top: 30px;padding-bottom: 30px;
@@ -18,7 +21,7 @@
         a {
             display: inline-flex; align-items: center;
             @extend %md-15;
-            color: #1A162E;
+            color: var(--text-caption);
             img {
                 @include a.square-icon(12px); margin-left: 6px;
             }
@@ -36,22 +39,23 @@
     }
     &__button {
         padding: 10px 20px; height: 100%;
-        transition: background .3s;
+        transition: filter .3s;
         @include a.flex-center($g: 10px);
         img {@include a.square-icon(24px)}
         span {@extend %md-15;}
         &:hover {
-            background: #bbb;
+            filter: brightness(0.7);
         }
     }
     &__button-container {
         min-width: 50px; height: 50px;
-        background: #FFFFFF;
+        background: var(--header-top-cta);
         overflow: hidden;
-        box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.20);
+        box-shadow: 0px 20px 60px 10px rgba(var(--seperator),0.2 );
         @include a.flex-center(center);
         &--long {@include a.flex-center()} 
     }
     &__search {padding: 0; @include a.square-icon(100%, $center: true)}
-    &__button-separate {width: 2px; height: 30px; background: #EDEDF6;}
-}
+    &__button-separate {width: 2px; height: 30px; background: var(--seperator);}
+    &__icon {filter: var(--txt-caption__filter);}
+} 

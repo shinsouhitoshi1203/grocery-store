@@ -1,3 +1,11 @@
 html[theme="dark"] {
-    
+    --header-top-cta: #292e39;
+    --header-bg: #171c28;
+
+    // secondary colors
+    --txt-caption: #ffffff;
+    --txt-caption__filter: invert(99%) sepia(1%) saturate(0%) hue-rotate(251deg) brightness(108%) contrast(100%);
+
+    --seperator: #ededf6;
+
 }

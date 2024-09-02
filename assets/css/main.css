@@ -170,10 +170,6 @@ button {
   cursor: pointer;
 }
 
-::root {
-  --text-color: #1A162E;
-}
-
 html {
   font-size: 62.5%;
 }
@@ -182,7 +178,7 @@ body {
   font-family: "Gordita";
   font-weight: 300;
   font-size: 1.6rem;
-  color: var(--text-color);
+  color: var(--txt-caption);
 }
 
 h1, h2, h3 {
@@ -1163,11 +1159,14 @@ img {
 }
 
 .header {
-  background: #EEEEEE;
+  background: var(--header-bg);
   position: sticky;
   top: 0;
   left: 0;
   z-index: 1111;
+}
+.header * {
+  color: inherit;
 }
 .header__wrapper {
   display: flex;
@@ -1194,7 +1193,7 @@ img {
 .header__nav a {
   display: inline-flex;
   align-items: center;
-  color: #1A162E;
+  color: var(--text-caption);
 }
 .header__nav a img {
   width: 12px;
@@ -1222,7 +1221,7 @@ img {
 .header__button {
   padding: 10px 20px;
   height: 100%;
-  transition: background 0.3s;
+  transition: filter 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1233,14 +1232,14 @@ img {
   height: 24px;
 }
 .header__button:hover {
-  background: #bbb;
+  filter: brightness(0.7);
 }
 .header__button-container {
   min-width: 50px;
   height: 50px;
-  background: #FFFFFF;
+  background: var(--header-top-cta);
   overflow: hidden;
-  box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+  box-shadow: 0px 20px 60px 10px rgba(var(--seperator), 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1261,7 +1260,10 @@ img {
 .header__button-separate {
   width: 2px;
   height: 30px;
-  background: #EDEDF6;
+  background: var(--seperator);
+}
+.header__icon {
+  filter: var(--txt-caption__filter);
 }
 
 .brand {
@@ -1276,11 +1278,27 @@ img {
   height: 32px;
 }
 .brand__text {
-  color: #1A162E;
+  color: var(--txt-caption);
   font-size: 2.2rem;
 }
 .brand:hover {
   transform: scale(1.02);
+}
+
+html[theme=dark] {
+  --header-top-cta: #292e39;
+  --header-bg: #171c28;
+  --txt-caption: #ffffff;
+  --txt-caption__filter: invert(99%) sepia(1%) saturate(0%) hue-rotate(251deg) brightness(108%) contrast(100%);
+  --seperator: #ededf6;
+}
+
+html[theme=light] {
+  --header-top-cta: #ffffff;
+  --header-bg: #eeeeee;
+  --txt-caption: #1a162e;
+  --txt-caption__filter: brightness(0) saturate(100%) invert(5%) sepia(47%) saturate(2636%) hue-rotate(234deg) brightness(96%) contrast(91%);
+  --seperator: #ededf6;
 }
 
 /*# sourceMappingURL=main.css.map */

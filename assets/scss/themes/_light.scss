@@ -1,3 +1,10 @@
 html[theme="light"] {
-    
+    --header-top-cta: #ffffff;
+    --header-bg: #eeeeee;
+
+    --txt-caption: #1a162e;
+    --txt-caption__filter: brightness(0) saturate(100%) invert(5%) sepia(47%) saturate(2636%) hue-rotate(234deg) brightness(96%) contrast(91%);
+
+    --seperator: #ededf6;
+
 }
