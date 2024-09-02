@@ -1,3 +1,5 @@
+@use "./variables" as v;
+@use "sass:list";
 @mixin flex-center($jc: center, $g: null) {
     display: flex; align-items: center;justify-content: $jc;
     gap: $g;
@@ -7,6 +9,18 @@
     border-radius: $bdrs;
     @if $center==true {
         @include flex-center()
+    }
+}
+
+
+@mixin responsive($bp) {
+    $bp-list: sm md lg xl xxl;
+    @if (list.index($bp-list, $bp)!=null) {
+        @media all and (max-width: #{map-get(v.$breakpoints, $bp)} ) {
+            @content;
+        }
+    } @else {
+        @error "Check the breakpoint again!";
     }
 }
 

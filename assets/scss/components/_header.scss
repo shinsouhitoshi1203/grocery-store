@@ -8,12 +8,17 @@
     &__wrapper {
         @include a.flex-center(space-between);
         padding-top: 30px;padding-bottom: 30px;
+        & > * {flex-shrink: 0;}
+
+        @include a.responsive(sm) {gap: 39px; justify-content: center;}
     }
     &__main {
         @include a.flex-center();
     }
     &__nav {
         margin-left: 144px;
+        @include a.responsive(xl) {margin-left: 36px;}
+        @include a.responsive(lg) {display: none;}
         ul {
             @include a.flex-center(null, 30px);
             list-style-type: none; display: flex; 
@@ -25,6 +30,14 @@
             img {
                 @include a.square-icon(12px); margin-left: 6px;
             }
+        }
+    }
+    &__nav-dropdown {
+        @include a.square-icon(36px);
+        padding: 6px;
+        display: none;
+        @include a.responsive(lg) {
+            display: flex;
         }
     }
     &__dashboard {
@@ -42,7 +55,10 @@
         transition: filter .3s;
         @include a.flex-center($g: 10px);
         img {@include a.square-icon(24px)}
-        span {@extend %md-15;}
+        span {
+            @extend %md-15;
+            @include a.responsive(md) {display: none;}
+        }
         &:hover {
             filter: brightness(0.7);
         }
@@ -54,6 +70,8 @@
         box-shadow: 0px 20px 60px 10px rgba(var(--seperator),0.2 );
         @include a.flex-center(center);
         &--long {@include a.flex-center()} 
+        
+        @include a.responsive(sm) {display: none;}
     }
     &__search {padding: 0; @include a.square-icon(100%, $center: true)}
     &__button-separate {width: 2px; height: 30px; background: var(--seperator);}
