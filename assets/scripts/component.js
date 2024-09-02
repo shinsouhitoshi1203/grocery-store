@@ -1,5 +1,4 @@
-
-
+// Load components
 function requireReload(t,s) {
     return new Promise (
         function (resolve, reject) {
@@ -42,6 +41,7 @@ function load(list) {
                 var s = obj.src;
                 loadComponent(t, s);
             })
+            setMegaMenuArrowPosition();
         }
     )
 }
@@ -75,3 +75,29 @@ function loadComponent (target, src) {
         retrieveData(src, dataHandler);
     }
 }
+
+function setMegaMenuArrowPosition() {
+    function handler() {
+        var nav__list = document.querySelectorAll(".navbar__item");
+        var arrows = document.querySelectorAll(".megamenu");
+        var position = new Array(nav__list.length).fill(0);
+
+        nav__list.forEach((nav__item,i)=>{
+            var value = nav__item.offsetLeft + nav__item.offsetWidth / 2 - 16;
+            position[i] = `${value}px`;
+        })
+        
+        arrows.forEach((arrow,i)=>{
+            arrow.style.setProperty("--arrow-position",position[i]);
+        })
+    }
+    var promise = new Promise (
+        function (resolve) {
+            setTimeout(()=>{resolve()},300)
+        }
+    );
+    promise.then(()=>{
+        handler();
+    })
+}
+

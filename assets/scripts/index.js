@@ -16,4 +16,7 @@ var li = [
 
 document.addEventListener("DOMContentLoaded", () => {
     load(li);
+    
 })
+
+document.addEventListener("resize", setMegaMenuArrowPosition);

@@ -1,4 +1,7 @@
+@use "./../abstracts" as a;
 html[theme="light"] {
+    --body-bg: #f6f6f6;
+
     --header-top-cta: #ffffff;
     --header-bg: #eeeeee;
 
@@ -7,4 +10,13 @@ html[theme="light"] {
 
     --seperator: #ededf6;
 
+
+    //menu
+    --megamenu: #ffffff;
+    --megamenu-shadow: rgba(200, 200, 200, 0.4);
+
+    
+    @include a.responsive(sm) {
+        --header-bg: #ffffff;
+    }
 }

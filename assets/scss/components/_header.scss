@@ -8,7 +8,8 @@
     &__wrapper {
         @include a.flex-center(space-between);
         padding-top: 30px;padding-bottom: 30px;
-        & > * {flex-shrink: 0;}
+        position: relative;
+        & > * {flex-shrink: 0; z-index: 10;}
 
         @include a.responsive(sm) {gap: 39px; justify-content: center;}
     }
@@ -25,6 +26,7 @@
         }
         a {
             display: inline-flex; align-items: center;
+            position: relative; z-index: 10;
             @extend %md-15;
             color: var(--text-caption);
             img {
@@ -77,3 +79,30 @@
     &__button-separate {width: 2px; height: 30px; background: var(--seperator);}
     &__icon {filter: var(--txt-caption__filter);}
 } 
+
+
+.navbar {
+    &__item {
+        &:hover > .megamenu {
+            display: block;
+        }
+    }
+}
+
+.megamenu {
+    display: none; position: absolute; 
+    top: 0;left: 0; width: 100%;
+    padding-top: 136px;
+    &__inner {
+        width: 100%;
+        border-radius: 20px; padding: 30px;
+        background: var(--megamenu); box-shadow: 0px 40px 90px 20px var(--megamenu-shadow);
+        position: relative;
+        &::before {
+            content: url(./../../../icons/megamenu-arrow-down.svg);
+            @include a.square-icon(30px);
+            border-radius: inherit;
+            position: absolute; top: -13px; left: var(--arrow-position);
+        }
+    }
+}

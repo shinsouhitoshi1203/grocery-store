@@ -179,6 +179,7 @@ body {
   font-weight: 300;
   font-size: 1.6rem;
   color: var(--txt-caption);
+  background: var(--body-bg);
 }
 
 h1, h2, h3 {
@@ -1005,7 +1006,7 @@ img {
 }
 @media all and (min-width: 1400px) {
   .container {
-    max-width: 1320px;
+    max-width: 1350px;
   }
   .row-cols-xxl-1 > * {
     flex: 0 0 auto;
@@ -1174,9 +1175,11 @@ img {
   justify-content: space-between;
   padding-top: 30px;
   padding-bottom: 30px;
+  position: relative;
 }
 .header__wrapper > * {
   flex-shrink: 0;
+  z-index: 10;
 }
 @media all and (max-width: 575.98px) {
   .header__wrapper {
@@ -1212,6 +1215,8 @@ img {
 .header__nav a {
   display: inline-flex;
   align-items: center;
+  position: relative;
+  z-index: 10;
   color: var(--text-caption);
 }
 .header__nav a img {
@@ -1306,6 +1311,36 @@ img {
   filter: var(--txt-caption__filter);
 }
 
+.navbar__item:hover > .megamenu {
+  display: block;
+}
+
+.megamenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 136px;
+}
+.megamenu__inner {
+  width: 100%;
+  border-radius: 20px;
+  padding: 30px;
+  background: var(--megamenu);
+  box-shadow: 0px 40px 90px 20px var(--megamenu-shadow);
+  position: relative;
+}
+.megamenu__inner::before {
+  content: url(./../../../icons/megamenu-arrow-down.svg);
+  width: 30px;
+  height: 30px;
+  border-radius: inherit;
+  position: absolute;
+  top: -13px;
+  left: var(--arrow-position);
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -1326,6 +1361,7 @@ img {
 }
 
 html[theme=dark] {
+  --body-bg: #292e39;
   --header-top-cta: #292e39;
   --header-bg: #171c28;
   --txt-caption: #ffffff;
@@ -1334,11 +1370,19 @@ html[theme=dark] {
 }
 
 html[theme=light] {
+  --body-bg: #f6f6f6;
   --header-top-cta: #ffffff;
   --header-bg: #eeeeee;
   --txt-caption: #1a162e;
   --txt-caption__filter: brightness(0) saturate(100%) invert(5%) sepia(47%) saturate(2636%) hue-rotate(234deg) brightness(96%) contrast(91%);
   --seperator: #ededf6;
+  --megamenu: #ffffff;
+  --megamenu-shadow: rgba(200, 200, 200, 0.4);
+}
+@media all and (max-width: 575.98px) {
+  html[theme=light] {
+    --header-bg: #ffffff;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
