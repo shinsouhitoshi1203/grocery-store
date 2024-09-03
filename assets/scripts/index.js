@@ -20,10 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("resize", setMegaMenuArrowPosition);
 window.onscroll = (e)=> {
-    if (window.scrollY >= 80) {
+    console.log(window.scrollY);
+    if (window.scrollY >= 79.0001) {
         document.querySelector("header").classList.add("header--scrolling");
         
-    } else if (window.scrollY < 80) {
+    } else {
         document.querySelector("header").classList.remove("header--scrolling");
     }
 }

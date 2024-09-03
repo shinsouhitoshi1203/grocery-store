@@ -1201,7 +1201,6 @@ img {
 
 .header {
   background: var(--header-bg);
-  transition: visibility 0.3s, background 0.3s;
   position: sticky;
   top: 0;
   left: 0;
@@ -1211,7 +1210,6 @@ img {
   color: inherit;
 }
 .header__wrapper {
-  transition: padding 0.3s, background 0.3s, visibility 0.3s;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1366,10 +1364,10 @@ img {
 }
 .header--scrolling .header__wrapper {
   visibility: visible;
-  padding: 20px;
   border-radius: 20px;
-  top: 20px;
+  padding: 30px;
   background: var(--header-bg);
+  transform: translateY(20px);
 }
 .header--scrolling .megamenu {
   padding-top: 111px;

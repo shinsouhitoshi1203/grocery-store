@@ -1,12 +1,12 @@
 @use "./../abstracts" as a;
 .header {
-    background: var(--header-bg); transition: visibility .3s, background .3s;
+    background: var(--header-bg); //transition: visibility .3s, background .3s;
     position: sticky; top: 0;left: 0;z-index: 1111;
     * {
         color: inherit;
     }
     &__wrapper {
-        transition: padding .3s, background .3s, visibility .3s;
+        //transition: padding .3s, background .3s, visibility .3s;
         @include a.flex-center(space-between);
         padding-top: 30px;padding-bottom: 30px;
         position: relative;
@@ -93,6 +93,6 @@
 
 .header--scrolling {
     visibility: hidden;
-    .header__wrapper {visibility: visible; padding: 20px; border-radius: 20px; top: 20px; background: var(--header-bg); };
+    .header__wrapper {visibility: visible; border-radius: 20px; padding: 30px; background: var(--header-bg); transform: translateY(20px)};
     .megamenu {padding-top: 111px;}
 }
