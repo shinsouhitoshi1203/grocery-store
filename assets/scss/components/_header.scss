@@ -2,6 +2,7 @@
 .header {
     background: var(--header-bg); //transition: visibility .3s, background .3s;
     position: sticky; top: 0;left: 0;z-index: 1111;
+    @include a.responsive(sm) {box-shadow: 0px 20px 60px 10px var(--header-box-shadow);}
     * {
         color: inherit;
     }
@@ -90,9 +91,11 @@
         }
     }
 }
-
-.header--scrolling {
-    visibility: hidden;
-    .header__wrapper {visibility: visible; border-radius: 20px; padding: 30px; background: var(--header-bg); transform: translateY(20px)};
-    .megamenu {padding-top: 111px;}
-}
+/* 
+@include a.responsive() {
+    .header--scrolling {
+        visibility: hidden;
+        .header__wrapper {visibility: visible; border-radius: 20px; padding: 30px; background: var(--header-bg); transform: translateY(20px)};
+        .megamenu {padding-top: 111px;}
+    }
+} */

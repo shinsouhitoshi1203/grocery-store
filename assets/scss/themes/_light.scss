@@ -2,8 +2,10 @@
 html[theme="light"] {
     --body-bg: #f6f6f6;
     --scrollbar: #0071DC;
+    
     --header-top-cta: #ffffff;
     --header-bg: #eeeeee;
+    --heading-box-shadow: rgba(237, 237, 246, 0.20);
 
     --txt-caption: #1a162e;
     --icon-caption: brightness(0) saturate(100%) invert(5%) sepia(47%) saturate(2636%) hue-rotate(234deg) brightness(96%) contrast(91%);
@@ -17,7 +19,6 @@ html[theme="light"] {
     --megamenu-shadow: rgba(200, 200, 200, 0.4);
     --megamenu-seperator: #D2D1D6;
     --megamenu-link-hover: #0071DC;
-
     @include a.responsive(sm) {
         --header-bg: #ffffff;
     }
