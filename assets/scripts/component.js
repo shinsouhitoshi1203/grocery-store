@@ -15,7 +15,7 @@ function load(list) {
         var obj = list[i];
         var t = obj.target;
         var s = obj.src;
-        console.log(obj);
+        //console.log(obj);
         var preload_id = obj.preload; 
         if (preload_id) {
             var preload_target = list[preload_id].target;
@@ -36,12 +36,19 @@ function load(list) {
     Promise.all(arr).then(
         function () {
             console.log(later);
+            return new Promise(
+                (resolve)=>{setTimeout(()=>{resolve()},300)}
+            )
+            
+        }
+    ).then (
+        function () {
+            setMegaMenuArrowPosition();
             later.forEach((obj)=>{
                 var t = obj.target;
                 var s = obj.src;
                 loadComponent(t, s);
             })
-            setMegaMenuArrowPosition();
         }
     )
 }
@@ -64,7 +71,7 @@ function loadComponent (target, src) {
     function dataHandler(raw) {
         var o = document.querySelector(target);
         localStorage.setItem(target, raw);
-        console.log(target)
+        console.log(o)
         if (!o.innerHTML) o.innerHTML = raw;
     }
     
@@ -100,4 +107,6 @@ function setMegaMenuArrowPosition() {
         handler();
     })
 }
+
+
 

@@ -16,7 +16,20 @@ var li = [
 
 document.addEventListener("DOMContentLoaded", () => {
     load(li);
-    
 })
 
-document.addEventListener("resize", setMegaMenuArrowPosition);
+
+window.addEventListener("resize", setMegaMenuArrowPosition);
+
+function loadMegamenuOnHover() {
+    var o = document.querySelectorAll(".navbar__item");
+    console.log(o);
+
+    o.forEach ( 
+        function(i) {
+            i.addEventListener("mouseover",()=>{
+                setMegaMenuArrowPosition();
+            })
+        }
+    )
+}

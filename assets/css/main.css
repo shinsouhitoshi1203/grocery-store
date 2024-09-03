@@ -1181,6 +1181,9 @@ img {
   flex-shrink: 0;
   z-index: 10;
 }
+.header__wrapper .brand {
+  z-index: 10;
+}
 @media all and (max-width: 575.98px) {
   .header__wrapper {
     gap: 39px;

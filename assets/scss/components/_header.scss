@@ -10,6 +10,7 @@
         padding-top: 30px;padding-bottom: 30px;
         position: relative;
         & > * {flex-shrink: 0; z-index: 10;}
+        .brand {z-index: 10;}
 
         @include a.responsive(sm) {gap: 39px; justify-content: center;}
     }

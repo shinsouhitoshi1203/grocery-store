@@ -7,7 +7,7 @@
             <a href="./index.html" class="brand"></a>
             <nav class="header__nav navbar">
                 <ul>
-                    <li class="navbar__item">
+                    <li class="navbar__item" onmouseover="setMegaMenuArrowPosition()">
                         <a href="#!" title="Departments">Departments
                             <img src="./icons/arrow-down.svg" class="header__icon" alt="">
                         </a>
@@ -16,7 +16,7 @@
                             <div class="megamenu__inner">Just Communication</div>
                         </div>
                     </li>
-                    <li class="navbar__item">
+                    <li class="navbar__item" onmouseover="setMegaMenuArrowPosition()">
                         <a href="#!" title="Grocery">Grocery
                             <img src="./icons/arrow-down.svg" class="header__icon" alt="">
                         </a>
@@ -25,7 +25,7 @@
                             <div class="megamenu__inner">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, qui tenetur esse explicabo deserunt officia maxime soluta quo tempore distinctio enim saepe, nihil quam a nostrum fugiat sapiente culpa minima?</div>
                         </div>
                     </li>
-                    <li class="navbar__item">
+                    <li class="navbar__item" onmouseover="setMegaMenuArrowPosition()">
                         <a href="#!" title="Beauty">Beauty
                             <img src="./icons/arrow-down.svg" class="header__icon" alt="">
                         </a>
@@ -60,3 +60,7 @@
         </div>
     </div>
 </div>
+
+<script>
+    loadMegamenuOnHover();
+</script>
