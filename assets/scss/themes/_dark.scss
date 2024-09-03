@@ -1,13 +1,23 @@
 html[theme="dark"] {
     --body-bg: #292e39;
+    --scrollbar: #ffffff;
     
     --header-top-cta: #292e39;
     --header-bg: #171c28;
 
     // secondary colors
     --txt-caption: #ffffff;
-    --txt-caption__filter: invert(99%) sepia(1%) saturate(0%) hue-rotate(251deg) brightness(108%) contrast(100%);
+    --icon-caption: invert(99%) sepia(1%) saturate(0%) hue-rotate(251deg) brightness(108%) contrast(100%);
 
     --seperator: #ededf6;
+
+    //menu
+    --megamenu: #292E39;
+    --megamenu-arrow: brightness(0) saturate(100%) invert(17%) sepia(7%) saturate(1544%) hue-rotate(183deg) brightness(91%) contrast(94%);
+    --megamenu-shadow: rgba(23, 28, 40, 0.40);
+    --megamenu-seperator: #171C28;
+    --megamenu-link-hover: #0071DC;
+
+    --megamenu-text: #B9BABE;
 
 }

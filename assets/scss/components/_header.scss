@@ -1,11 +1,12 @@
 @use "./../abstracts" as a;
 .header {
-    background: var(--header-bg); 
+    background: var(--header-bg); transition: visibility .3s, background .3s;
     position: sticky; top: 0;left: 0;z-index: 1111;
     * {
         color: inherit;
     }
     &__wrapper {
+        transition: padding .3s, background .3s, visibility .3s;
         @include a.flex-center(space-between);
         padding-top: 30px;padding-bottom: 30px;
         position: relative;
@@ -21,17 +22,17 @@
         margin-left: 144px;
         @include a.responsive(xl) {margin-left: 36px;}
         @include a.responsive(lg) {display: none;}
-        ul {
+        ul {list-style-type: none; }
+        &-list {
             @include a.flex-center(null, 30px);
-            list-style-type: none; display: flex; 
-        }
-        a {
-            display: inline-flex; align-items: center;
-            position: relative; z-index: 10;
-            @extend %md-15;
-            color: var(--text-caption);
-            img {
-                @include a.square-icon(12px); margin-left: 6px;
+            & > li > a {
+                display: inline-flex; align-items: center;
+                position: relative; z-index: 10;
+                @extend %md-15;
+                color: var(--text-caption);
+                img {
+                    @include a.square-icon(12px); margin-left: 6px;
+                }
             }
         }
     }
@@ -78,7 +79,7 @@
     }
     &__search {padding: 0; @include a.square-icon(100%, $center: true)}
     &__button-separate {width: 2px; height: 30px; background: var(--seperator);}
-    &__icon {filter: var(--txt-caption__filter);}
+    &__icon {filter: var(--icon-caption);}
 } 
 
 
@@ -90,20 +91,8 @@
     }
 }
 
-.megamenu {
-    display: none; position: absolute; 
-    top: 0;left: 0; width: 100%;
-    padding-top: 136px;
-    &__inner {
-        width: 100%;
-        border-radius: 20px; padding: 30px;
-        background: var(--megamenu); box-shadow: 0px 40px 90px 20px var(--megamenu-shadow);
-        position: relative;
-        &::before {
-            content: url(./../../../icons/megamenu-arrow-down.svg);
-            @include a.square-icon(30px);
-            border-radius: inherit;
-            position: absolute; top: -13px; left: var(--arrow-position);
-        }
-    }
+.header--scrolling {
+    visibility: hidden;
+    .header__wrapper {visibility: visible; padding: 20px; border-radius: 20px; top: 20px; background: var(--header-bg); };
+    .megamenu {padding-top: 111px;}
 }

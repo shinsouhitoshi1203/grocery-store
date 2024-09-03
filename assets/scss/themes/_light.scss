@@ -1,21 +1,23 @@
 @use "./../abstracts" as a;
 html[theme="light"] {
     --body-bg: #f6f6f6;
-
+    --scrollbar: #0071DC;
     --header-top-cta: #ffffff;
     --header-bg: #eeeeee;
 
     --txt-caption: #1a162e;
-    --txt-caption__filter: brightness(0) saturate(100%) invert(5%) sepia(47%) saturate(2636%) hue-rotate(234deg) brightness(96%) contrast(91%);
+    --icon-caption: brightness(0) saturate(100%) invert(5%) sepia(47%) saturate(2636%) hue-rotate(234deg) brightness(96%) contrast(91%);
 
     --seperator: #ededf6;
 
 
     //menu
     --megamenu: #ffffff;
+    --megamenu-arrow: brightness(0) saturate(100%) invert(98%) sepia(98%) saturate(10%) hue-rotate(209deg) brightness(104%) contrast(102%);
     --megamenu-shadow: rgba(200, 200, 200, 0.4);
+    --megamenu-seperator: #D2D1D6;
+    --megamenu-link-hover: #0071DC;
 
-    
     @include a.responsive(sm) {
         --header-bg: #ffffff;
     }

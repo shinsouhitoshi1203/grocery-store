@@ -1,0 +1,60 @@
+@use "./../abstracts" as a;
+.megamenu {
+    display: none; 
+    position: absolute; top: 0;left: 0;
+    width: 100%; max-width: 1240px; 
+
+    padding-top: 136px;
+    & * {color: var(--megamenu-text);}
+    &__inner {
+        width: 100%; height: min(55vh,582px);
+        
+        border-radius: 20px; padding: 30px;
+        background: var(--megamenu); box-shadow: 0px 40px 90px 20px var(--megamenu-shadow);
+        position: relative;
+        &::before {
+            content: url(./../../../icons/megamenu-arrow-down.svg);
+            @include a.square-icon(30px);
+            border-radius: inherit;
+            position: absolute; top: -13px; left: var(--arrow-position);
+            filter: var(--megamenu-arrow);
+        }
+    }
+    &__wrap {
+        overflow-y: auto; overflow-x: hidden; height: 100%;
+        &--real {display: flex; column-gap: 30px; align-items: stretch; width: 100%;}
+    }
+    &__seperator {
+        width: 1px; background: var(--megamenu-seperator);
+    }
+    &__contents{
+        flex-grow: 1;
+        @include a.flex(flex-start,space-between)
+    }
+    // groups
+    &__group {
+        display: grid; grid-gap: 30px;
+    }
+    // items
+    &__item {
+        display: flex; align-items: flex-start; gap: 14px;
+    }
+    &__icon {
+        width: 36px;height: 36px; position: relative;
+        &-shape {@include a.square-icon(30px)}
+        &-real {position: absolute; bottom: 0;right: 0; @include a.square-icon(24px); filter: var(--icon-caption);}
+    }
+
+    &__meta {
+        &-title {padding: 6px 0; @extend %md-16; margin-bottom: 20px;}
+        &-list {
+            display: grid; gap: 14px;
+            a {
+                @extend %rg-14; 
+                transition: font-weight .3s, color .3s;
+                &::before{@extend %fw-ps;}
+                &:hover {@extend %md-14;color: var(--megamenu-link-hover);}
+            }
+        }
+    }
+}

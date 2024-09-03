@@ -1,87 +1,42 @@
 // Load components
-function requireReload(t,s) {
-    return new Promise (
-        function (resolve, reject) {
-            loadComponent(t, s);
-            setTimeout(()=>{resolve()},100);
-        }
-    )
-}
-
-function load(list) {
-    var map = new Array(list.length).fill(0);
-    var arr = [], later = [];
-    for (var i=0;i<list.length;i++){
-        var obj = list[i];
+async function loadElements(list) {
+    var arr = [], inner=[];
+    async function getData(t,s) {
+        var httpResult = await fetch(s);
+        var rawResult = await httpResult.text();
+        arr.push(rawResult);
+    }
+    
+    list.forEach((obj)=>{
         var t = obj.target;
         var s = obj.src;
-        //console.log(obj);
-        var preload_id = obj.preload; 
-        if (preload_id) {
-            var preload_target = list[preload_id].target;
-            var preload_src = list[preload_id].src;
-        }
-        if (map[i]==0) {
-            if ((preload_target!="")&&(preload_target!=null)) {
-                map[preload_id] = 1;
-                var promise = requireReload(preload_target,preload_src);
-                arr.push(promise);
-                later.push(obj);
-            } else {
-                loadComponent(t, s);
-            }
-            map[i]=1;
-        }
-    }
-    Promise.all(arr).then(
-        function () {
-            console.log(later);
-            return new Promise(
-                (resolve)=>{setTimeout(()=>{resolve()},300)}
-            )
-            
-        }
-    ).then (
-        function () {
-            setMegaMenuArrowPosition();
-            later.forEach((obj)=>{
-                var t = obj.target;
-                var s = obj.src;
-                loadComponent(t, s);
-            })
-        }
-    )
-}
-
-function loadComponent (target, src) {
-    function retrieveData (src, handler) {
-        fetch(src)
-            .then (
-                function (httpResult) {
-                    return httpResult.text();
+        arr.push (
+            new Promise (
+                function(resolve) {
+                    fetch(s).then((h)=>h.text()).then((r)=>{
+                        resolve({
+                            target: t,
+                            html: r,
+                        }); 
+                    })
                 }
             )
-            .then (
-                function (rawResult) {
-                    handler(rawResult)
-                }
-            );
-    }
-
-    function dataHandler(raw) {
+        )
+         
+    });
+    function dataHandler(target,raw) {
         var o = document.querySelector(target);
         localStorage.setItem(target, raw);
         console.log(o)
         if (!o.innerHTML) o.innerHTML = raw;
     }
-    
-    // localStorage.getItem(target)
-    if (false) {
-        o.innerHTML = localStorage.getItem(target);
-    } else {
-        retrieveData(src, dataHandler);
-    }
+    Promise.all(arr).then((a)=>{
+        a.forEach(o=>{
+            dataHandler(o.target, o.html)
+        })
+    })
 }
+
 
 function setMegaMenuArrowPosition() {
     function handler() {
@@ -109,4 +64,36 @@ function setMegaMenuArrowPosition() {
 }
 
 
+var input = {
+title: "Computers",shape: "./icons/shapes/triangle.svg",
+icon: "./icons/categories/pc.svg",
+list: [
+"Shop All Computers",
+"Laptops",
+"PC Gaming",
+"Monitors",
+"Chromebook",
+"Printers & Ink",
+"Shop all TVs",
+"Computer Accessories",
+"Desktops",
+"Tax Software",
+"Computer Software",
+"PC Finder",
+]
+}
 
+function loadCategory(group) {
+    var li = group.list.map(o=>`<li><a href="#!" title="Shop all TVs">${o}</a></li>`).join("");
+    var html = `<div class="megamenu__item">
+    <div class="megamenu__icon">
+    <img src="${group.shape}" alt="" class="megamenu__icon-shape">
+    <img src="${group.icon}" alt="" class="megamenu__icon-real"></div>
+    </div>
+    <div class="megamenu__meta">
+    <p class="megamenu__meta-title">${group.title}</p>
+    <ul class="megamenu__meta-list">${li}</div>
+    </div>
+    `;
+    return html;
+}

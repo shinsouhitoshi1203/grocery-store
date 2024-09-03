@@ -4,6 +4,10 @@
     display: flex; align-items: center;justify-content: $jc;
     gap: $g;
 }
+@mixin flex($ai: center, $jc: center, $g: null) {
+    display: flex; align-items: $ai;justify-content: $jc;
+    gap: $g;
+}
 @mixin square-icon($size, $bdrs: null, $center: false) {
     width: $size; height: $size; 
     border-radius: $bdrs;
@@ -24,8 +28,12 @@
     }
 }
 
-// box-shadow {
-
+%fw-ps {display: block;content: attr(title);font-weight: 900;height: 0;overflow: hidden;visibility: hidden;}
 // text
-%md-15 {font-size: 1.5rem; font-weight: 500; line-height: 1.45;}
+%common-lh {line-height: 1.42;}
+%rg-14 {font-size: 1.4rem; font-weight: 400; @extend %common-lh;}
+
+%md-14 {font-size: 1.4rem; font-weight: 500; @extend %common-lh;}
+%md-15 {font-size: 1.5rem; font-weight: 500; @extend %common-lh;}
+%md-16 {font-size: 1.6rem; font-weight: 500; @extend %common-lh;}
 
