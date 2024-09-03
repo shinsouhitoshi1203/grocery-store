@@ -97,3 +97,15 @@ function loadCategory(group) {
     `;
     return html;
 }
+
+function categoryShow(e) {
+    try {
+        document.querySelector(".megamenu__contents").innerText = "";
+        var allCategories = document.querySelectorAll(".megamenu__submenu");
+        allCategories.forEach(c=>{c.classList.remove("megamenu__submenu--appeared")})
+        var o = e.querySelector(".megamenu__submenu");
+        o.classList.add("megamenu__submenu--appeared");
+    } catch (error) {
+        document.querySelector(".megamenu__contents").innerText = "Nothing to show here";
+    }
+}
