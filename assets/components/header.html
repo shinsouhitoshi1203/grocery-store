@@ -1,18 +1,21 @@
 <div class="container">
     <div class="header__wrapper">
-        <a href="javascript:;" class="header__nav-dropdown" title="View menu">
+        <button href="javascript:;" class="header__nav-dropdown" title="View menu" target-item=".header__nav" onclick="toggleNavigationBar(this)">
             <img src="./icons/menu-dropdown.svg" alt="" class="header__icon">
-        </a>
+        </button>
         <section class="header__main">
             <a href="./index.html" class="brand"></a>
-            <nav class="header__nav navbar">
+            <nav class="header__nav navbar navbar--hide">
+                <a href="#!" class="navbar__dropdown-close" target-item=".header__nav" onclick="toggleNavigationBar(this)">
+                    <img src="./icons/arrow-left.svg" alt="" class="header__icon">
+                </a>
                 <ul class="header__nav-list">
-                    <li class="navbar__item" onmouseover="setMegaMenuArrowPosition()">
+                    <li class="navbar__item" onmouseover="toggleMegamenuOn(this)" onmouseout="toggleMegamenuOff(this)" onclick="toggleMegamenu(this)">
                         <a href="#!" title="Departments">Departments
                             <img src="./icons/arrow-down.svg" class="header__icon" alt="">
                         </a>
 
-                        <div class="megamenu" style="--arrow-position: 0;">
+                        <div class="megamenu megamenu--mixed" style="--arrow-position: 0;">
                             <div class="megamenu__inner">
                                 <div class="megamenu__wrap">
                                     <div class="megamenu__wrap--real">
@@ -25,7 +28,7 @@
                                                 <div class="megamenu__meta">
                                                     <p class="megamenu__meta-title">All Departments</p>
                                                     <ul class="megamenu__meta-list">
-                                                        <li class="megamenu__meta-item" onmouseover="categoryShow(this)">
+                                                        <li class="megamenu__meta-item" onmouseover="toggleSubMegamenuOn(this,event)" onmouseout="toggleSubMegamenuOff(this,event)" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)" >
                                                             <a href="#!" title="Savings & Featured Shops">Savings & Featured Shops</a>
                                                             <div class="megamenu__submenu">
                                                                 <div class="megamenu__group">
@@ -241,35 +244,495 @@
                                         </div>
                                         <div class="megamenu__seperator"></div>
                                         <div class="megamenu__contents">
-<!-- 
-                                            
-                                             -->
+                                            Hover any category in the list on the left to see featured items
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="navbar__item" onmouseover="setMegaMenuArrowPosition()">
+                    <li class="navbar__item" onmouseover="toggleMegamenuOn(this)" onmouseout="toggleMegamenuOff(this)" onclick="toggleMegamenu(this)">
                         <a href="#!" title="Grocery">Grocery
                             <img src="./icons/arrow-down.svg" class="header__icon" alt="">
                         </a>
 
                         <div class="megamenu" style="--arrow-position: 0;">
-                            <div class="megamenu__inner">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, qui tenetur esse explicabo deserunt officia maxime soluta quo tempore distinctio enim saepe, nihil quam a nostrum fugiat sapiente culpa minima?</div>
+                            <div class="megamenu__inner">
+                                <div class="megamenu__wrap">
+                                    <div class="megamenu__wrap--real"> 
+                                        <div class="megamenu__contents">
+                                            <div class="megamenu__group">
+                                                <div class="megamenu__item">
+                                                    <div class="megamenu__icon">
+                                                        <img src="./icons/shapes/square.svg" alt="" class="megamenu__icon-shape">
+                                                        <img src="./icons/categories/tv.svg" alt="" class="megamenu__icon-real">
+                                                    </div>
+                                                    <div class="megamenu__meta">
+                                                        <p class="megamenu__meta-title">TV & Video</p>
+                                                        <ul class="megamenu__meta-list">
+                                                            <li>
+                                                                <a href="#!" title="Shop all TVs">Shop all TVs</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="TVs by Size">TVs by Size</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Smart TVs">Smart TVs</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Roku TVss">Roku TVs</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Streaming">Streaming</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="TV Mounts & Accessories">TV Mounts & Accessories</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="DVD & Blu-Ray Players">DVD & Blu-Ray Players</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="megamenu__item">
+                                                    <div class="megamenu__icon">
+                                                        <img src="./icons/shapes/star.svg" alt="" class="megamenu__icon-shape">
+                                                        <img src="./icons/categories/tv.svg" alt="" class="megamenu__icon-real">
+                                                    </div>
+                                                    <div class="megamenu__meta">
+                                                        <p class="megamenu__meta-title">Wearable Technology</p>
+                                                        <ul class="megamenu__meta-list">
+                                                            <li>
+                                                                <a href="#!" title="Galaxy Watch">Galaxy Watch</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Apple Watch">Apple Watch</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Fitness Trackers">Fitness Trackers</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Virtual Reality">Virtual Reality</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Headphones">Headphones</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="megamenu__group">
+                                                <div class="megamenu__item">
+                                                    <div class="megamenu__icon">
+                                                        <img src="./icons/shapes/triangle.svg" alt="" class="megamenu__icon-shape">
+                                                        <img src="./icons/categories/pc.svg" alt="" class="megamenu__icon-real">
+                                                    </div>
+                                                    <div class="megamenu__meta">
+                                                        <p class="megamenu__meta-title">Computers</p>
+                                                        <ul class="megamenu__meta-list">
+                                                            <li>
+                                                                <a href="#!" title="Shop All Computers">Shop All Computers</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Laptops">Laptops</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="PC Gaming">PC Gaming</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Roku TVss">Monitors</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Streaming">Chromebook</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="TV Mounts & Accessories">Printers & Ink</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="DVD & Blu-Ray Players">Shop all TVs</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Streaming">Computer Accessories</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="TV Mounts & Accessories">Desktops</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="DVD & Blu-Ray Players">Tax Software</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Streaming">Computer Software</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="TV Mounts & Accessories">PC Finder</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="megamenu__group">
+                                                <div class="megamenu__item">
+                                                    <div class="megamenu__icon">
+                                                        <img src="./icons/shapes/pie.svg" alt="" class="megamenu__icon-shape">
+                                                        <img src="./icons/categories/saving.svg" alt="" class="megamenu__icon-real">
+                                                    </div>
+                                                    <div class="megamenu__meta">
+                                                        <p class="megamenu__meta-title">Saving</p>
+                                                        <ul class="megamenu__meta-list">
+                                                            <li>
+                                                                <a href="#!" title="Tech Savings">Tech Savings</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Overstock Savings">Overstock Savings</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Tech Rollbacks">Tech Rollbacks</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="megamenu__item">
+                                                    <div class="megamenu__icon">
+                                                        <img src="./icons/shapes/hexagon.svg" alt="" class="megamenu__icon-shape">
+                                                        <img src="./icons/categories/phone.svg" alt="" class="megamenu__icon-real">
+                                                    </div>
+                                                    <div class="megamenu__meta">
+                                                        <p class="megamenu__meta-title">Cell Phones</p>
+                                                        <ul class="megamenu__meta-list">
+                                                            <li>
+                                                                <a href="#!" title="Wireless Deals">Wireless Deals</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="5G Phones">5G Phones</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Prepaid Phones & Plans">Prepaid Phones & Plans</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Refurbished Phones">Refurbished Phones</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="iPhone Accessories">iPhone Accessories</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Cases & Screen Protectors">Cases & Screen Protectors</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Walmart Protection Plan">Walmart Protection Plan</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Unlocked Phones">Unlocked Phones</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="megamenu__group">
+                                                <div class="megamenu__item">
+                                                    <div class="megamenu__icon">
+                                                        <img src="./icons/shapes/pie.svg" alt="" class="megamenu__icon-shape">
+                                                        <img src="./icons/categories/saving.svg" alt="" class="megamenu__icon-real">
+                                                    </div>
+                                                    <div class="megamenu__meta">
+                                                        <p class="megamenu__meta-title">Saving</p>
+                                                        <ul class="megamenu__meta-list">
+                                                            <li>
+                                                                <a href="#!" title="Tech Savings">Tech Savings</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Overstock Savings">Overstock Savings</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Tech Rollbacks">Tech Rollbacks</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="megamenu__item">
+                                                    <div class="megamenu__icon">
+                                                        <img src="./icons/shapes/hexagon.svg" alt="" class="megamenu__icon-shape">
+                                                        <img src="./icons/categories/phone.svg" alt="" class="megamenu__icon-real">
+                                                    </div>
+                                                    <div class="megamenu__meta">
+                                                        <p class="megamenu__meta-title">Cell Phones</p>
+                                                        <ul class="megamenu__meta-list">
+                                                            <li>
+                                                                <a href="#!" title="Wireless Deals">Wireless Deals</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="5G Phones">5G Phones</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Prepaid Phones & Plans">Prepaid Phones & Plans</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Refurbished Phones">Refurbished Phones</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="iPhone Accessories">iPhone Accessories</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Cases & Screen Protectors">Cases & Screen Protectors</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Walmart Protection Plan">Walmart Protection Plan</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Unlocked Phones">Unlocked Phones</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </li>
-                    <li class="navbar__item" onmouseover="setMegaMenuArrowPosition()">
+                    <li class="navbar__item" onmouseover="toggleMegamenuOn(this)" onmouseout="toggleMegamenuOff(this)" onclick="toggleMegamenu(this)">
                         <a href="#!" title="Beauty">Beauty
                             <img src="./icons/arrow-down.svg" class="header__icon" alt="">
                         </a>
 
                         <div class="megamenu" style="--arrow-position: 0;">
-                            <div class="megamenu__inner">Takayama Minami</div>
+                            <div class="megamenu__inner">
+                                <div class="megamenu__wrap">
+                                    <div class="megamenu__wrap--real"> 
+                                        <div class="megamenu__contents">
+                                            <div class="megamenu__group">
+                                                <div class="megamenu__item">
+                                                    <div class="megamenu__icon">
+                                                        <img src="./icons/shapes/square.svg" alt="" class="megamenu__icon-shape">
+                                                        <img src="./icons/categories/tv.svg" alt="" class="megamenu__icon-real">
+                                                    </div>
+                                                    <div class="megamenu__meta">
+                                                        <p class="megamenu__meta-title">TV & Video</p>
+                                                        <ul class="megamenu__meta-list">
+                                                            <li>
+                                                                <a href="#!" title="Shop all TVs">Shop all TVs</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="TVs by Size">TVs by Size</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Smart TVs">Smart TVs</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Roku TVss">Roku TVs</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Streaming">Streaming</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="TV Mounts & Accessories">TV Mounts & Accessories</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="DVD & Blu-Ray Players">DVD & Blu-Ray Players</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="megamenu__item">
+                                                    <div class="megamenu__icon">
+                                                        <img src="./icons/shapes/star.svg" alt="" class="megamenu__icon-shape">
+                                                        <img src="./icons/categories/tv.svg" alt="" class="megamenu__icon-real">
+                                                    </div>
+                                                    <div class="megamenu__meta">
+                                                        <p class="megamenu__meta-title">Wearable Technology</p>
+                                                        <ul class="megamenu__meta-list">
+                                                            <li>
+                                                                <a href="#!" title="Galaxy Watch">Galaxy Watch</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Apple Watch">Apple Watch</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Fitness Trackers">Fitness Trackers</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Virtual Reality">Virtual Reality</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Headphones">Headphones</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="megamenu__group">
+                                                <div class="megamenu__item">
+                                                    <div class="megamenu__icon">
+                                                        <img src="./icons/shapes/triangle.svg" alt="" class="megamenu__icon-shape">
+                                                        <img src="./icons/categories/pc.svg" alt="" class="megamenu__icon-real">
+                                                    </div>
+                                                    <div class="megamenu__meta">
+                                                        <p class="megamenu__meta-title">Computers</p>
+                                                        <ul class="megamenu__meta-list">
+                                                            <li>
+                                                                <a href="#!" title="Shop All Computers">Shop All Computers</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Laptops">Laptops</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="PC Gaming">PC Gaming</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Roku TVss">Monitors</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Streaming">Chromebook</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="TV Mounts & Accessories">Printers & Ink</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="DVD & Blu-Ray Players">Shop all TVs</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Streaming">Computer Accessories</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="TV Mounts & Accessories">Desktops</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="DVD & Blu-Ray Players">Tax Software</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Streaming">Computer Software</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="TV Mounts & Accessories">PC Finder</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="megamenu__group">
+                                                <div class="megamenu__item">
+                                                    <div class="megamenu__icon">
+                                                        <img src="./icons/shapes/pie.svg" alt="" class="megamenu__icon-shape">
+                                                        <img src="./icons/categories/saving.svg" alt="" class="megamenu__icon-real">
+                                                    </div>
+                                                    <div class="megamenu__meta">
+                                                        <p class="megamenu__meta-title">Saving</p>
+                                                        <ul class="megamenu__meta-list">
+                                                            <li>
+                                                                <a href="#!" title="Tech Savings">Tech Savings</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Overstock Savings">Overstock Savings</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Tech Rollbacks">Tech Rollbacks</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="megamenu__item">
+                                                    <div class="megamenu__icon">
+                                                        <img src="./icons/shapes/hexagon.svg" alt="" class="megamenu__icon-shape">
+                                                        <img src="./icons/categories/phone.svg" alt="" class="megamenu__icon-real">
+                                                    </div>
+                                                    <div class="megamenu__meta">
+                                                        <p class="megamenu__meta-title">Cell Phones</p>
+                                                        <ul class="megamenu__meta-list">
+                                                            <li>
+                                                                <a href="#!" title="Wireless Deals">Wireless Deals</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="5G Phones">5G Phones</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Prepaid Phones & Plans">Prepaid Phones & Plans</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Refurbished Phones">Refurbished Phones</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="iPhone Accessories">iPhone Accessories</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Cases & Screen Protectors">Cases & Screen Protectors</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Walmart Protection Plan">Walmart Protection Plan</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Unlocked Phones">Unlocked Phones</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="megamenu__group">
+                                                <div class="megamenu__item">
+                                                    <div class="megamenu__icon">
+                                                        <img src="./icons/shapes/pie.svg" alt="" class="megamenu__icon-shape">
+                                                        <img src="./icons/categories/saving.svg" alt="" class="megamenu__icon-real">
+                                                    </div>
+                                                    <div class="megamenu__meta">
+                                                        <p class="megamenu__meta-title">Saving</p>
+                                                        <ul class="megamenu__meta-list">
+                                                            <li>
+                                                                <a href="#!" title="Tech Savings">Tech Savings</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Overstock Savings">Overstock Savings</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Tech Rollbacks">Tech Rollbacks</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="megamenu__item">
+                                                    <div class="megamenu__icon">
+                                                        <img src="./icons/shapes/hexagon.svg" alt="" class="megamenu__icon-shape">
+                                                        <img src="./icons/categories/phone.svg" alt="" class="megamenu__icon-real">
+                                                    </div>
+                                                    <div class="megamenu__meta">
+                                                        <p class="megamenu__meta-title">Cell Phones</p>
+                                                        <ul class="megamenu__meta-list">
+                                                            <li>
+                                                                <a href="#!" title="Wireless Deals">Wireless Deals</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="5G Phones">5G Phones</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Prepaid Phones & Plans">Prepaid Phones & Plans</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Refurbished Phones">Refurbished Phones</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="iPhone Accessories">iPhone Accessories</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Cases & Screen Protectors">Cases & Screen Protectors</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Walmart Protection Plan">Walmart Protection Plan</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#!" title="Unlocked Phones">Unlocked Phones</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </li>
                 </ul>
             </nav>
+            <div class="navbar__overlay"target-item=".header__nav" onclick="toggleNavigationBar(this)">
+            </div>
         </section>
         <div class="header__dashboard">
             <div class="header__button-container">
