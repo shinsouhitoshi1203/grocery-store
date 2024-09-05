@@ -62,7 +62,7 @@
         img {@include a.square-icon(24px)}
         span {
             @extend %md-15;
-            @include a.responsive(md) {display: none;}
+            
         }
         &:hover {
             filter: brightness(0.7);
@@ -74,9 +74,7 @@
         overflow: hidden;
         box-shadow: 0px 20px 60px 10px rgba(var(--seperator),0.2 );
         @include a.flex-center(center);
-        &--long {@include a.flex-center()} 
-        
-        @include a.responsive(sm) {display: none;}
+        &--long {@include a.flex-center()}         
     }
     &__search {padding: 0; @include a.square-icon(100%, $center: true)}
     &__button-separate {width: 2px; height: 30px; background: var(--seperator);}
@@ -85,19 +83,14 @@
 
 .navbar {
     &__item {
-        &:hover > .megamenu {
-            //display: block;
-        }
         &--show > .megamenu {
             display: block;
         }
     }
     &__dropdown-close {
-        display: none; margin-bottom: 20px;
+        margin-bottom: 20px;
         @include a.square-icon(24px);
-        @include a.responsive(lg) {
-            display: block;
-        }
+        
     }
     
     &__overlay {

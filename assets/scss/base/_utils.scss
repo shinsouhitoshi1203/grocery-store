@@ -1,0 +1,29 @@
+$breakpoints: (
+    xs: 0,
+    xxl: 1400px,
+    xl: 1200px,
+    lg: 992px,
+    md: 768px,
+    sm: 576px,
+);
+$displays: flex, grid, block, inline, none; 
+
+@mixin display-responsive($bp, $mw) {
+    @if $bp!=xs {
+        @media (max-width: #{$mw - 0.02px}) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@each $bp, $mw in $breakpoints {
+    @include display-responsive($bp, $mw) {
+        $infix : if($bp==xs, "", "-"+#{$bp});
+        @each $d in $displays {
+            .d#{$infix}-#{$d}{display: #{$d}!important;}
+        }
+    };
+}
+

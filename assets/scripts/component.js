@@ -96,8 +96,10 @@ function loadCategory(group) {
     `;
     return html;
 }
+// no more propagandation
 
-function categoryShow(e) {
+
+function categoryShow(e, v) {
     try {
         var allCategoriesLink = document.querySelectorAll(".megamenu__meta-item");
         allCategoriesLink.forEach(c=>{c.classList.remove("megamenu__meta-item--hover")})
@@ -110,9 +112,9 @@ function categoryShow(e) {
         o.classList.add("megamenu__submenu--appeared");
 
     } catch (error) {
-        document.querySelector(".megamenu__contents").innerText = "Nothing to show here";
+        document.querySelector(".megamenu__contents").innerText = "";
     }
-    console.log([e]);
+    v.stopPropagation();
 }
 
 // toggle navigation bar
@@ -151,27 +153,24 @@ function toggleMegamenuOn (e) {
 }
 // toggle submenu
 function toggleSubMegamenu (e) {
-    function handler(t) {
-        t.classList.toggle("navbar__item--show");
-    }
-    if (window.innerWidth < 991.98) {
-        handler(e);
+    if (window.innerWidth) {
+        try {e.parentNode.querySelector(".megamenu__submenu").classList.toggle("megamenu__submenu--show");}  catch (error) {}
     }
 }
 function toggleSubMegamenuOff (e) {
     setMegaMenuArrowPosition();
     if (window.innerWidth >= 991.98) {
-        e.classList.remove("navbar__item--show");
+        try {e.parentNode.querySelector(".megamenu__submenu").classList.remove("megamenu__submenu--show");} catch (error) {}
     }
 }
 function toggleSubMegamenuOn (e) {
     setMegaMenuArrowPosition();
     if (window.innerWidth >= 991.98) {
-        e.classList.add("navbar__item--show");
+        try {e.parentNode.querySelector(".megamenu__submenu").classList.add("megamenu__submenu--show");} catch (error) {}
     }
 }
 // toggle items in mixed megamenu
 function categoryShowToggle(t, e) {
-    console.log([t]);
+    // console.log([t]);
     e.stopPropagation();
 }
