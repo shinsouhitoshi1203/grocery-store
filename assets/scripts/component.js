@@ -141,46 +141,78 @@ function toggleNavigationBar(b, isForce=false) {
 }
 
 // toggle megamenu by javascript
-function toggleMegamenu (e) {
-    function handler(t) {
-        t.classList.toggle("navbar__item--show");
+    function toggleMegamenu (e, event) {
+        function handler(t) {
+            if (event.target.parentNode.classList.contains("navbar__item")){
+                t.classList.toggle("navbar__item--show");
+            }
+        }
+        if (window.innerWidth < 991.98) {
+            handler(e);
+        }
+        
     }
-    if (window.innerWidth < 991.98) {
-        handler(e);
+    function toggleMegamenuOff (e, event) {
+        setMegaMenuArrowPosition();
+        if (window.innerWidth >= 991.98) {
+            if (event.target.parentNode.classList.contains("navbar__item")){
+                t.classList.remove("navbar__item--show");
+            }
+        }
     }
-}
-function toggleMegamenuOff (e) {
-    setMegaMenuArrowPosition();
-    if (window.innerWidth >= 991.98) {
-        e.classList.remove("navbar__item--show");
+    function toggleMegamenuOn (e, event) {
+        function hasOpened(e) {
+            return (e.querySelector(".megamenu__submenu--show")) ? true : false;
+        }
+        setMegaMenuArrowPosition();
+        if (window.innerWidth >= 991.98) {
+            if (event.target.parentNode.classList.contains("navbar__item")) {
+                if (!hasOpened(e)) {
+                    var firstSubMegamenu = document.querySelector('.megamenu--mixed').querySelector('.megamenu__meta-item');
+                    toggleSubMegamenuOn (firstSubMegamenu, event);
+                } 
+                e.classList.add("navbar__item--show");
+            }
+        }
+            
     }
-}
-function toggleMegamenuOn (e) {
-    setMegaMenuArrowPosition();
-    if (window.innerWidth >= 991.98) {
-        e.classList.add("navbar__item--show");
-    }
-}
+
+
 // toggle submenu
-function toggleSubMegamenu (e) {
-    if (window.innerWidth) {
-        try {e.querySelector(".megamenu__submenu").classList.toggle("megamenu__submenu--show");}  catch (error) {}
+function getRidAllSubMegamenu(e, event) {
+    var o = e.parentNode.querySelectorAll(".megamenu__meta-item");
+    o.forEach(s=>toggleSubMegamenuOff(s, event));
+}
+function toggleSubMegamenu (e, event) {
+    if (window.innerWidth<=991.98) {
+        try {
+            if (event.target.parentNode.classList.contains("megamenu__meta-item")){
+                e.querySelector(".megamenu__submenu").classList.toggle("megamenu__submenu--show");
+                e.scrollIntoView();
+            }
+        }  catch (error) {}
+    } else {
+        try {
+            getRidAllSubMegamenu(e, event);
+            e.querySelector(".megamenu__submenu").classList.add("megamenu__submenu--show");
+        }  catch (error) {}
     }
 }
-function toggleSubMegamenuOff (e) {
+function toggleSubMegamenuOff (e,event) {
     setMegaMenuArrowPosition();
     if (window.innerWidth >= 991.98) {
         try {e.querySelector(".megamenu__submenu").classList.remove("megamenu__submenu--show");} catch (error) {}
     }
+    event.stopPropagation();
 }
-function toggleSubMegamenuOn (e) {
+function toggleSubMegamenuOn (e,event) {
     setMegaMenuArrowPosition();
     if (window.innerWidth >= 991.98) {
         try {e.querySelector(".megamenu__submenu").classList.add("megamenu__submenu--show");} catch (error) {}
     }
+    event.stopPropagation();
 }
 // toggle items in mixed megamenu
 function categoryShowToggle(t, e) {
-    // console.log([t]);
     e.stopPropagation();
 }
