@@ -156,7 +156,7 @@ function toggleNavigationBar(b, isForce=false) {
         setMegaMenuArrowPosition();
         if (window.innerWidth >= 991.98) {
             if (event.target.parentNode.classList.contains("navbar__item")){
-                t.classList.remove("navbar__item--show");
+                e.classList.remove("navbar__item--show");
             }
         }
     }
