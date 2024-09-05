@@ -82,6 +82,7 @@
 } 
 
 .navbar {
+    @include a.responsive(lg) {transition: transform .3s, opacity 0s;}
     &__item {
         &--show > .megamenu {
             display: block;
@@ -103,17 +104,19 @@
     
     @include a.responsive(lg) {
         // &--show, &--hide {visibility: hidden;}
-        &--hide {transform: translateX(-100%);}
-        &--show {transform: translateX(0);}
+        &--hide {transform: translateX(-100%); opacity: 0;}
+        &--show {transform: translateX(0); opacity: 1;}
     }
 }
 
 // responsive options for navigation bar
 
     @include a.responsive(lg) {
-    
         .header {
-            &__nav{position: fixed; width: 60%; height: 100%; top: 0;left: 0; display: block; background: var(--megamenu);margin: 0; z-index: 31; padding: 20px; overflow-y: auto;}
+            &__nav{
+                position: fixed; width: 60%; height: 100%; top: 0;left: 0; display: block; background: var(--megamenu);margin: 0; z-index: 31; padding: 20px 10px 20px 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; max-height: 1262px;
+                & > &-list {overflow-y: auto; height: calc(100% - 60px);align-items: flex-start; align-content: flex-start; padding-right: 10px;}
+            }
 
             &__nav-list {
                 display: grid; gap: 20px;
@@ -124,5 +127,4 @@
                 }
             }
         } 
-        
     } 

@@ -40,10 +40,14 @@ function loadMegamenuOnHover() {
     )
 }
 window.addEventListener("resize", ()=>{
-    console.log(111)
+    
     if (window.innerWidth >= 991.98) {
         document.querySelectorAll(".navbar__item").forEach(
             (e)=>{e.classList.remove("navbar__item--show")}
         )
+        toggleNavigationBar(document.querySelector(".navbar__dropdown-close"), true);
+    } else {
+        console.log(window.innerWidth)
     }
+
 })

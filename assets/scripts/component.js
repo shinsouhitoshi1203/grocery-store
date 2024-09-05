@@ -118,15 +118,25 @@ function categoryShow(e, v) {
 }
 
 // toggle navigation bar
-function toggleNavigationBar(b) {
+function toggleNavigationBar(b, isForce=false) {
     //var o = document.querySelector(".navbar__overlay");
     var t = document.querySelector(b.getAttribute("target-item"));
-    if (t.classList.contains("navbar--hide")) {
+    function show() {
         t.classList.remove("navbar--hide");
         t.classList.add("navbar--show");
-    } else {
+    }
+    function hide() {
         t.classList.remove("navbar--show");
         t.classList.add("navbar--hide");
+    }
+    if (!isForce) {
+        if (t.classList.contains("navbar--hide")) {
+            show();
+        } else {
+            hide();
+        }
+    } else {
+        hide();
     }
 }
 
@@ -154,19 +164,19 @@ function toggleMegamenuOn (e) {
 // toggle submenu
 function toggleSubMegamenu (e) {
     if (window.innerWidth) {
-        try {e.parentNode.querySelector(".megamenu__submenu").classList.toggle("megamenu__submenu--show");}  catch (error) {}
+        try {e.querySelector(".megamenu__submenu").classList.toggle("megamenu__submenu--show");}  catch (error) {}
     }
 }
 function toggleSubMegamenuOff (e) {
     setMegaMenuArrowPosition();
     if (window.innerWidth >= 991.98) {
-        try {e.parentNode.querySelector(".megamenu__submenu").classList.remove("megamenu__submenu--show");} catch (error) {}
+        try {e.querySelector(".megamenu__submenu").classList.remove("megamenu__submenu--show");} catch (error) {}
     }
 }
 function toggleSubMegamenuOn (e) {
     setMegaMenuArrowPosition();
     if (window.innerWidth >= 991.98) {
-        try {e.parentNode.querySelector(".megamenu__submenu").classList.add("megamenu__submenu--show");} catch (error) {}
+        try {e.querySelector(".megamenu__submenu").classList.add("megamenu__submenu--show");} catch (error) {}
     }
 }
 // toggle items in mixed megamenu

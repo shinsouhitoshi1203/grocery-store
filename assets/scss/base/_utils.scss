@@ -7,6 +7,7 @@ $breakpoints: (
     sm: 576px,
 );
 $displays: flex, grid, block, inline, none; 
+$widths: 10,20,30,40,50,60,70,80,90,100, initial; 
 
 @mixin display-responsive($bp, $mw) {
     @if $bp!=xs {
@@ -18,12 +19,28 @@ $displays: flex, grid, block, inline, none;
     }
 }
 
-@each $bp, $mw in $breakpoints {
-    @include display-responsive($bp, $mw) {
-        $infix : if($bp==xs, "", "-"+#{$bp});
-        @each $d in $displays {
-            .d#{$infix}-#{$d}{display: #{$d}!important;}
-        }
-    };
+@mixin display-option() {
+    @each $bp, $mw in $breakpoints {
+        @include display-responsive($bp, $mw) {
+            $infix : if($bp==xs, "", "-"+#{$bp});
+            @each $d in $displays {
+                .d#{$infix}-#{$d}{display: #{$d}!important;}
+            }
+        };
+    }
 }
 
+@mixin width-option() {
+    @each $bp, $mw in $breakpoints {
+        @include display-responsive($bp, $mw) {
+            $infix : if($bp==xs, "", "-"+#{$bp});
+            @each $w in $widths {
+                $width : if($w==initial, initial, #{$w}+"%");
+                .w#{$infix}-#{$w}{width: #{$width}!important;}
+            }
+        };
+    }
+}
+
+@include display-option();
+@include width-option();
