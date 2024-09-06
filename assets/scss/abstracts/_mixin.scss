@@ -28,6 +28,7 @@
     }
 }
 
+@mixin sticky {position: sticky; top: 0;}
 %fw-ps {display: block;content: attr(title);font-weight: 900;height: 0;overflow: hidden;visibility: hidden;}
 // text
 %common-lh {line-height: 1.42;}

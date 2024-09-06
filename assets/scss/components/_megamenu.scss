@@ -75,6 +75,10 @@
     }
 }
 
+// css x javascript moment
+.megamenu {
+    &__meta-item:has(.megamenu__submenu--show) > a {color: var(--header-submenu-title-selected);}
+}
 @include a.responsive(lg) {
     .megamenu {
         padding: 0; position: relative;
@@ -88,7 +92,7 @@
         //megamenu for mixed catalogues
         &--mixed &__submenu {position: relative; inset: unset; flex-wrap: wrap; height: initial;}
         &--mixed &__wrap--real {flex-wrap: wrap;}
-
+        
         // &--mixed &__contents {display: none;}
         // &--mixed &__icon--mixed {display: none;}
         // &--mixed &__meta-title--mixed {display: none;}
