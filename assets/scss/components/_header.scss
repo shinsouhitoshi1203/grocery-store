@@ -90,14 +90,22 @@
         }
     }
     &__dropdown-close {
-        margin-bottom: 20px;
+        transition: filter .3s;
         @include a.square-icon(24px);
-        
+        &:hover {filter: var(--navbar-close);}
     }
     
     &__overlay {
         position: fixed; inset: 0 0 0 0; background: rgba(0, 0, 0, 0.3);
         z-index: 30; visibility: hidden;
+    }
+
+    //for card and favourite 
+    &__button {
+        align-items: center; gap: 15px; margin-right: 20px;
+        img {@include a.square-icon(24px);}
+        span {@extend %md-15}
+        &-value {margin-left: auto;}
     }
     @include a.responsive(lg) {
         &--show + &__overlay {visibility: visible;}
@@ -115,7 +123,7 @@
         .header {
             &__nav{
                 position: fixed; width: 60%; height: 100%; top: 0;left: 0; background: var(--megamenu);margin: 0; z-index: 31; padding: 20px 10px 20px 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; max-height: 1262px;
-                display: flex; flex-direction: column;
+                display: flex; flex-direction: column; gap: 20px;
                 & > &-list {overflow-y: auto; flex-grow: 1;align-items: flex-start; align-content: flex-start; padding-right: 10px;}
             }
             &__nav-list {display: grid; gap: 20px}

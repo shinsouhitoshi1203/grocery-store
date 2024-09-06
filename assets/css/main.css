@@ -1500,7 +1500,7 @@ img {
   visibility: hidden;
 }
 
-.megamenu__meta-title, .header__button span, .navbar__item > a, .megamenu__meta-list a:hover, .megamenu__meta-item--hover > a, .megamenu__meta-list a {
+.megamenu__meta-title, .header__button span, .navbar__item > a, .navbar__button span, .megamenu__meta-list a:hover, .megamenu__meta-item--hover > a, .megamenu__meta-list a {
   line-height: 1.42;
 }
 
@@ -1514,7 +1514,7 @@ img {
   font-weight: 500;
 }
 
-.header__button span, .navbar__item > a {
+.header__button span, .navbar__item > a, .navbar__button span {
   font-size: 1.5rem;
   font-weight: 500;
 }
@@ -1683,9 +1683,12 @@ img {
   display: block;
 }
 .navbar__dropdown-close {
-  margin-bottom: 20px;
+  transition: filter 0.3s;
   width: 24px;
   height: 24px;
+}
+.navbar__dropdown-close:hover {
+  filter: var(--navbar-close);
 }
 .navbar__overlay {
   position: fixed;
@@ -1693,6 +1696,18 @@ img {
   background: rgba(0, 0, 0, 0.3);
   z-index: 30;
   visibility: hidden;
+}
+.navbar__button {
+  align-items: center;
+  gap: 15px;
+  margin-right: 20px;
+}
+.navbar__button img {
+  width: 24px;
+  height: 24px;
+}
+.navbar__button-value {
+  margin-left: auto;
 }
 @media all and (max-width: 991.98px) {
   .navbar--show + .navbar__overlay {
@@ -1726,6 +1741,7 @@ img {
     max-height: 1262px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
   }
   .header__nav > .header__nav-list {
     overflow-y: auto;
@@ -1940,6 +1956,7 @@ html[theme=dark] {
   --txt-caption: #ffffff;
   --icon-caption: invert(99%) sepia(1%) saturate(0%) hue-rotate(251deg) brightness(108%) contrast(100%);
   --seperator: #ededf6;
+  --navbar-close: brightness(0.7);
   --megamenu: #292E39;
   --megamenu-arrow: brightness(0) saturate(100%) invert(17%) sepia(7%) saturate(1544%) hue-rotate(183deg) brightness(91%) contrast(94%);
   --megamenu-shadow: rgba(23, 28, 40, 0.40);
@@ -1958,6 +1975,7 @@ html[theme=light] {
   --txt-caption: #1a162e;
   --icon-caption: brightness(0) saturate(100%) invert(5%) sepia(47%) saturate(2636%) hue-rotate(234deg) brightness(96%) contrast(91%);
   --seperator: #ededf6;
+  --navbar-close: brightness(3);
   --megamenu: #ffffff;
   --megamenu-arrow: brightness(0) saturate(100%) invert(98%) sepia(98%) saturate(10%) hue-rotate(209deg) brightness(104%) contrast(102%);
   --megamenu-shadow: rgba(200, 200, 200, 0.4);
