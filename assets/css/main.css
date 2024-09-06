@@ -1745,6 +1745,7 @@ img {
   }
   .header__nav > .header__nav-list {
     overflow-y: auto;
+    overscroll-behavior: contain;
     flex-grow: 1;
     align-items: flex-start;
     align-content: flex-start;
