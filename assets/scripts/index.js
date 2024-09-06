@@ -31,7 +31,7 @@ window.onscroll = (e) => {
 
 window.addEventListener("resize", ()=>{
     
-    if (window.innerWidth >= 991.98) {
+    if (window.innerWidth >= breakpoint) {
         document.querySelectorAll(".navbar__item").forEach(
             (e)=>{e.classList.remove("navbar__item--show")}
         )
