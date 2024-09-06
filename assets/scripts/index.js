@@ -21,27 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("resize", setMegaMenuArrowPosition);
 
 // options for headers
-window.onscroll = (e)=> {
-    if (window.scrollY >= 79.0001) {
+window.onscroll = (e) => {
+    if (window.scrollY >= 85) {
         document.querySelector("header").classList.add("header--scrolling");
     } else {
         document.querySelector("header").classList.remove("header--scrolling");
     }
 }
 
-
-function loadMegamenuOnHover() {
-    var o = document.querySelectorAll(".navbar__item");
-    console.log(o);
-
-    o.forEach ( 
-        function(i) {
-            i.addEventListener("mouseover",()=>{
-                setMegaMenuArrowPosition();
-            })
-        }
-    )
-}
 window.addEventListener("resize", ()=>{
     
     if (window.innerWidth >= 991.98) {
