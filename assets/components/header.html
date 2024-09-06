@@ -12,10 +12,10 @@
                 <ul class="header__nav-list">
                     <li class="navbar__item" onmouseover="menuOption(this, event, 'add')" onmouseout="menuOption(this, event, 'remove')" onclick="toggleMegamenu(this, event)">
                         <a href="#!" title="Departments" >Departments
-                            <img src="./icons/arrow-down.svg" class="header__icon" alt="">
+                            <img src="./icons/arrow-down.svg" class="header__icon navbar__dropdown" alt="">
                         </a>
                         <div class="megamenu megamenu--mixed" style="--arrow-position: 0;">
-                            <div class="megamenu__inner" from="0" onmouseover="menuOption(this, event, 'keep')">
+                            <div class="megamenu__inner" from="0" onmouseover="menuOption(this, event, 'keep')" onmouseout="menuOption(this, event, 'remove', true)">
                                 <div class="megamenu__wrap">
                                     <div class="megamenu__wrap--real">
                                         <div class="megamenu__main">
@@ -420,11 +420,11 @@
                     </li>
                     <li class="navbar__item" onmouseover="menuOption(this, event, 'add')" onmouseout="menuOption(this, event, 'remove')" onclick="toggleMegamenu(this, event)">
                         <a href="#!" title="Grocery">Grocery
-                            <img src="./icons/arrow-down.svg" class="header__icon" alt="">
+                            <img src="./icons/arrow-down.svg" class="header__icon navbar__dropdown" alt="">
                         </a>
 
                         <div class="megamenu" style="--arrow-position: 0;">
-                            <div class="megamenu__inner" from="1" onmouseover="menuOption(this, event, 'keep')">
+                            <div class="megamenu__inner" from="1" onmouseover="menuOption(this, event, 'keep')" onmouseout="menuOption(this, event, 'remove', true)">
                                 <div class="megamenu__wrap">
                                     <div class="megamenu__wrap--real"> 
                                         <div class="megamenu__contents">
@@ -659,11 +659,11 @@
                     </li>
                     <li class="navbar__item" onmouseover="menuOption(this, event, 'add')" onmouseout="menuOption(this, event, 'remove')" onclick="toggleMegamenu(this, event)" >
                         <a href="#!" title="Beauty">Beauty
-                            <img src="./icons/arrow-down.svg" class="header__icon" alt="">
+                            <img src="./icons/arrow-down.svg" class="header__icon navbar__dropdown" alt="">
                         </a>
 
                         <div class="megamenu" style="--arrow-position: 0;">
-                            <div class="megamenu__inner" from="2" onmouseover="menuOption(this, event, 'keep')">
+                            <div class="megamenu__inner" from="2" onmouseover="menuOption(this, event, 'keep')" onmouseout="menuOption(this, event, 'remove', true)">
                                 <div class="megamenu__wrap">
                                     <div class="megamenu__wrap--real"> 
                                         <div class="megamenu__contents">

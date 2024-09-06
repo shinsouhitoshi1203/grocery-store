@@ -26,15 +26,7 @@
         ul {list-style-type: none; }
         &-list {
             @include a.flex-center(null, 30px);
-            & > li > a {
-                display: inline-flex; align-items: center;
-                position: relative; z-index: 10;
-                @extend %md-15;
-                color: var(--text-caption);
-                img {
-                    @include a.square-icon(12px); margin-left: 6px;
-                }
-            }
+            
         }
     }
     &__nav-dropdown {
@@ -83,6 +75,15 @@
 
 .navbar {
     @include a.responsive(lg) {transition: transform .3s, opacity 0s;}
+    &__item > a {
+        display: flex; align-items: center;
+        position: relative; z-index: 10;
+        @extend %md-15;
+        color: var(--text-caption);
+        img {
+            @include a.square-icon(12px); margin-left: 6px;
+        }
+    }
     &__item {
         &--show > .megamenu {
             display: block;
@@ -103,7 +104,6 @@
     }
     
     @include a.responsive(lg) {
-        // &--show, &--hide {visibility: hidden;}
         &--hide {transform: translateX(-100%); opacity: 0;}
         &--show {transform: translateX(0); opacity: 1;}
     }
@@ -114,17 +114,16 @@
     @include a.responsive(lg) {
         .header {
             &__nav{
-                position: fixed; width: 60%; height: 100%; top: 0;left: 0; display: block; background: var(--megamenu);margin: 0; z-index: 31; padding: 20px 10px 20px 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; max-height: 1262px;
-                & > &-list {overflow-y: auto; height: calc(100% - 60px);align-items: flex-start; align-content: flex-start; padding-right: 10px;}
+                position: fixed; width: 60%; height: 100%; top: 0;left: 0; background: var(--megamenu);margin: 0; z-index: 31; padding: 20px 10px 20px 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; max-height: 1262px;
+                display: flex; flex-direction: column;
+                & > &-list {overflow-y: auto; flex-grow: 1;align-items: flex-start; align-content: flex-start; padding-right: 10px;}
             }
-
-            &__nav-list {
-                display: grid; gap: 20px;
-                & > li > a { 
-                    font-size: 1.6rem;
-                    padding: 4px 0; display: flex; justify-content: space-between;
-                    img {transform: rotate(-90deg);}
-                }
-            }
+            &__nav-list {display: grid; gap: 20px}
         } 
+        .navbar {
+            &__item > a {font-size: 1.6rem; padding: 4px 0; display: flex; justify-content: space-between; background: var(--megamenu); @include a.sticky; }
+            &__dropdown {transform: rotate(-90deg); transition: transform .3s;}
+            &__item--show &__dropdown {transform: rotate(0deg);}
+        }
     } 
+

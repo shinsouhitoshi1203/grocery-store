@@ -154,7 +154,7 @@ function toggleNavigationBar(b, isForce=false) {
 }
 
 // toggle megamenu by javascript
-function menuOption(e,event, action="") {
+function menuOption(e,event, action="", fromInner=false) {
 
     // please always add references to the following constants before debugging. 
     const breakpoint = 992 - 0.02; 
@@ -197,6 +197,10 @@ function menuOption(e,event, action="") {
         var i = Number.parseInt(e.getAttribute("from"));
         document.querySelectorAll(`.${classToTarget}`)[i].classList.add(classShow)
     }
+    function switchOffFromInner(e) {
+        var i = Number.parseInt(e.getAttribute("from"));
+        document.querySelectorAll(`.${classToTarget}`)[i].classList.remove(classShow)
+    }
 
     if (window.innerWidth < breakpoint) {
         switch (action) {
@@ -211,7 +215,7 @@ function menuOption(e,event, action="") {
                 switchOn (e, event)
                 break;
             case 'remove':
-                switchOff(e, event)
+                if (!fromInner) {switchOff(e, event)} else {switchOffFromInner(e)}
                 break;
             case 'keep':
                 keep(e);
