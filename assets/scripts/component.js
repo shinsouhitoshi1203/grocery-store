@@ -1,3 +1,6 @@
+// 
+const breakpoint = 992 - 0.02;
+
 // Load components
 async function loadElements(list) {
     var arr = [], inner=[];
@@ -27,7 +30,6 @@ async function loadElements(list) {
     function dataHandler(target,raw) {
         var o = document.querySelector(target);
         localStorage.setItem(target, raw);
-        console.log(o)
         if (!o.innerHTML) o.innerHTML = raw;
     }
     Promise.all(arr).then((a)=>{
@@ -99,36 +101,36 @@ function loadCategory(group) {
 // no more propagandation
 
 
-function categoryShow(e, v) {
+// function categoryShow(e, v) {
 
-    function switchObject(selector="", classToToggle="",pointerType="directly", realPointer="") {
-        var object = document.querySelectorAll(selector);
-        if (selector==""||classToToggle==""||realPointer=="") return;
-        if (pointerType=="directly") {
-            object.forEach(c=>{c.classList.remove(classToToggle)});
-            e.classList.add(classToToggle);
-        } else if (pointerType=="targetToChild") {
-            var firstChild = e.querySelector(realPointer);
+//     function switchObject(selector="", classToToggle="",pointerType="directly", realPointer="") {
+//         var object = document.querySelectorAll(selector);
+//         if (selector==""||classToToggle==""||realPointer=="") return;
+//         if (pointerType=="directly") {
+//             object.forEach(c=>{c.classList.remove(classToToggle)});
+//             e.classList.add(classToToggle);
+//         } else if (pointerType=="targetToChild") {
+//             var firstChild = e.querySelector(realPointer);
             
-        }
-    }
-    try {
-        var allCategoriesLink = document.querySelectorAll(".megamenu__meta-item");
-        allCategoriesLink.forEach(c=>{c.classList.remove("megamenu__meta-item--hover")})
-        e.classList.add("megamenu__meta-item--hover");
+//         }
+//     }
+//     try {
+//         var allCategoriesLink = document.querySelectorAll(".megamenu__meta-item");
+//         allCategoriesLink.forEach(c=>{c.classList.remove("megamenu__meta-item--hover")})
+//         e.classList.add("megamenu__meta-item--hover");
         
-        var allCategories = document.querySelectorAll(".megamenu__submenu");
-        var o = e.querySelector(".megamenu__submenu");
-        allCategories.forEach(c=>{c.querySelector(".megamenu__submenu").classList.remove("megamenu__submenu--appeared")})
-        o.classList.add("megamenu__submenu--appeared");
+//         var allCategories = document.querySelectorAll(".megamenu__submenu");
+//         var o = e.querySelector(".megamenu__submenu");
+//         allCategories.forEach(c=>{c.querySelector(".megamenu__submenu").classList.remove("megamenu__submenu--appeared")})
+//         o.classList.add("megamenu__submenu--appeared");
 
-    } catch (error) {
-        alert("There isn't any item available right now")
-    }
-    v.stopPropagation();
-}
+//     } catch (error) {
+//         alert("There isn't any item available right now")
+//     }
+//     v.stopPropagation();
+// }
 
-// toggle dropdown navigation bar
+// toggle dropdown navigation bar (responsive options)
 function toggleNavigationBar(b, isForce=false) {
     //var o = document.querySelector(".navbar__overlay");
     var t = document.querySelector(b.getAttribute("target-item"));
@@ -152,6 +154,75 @@ function toggleNavigationBar(b, isForce=false) {
 }
 
 // toggle megamenu by javascript
+function menuOption(e,event, action="") {
+
+    // please always add references to the following constants before debugging. 
+    const breakpoint = 992 - 0.02; 
+    const classToTarget = "navbar__item";
+    const classShow = `${classToTarget}--show`;
+
+    // prevent from javascript propagation
+    function isDirectlyTarget(event, className="") {
+        return (event.target.parentNode.classList.contains(className)) ? true : false;
+    }
+
+    function toggle(e, event) {
+        if (isDirectlyTarget(event, classToTarget)){
+            e.classList.toggle(classShow);
+        }
+    }
+
+    // switch the menu off manually ONLY IN desktop
+    function switchOff (e, event) {
+        con1 = isDirectlyTarget(event, classToTarget);
+        if ((con1)) e.classList.remove(classShow);
+    }
+
+    function switchOn (e, event) {
+        function hasSubmenuOpened() {
+            return (document.querySelector(".megamenu__submenu--show")) ? true : false;
+        }
+
+        if (isDirectlyTarget(event, classToTarget)) {
+            if (!hasSubmenuOpened()) {
+                var firstSubMegamenu = document.querySelector('.megamenu--mixed').querySelector('.megamenu__meta-item');
+                subMenuOption(firstSubMegamenu,event,"add")
+            } 
+            e.classList.add(classShow);
+        }            
+    }
+
+    // only keep for the desktop version
+    function keep(e) {
+        var i = Number.parseInt(e.getAttribute("from"));
+        document.querySelectorAll(`.${classToTarget}`)[i].classList.add(classShow)
+    }
+
+    if (window.innerWidth < breakpoint) {
+        switch (action) {
+            case 'toggle':
+                toggle(e, event);
+                break;
+        }
+    } else {
+        setMegaMenuArrowPosition();
+        switch (action) {
+            case 'add':
+                switchOn (e, event)
+                break;
+            case 'remove':
+                switchOff(e, event)
+                break;
+            case 'keep':
+                keep(e);
+                break;
+        }
+    }
+    
+    event.stopPropagation();
+}
+
+
     function toggleMegamenu (e, event) {
         function handler(t) {
             if (event.target.parentNode.classList.contains("navbar__item")){
@@ -161,43 +232,40 @@ function toggleNavigationBar(b, isForce=false) {
         if (window.innerWidth < 991.98) {
             handler(e);
         }
-        
     }
 
     function keepMegamenu(e, event) {
         var i = Number.parseInt(e.getAttribute("from"));
-        console.log(i);
+        
         if (window.innerWidth >= 991.98) {
             document.querySelectorAll(".navbar__item")[i].classList.add("navbar__item--show");
         }
 
         event.stopPropagation();
     }
+
     function toggleMegamenuOff (e, event) {
         setMegaMenuArrowPosition();
         if (window.innerWidth >= 991.98) {
-        console.log('parent',event.target.parentNode)
-        console.log('child',event.target);
-        console.log('this', e)
             con1 = event.target.parentNode.classList.contains("navbar__item");
             con2 = event.target.classList.contains("megamenu__inner");
             if ((con1)||(true)){
                 e.classList.remove("navbar__item--show");
-                // setTimeout(()=>{e.classList.remove("navbar__item--show")},3000) 
-                console.log(10);
             }
         }
     }
+
     function toggleMegamenuOn (e, event) {
-        function hasOpened(e) {
-            return (e.querySelector(".megamenu__submenu--show")) ? true : false;
+        function hasSomethingOpened(e) {
+            return (document.querySelector(".megamenu__submenu--show")) ? true : false;
         }
         setMegaMenuArrowPosition();
         if (window.innerWidth >= 991.98) {
             if (event.target.parentNode.classList.contains("navbar__item")) {
-                if (!hasOpened(e)) {
+                if (!hasSomethingOpened(e)) {
                     var firstSubMegamenu = document.querySelector('.megamenu--mixed').querySelector('.megamenu__meta-item');
-                    toggleSubMegamenuOn (firstSubMegamenu, event);
+                    subMenuOption(firstSubMegamenu,event,"add")
+                } else {
                 } 
                 e.classList.add("navbar__item--show");
             }
@@ -205,42 +273,154 @@ function toggleNavigationBar(b, isForce=false) {
             
     }
 
-
 // toggle submenu
-function getRidAllSubMegamenu(e, event) {
-    var o = e.parentNode.querySelectorAll(".megamenu__meta-item");
-    o.forEach(s=>toggleSubMegamenuOff(s, event));
-}
-function toggleSubMegamenu (e, event) {
-    if (window.innerWidth<=991.98) {
-        try {
-            if (event.target.parentNode.classList.contains("megamenu__meta-item")){
-                e.querySelector(".megamenu__submenu").classList.toggle("megamenu__submenu--show");
-                e.scrollIntoView();
+
+function subMenuOption(e,event, action="") {
+    const breakpoint = 992 - 0.02; 
+    var target = ".megamenu__submenu";
+
+    function classOption(o, className="", option="", classToTackle="") {
+        classToTackle = (classToTackle.includes("--")) ? classToTackle : `${className.substring(1)}--${classToTackle}`;
+        if (o) {
+            switch (option) {
+                case 'toggle':
+                    o.querySelector(className).classList.toggle(classToTackle);
+                    break;
+                case 'add':
+                    o.querySelector(className).classList.add(classToTackle);
+                    break;
+                case 'remove':
+                    o.querySelector(className).classList.remove(classToTackle);
+                    break;
             }
-        }  catch (error) {}
-    } else {
-        try {
-            getRidAllSubMegamenu(e, event);
-            e.querySelector(".megamenu__submenu").classList.add("megamenu__submenu--show");
-        }  catch (error) {}
+        }
+    }
+
+    function killAll(e, event) {
+        var o = e.parentNode.querySelectorAll(".megamenu__meta-item");
+        o.forEach(s=>switchOff(s, event));
+    }
+
+    function switchOff (e,event) {
+        try {classOption(e,target,"remove","show")} catch (error) {}
+    }
+
+    function switchOn (e,event) {
+        try {classOption(e,target,"add","show");} catch (error) {}
+    }
+
+    function toggle (e, event, typeOfResponse = "desktop") {
+        function toggleOthers () {
+            try {
+                if (event.target.parentNode.classList.contains("megamenu__meta-item")){
+                    classOption(e,target,"toggle","show");
+                    e.scrollIntoView();
+                }
+            }  catch (error) {}
+        }
+        function toggleDesktop () {
+            try {
+                killAll(e, event);
+                classOption(e,target,"add","show");
+            }  catch (error) {}
+        }
+        switch (typeOfResponse) {
+            case 'desktop':
+                toggleDesktop()
+                break;
+            case 'others':
+                toggleOthers ()
+                break;
+        }
+    }
+
+    // one for all options
+    if (action) {
+        if (window.innerWidth >= breakpoint) {
+            switch (action) {
+                case 'add':
+                    switchOn(e, event);
+                    break;
+                case 'remove':
+                    switchOff(e, event);
+                    break;
+                case 'toggle':
+                    toggle(e, event, "desktop");
+                    break;
+                case 'removeAll':
+                    killAll(e, event);
+                    break;
+            }
+        } else {
+            switch (action) {
+                case 'toggle':
+                    toggle(e, event, "others");
+                    break;
+            }
+        }
+        event.stopPropagation();
     }
 }
-function toggleSubMegamenuOff (e,event) {
-    setMegaMenuArrowPosition();
-    if (window.innerWidth >= 991.98) {
-        try {e.querySelector(".megamenu__submenu").classList.remove("megamenu__submenu--show");} catch (error) {}
+
+
+
+
+
+
+// toggle submenu (old)
+    function classOption(o = document, className="", option="", classToTackle="") {
+        classToTackle = (classToTackle.includes("--")) ? classToTackle : `${className.substring(1)}--${classToTackle}`;
+        console.log(classToTackle);
+        if (true) {
+            switch (option) {
+                case 'toggle':
+                    o.querySelector(className).classList.toggle(classToTackle);
+                    break;
+                case 'add':
+                    o.querySelector(className).classList.add(classToTackle);
+                    break;
+                case 'remove':
+                    o.querySelector(className).classList.remove(classToTackle);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
-    event.stopPropagation();
-}
-function toggleSubMegamenuOn (e,event) {
-    setMegaMenuArrowPosition();
-    if (window.innerWidth >= 991.98) {
-        try {e.querySelector(".megamenu__submenu").classList.add("megamenu__submenu--show");} catch (error) {}
+    function getRidAllSubMegamenu(e, event) {
+        var o = e.parentNode.querySelectorAll(".megamenu__meta-item");
+        o.forEach(s=>toggleSubMegamenuOff(s, event));
     }
-    event.stopPropagation();
-}
-// toggle items in mixed megamenu
-function categoryShowToggle(t, e) {
-    e.stopPropagation();
-}
+
+    function toggleSubMegamenu (e, event) {
+        var target = ".megamenu__submenu";
+        if (window.innerWidth<=breakpoint) {
+            try {
+                if (event.target.parentNode.classList.contains("megamenu__meta-item")){
+                    classOption(e,target,"toggle","show");
+                    e.scrollIntoView();
+                }
+            }  catch (error) {}
+        } else {
+            try {
+                getRidAllSubMegamenu(e, event);
+                classOption(e,target,"add","show");
+            }  catch (error) {}
+        }
+    }
+    function toggleSubMegamenuOff (e,event) {
+        var target = ".megamenu__submenu";
+        setMegaMenuArrowPosition();
+        if (window.innerWidth >= breakpoint) {
+            try {classOption(e,target,"remove","show"); /* e.querySelector(".megamenu__submenu").classList.remove("megamenu__submenu--show"); */} catch (error) {}
+        }
+        event.stopPropagation();
+    }
+    function toggleSubMegamenuOn (e,event) {
+        var target = ".megamenu__submenu";
+        setMegaMenuArrowPosition();
+        if (window.innerWidth >= breakpoint) {
+            try { classOption(e,target,"add","show");} catch (error) {}
+        }
+        event.stopPropagation();
+    }

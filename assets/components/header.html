@@ -10,12 +10,12 @@
                     <img src="./icons/arrow-left.svg" alt="" class="header__icon">
                 </a>
                 <ul class="header__nav-list">
-                    <li class="navbar__item" onmouseover="toggleMegamenuOn(this, event)" onmouseout="toggleMegamenuOff(this, event)" onclick="toggleMegamenu(this, event)">
+                    <li class="navbar__item" onmouseover="menuOption(this, event, 'add')" onmouseout="menuOption(this, event, 'remove')" onclick="toggleMegamenu(this, event)">
                         <a href="#!" title="Departments" >Departments
                             <img src="./icons/arrow-down.svg" class="header__icon" alt="">
                         </a>
                         <div class="megamenu megamenu--mixed" style="--arrow-position: 0;">
-                            <div class="megamenu__inner" from="0" onmouseover="keepMegamenu(this, event);">
+                            <div class="megamenu__inner" from="0" onmouseover="menuOption(this, event, 'keep')">
                                 <div class="megamenu__wrap">
                                     <div class="megamenu__wrap--real">
                                         <div class="megamenu__main">
@@ -27,7 +27,7 @@
                                                 <div class="megamenu__meta">
                                                     <h2 class="megamenu__meta-title megamenu__meta-title--mixed d-block d-lg-none">All Departments</h2>
                                                     <ul class="megamenu__meta-list">
-                                                        <li class="megamenu__meta-item" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)" >
+                                                        <li class="megamenu__meta-item" onclick="subMenuOption(this,event, 'toggle')" >
                                                             <a href="#!" title="Savings & Featured Shops">Savings & Featured Shops</a>
                                                             <div class="megamenu__submenu">
                                                                 <div class="megamenu__group">
@@ -198,13 +198,13 @@
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                        <li class="megamenu__meta-item" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)">
+                                                        <li class="megamenu__meta-item" onclick="subMenuOption(this,event, 'toggle')">
                                                             <a href="#!" title="Electronics">Electronics</a>
                                                         </li>
-                                                        <li class="megamenu__meta-item" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)">
+                                                        <li class="megamenu__meta-item" onclick="subMenuOption(this,event, 'toggle')">
                                                             <a href="#!" title="Clothing, Shoes & Accessories">Clothing, Shoes & Accessories</a>
                                                         </li>
-                                                        <li class="megamenu__meta-item" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)">
+                                                        <li class="megamenu__meta-item" onclick="subMenuOption(this,event, 'toggle')">
                                                             <a href="#!" title="Home, Furniture & Appliances">Home, Furniture & Appliances</a>
                                                             <div class="megamenu__submenu">
                                                                 <div class="megamenu__group">
@@ -375,34 +375,34 @@
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                        <li class="megamenu__meta-item" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)">
+                                                        <li class="megamenu__meta-item" onclick="subMenuOption(this,event, 'toggle')">
                                                             <a href="#!" title="Toys & Video Games">Toys & Video Games</a>
                                                         </li>
-                                                        <li class="megamenu__meta-item" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)">
+                                                        <li class="megamenu__meta-item" onclick="subMenuOption(this,event, 'toggle')">
                                                             <a href="#!" title="Home Improvement">Home Improvement</a>
                                                         </li>
-                                                        <li class="megamenu__meta-item" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)">
+                                                        <li class="megamenu__meta-item" onclick="subMenuOption(this,event, 'toggle')">
                                                             <a href="#!" title="Baby">Baby</a>
                                                         </li>
-                                                        <li class="megamenu__meta-item" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)">
+                                                        <li class="megamenu__meta-item" onclick="subMenuOption(this,event, 'toggle')">
                                                             <a href="#!" title="Household Essentials">Household Essentials</a>
                                                         </li>
-                                                        <li class="megamenu__meta-item" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)">
+                                                        <li class="megamenu__meta-item" onclick="subMenuOption(this,event, 'toggle')">
                                                             <a href="#!" title="Personal Care">Personal Care</a>
                                                         </li>
-                                                        <li class="megamenu__meta-item" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)">
+                                                        <li class="megamenu__meta-item" onclick="subMenuOption(this,event, 'toggle')">
                                                             <a href="#!" title="Patio & Garden">Patio & Garden</a>
                                                         </li>
-                                                        <li class="megamenu__meta-item" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)">
+                                                        <li class="megamenu__meta-item" onclick="subMenuOption(this,event, 'toggle')">
                                                             <a href="#!" title="Sports & Outdoors">Sports & Outdoors</a>
                                                         </li>
-                                                        <li class="megamenu__meta-item" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)">
+                                                        <li class="megamenu__meta-item" onclick="subMenuOption(this,event, 'toggle')">
                                                             <a href="#!" title="Gift Cards">Gift Cards</a>
                                                         </li>
-                                                        <li class="megamenu__meta-item" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)">
+                                                        <li class="megamenu__meta-item" onclick="subMenuOption(this,event, 'toggle')">
                                                             <a href="#!" title="Auto, Tires and Industrial">Auto, Tires and Industrial</a>
                                                         </li>
-                                                        <li class="megamenu__meta-item" onclick="toggleSubMegamenu(this,event); categoryShowToggle(this,event)">
+                                                        <li class="megamenu__meta-item" onclick="subMenuOption(this,event, 'toggle')">
                                                             <a href="#!" title="Movies, Music & Books">Movies, Music & Books</a>
                                                         </li>
                                                     </ul>
@@ -418,13 +418,13 @@
                             </div>
                         </div>
                     </li>
-                    <li class="navbar__item" onmouseover="toggleMegamenuOn(this, event)" onmouseout="toggleMegamenuOff(this, event)" onclick="toggleMegamenu(this, event)">
+                    <li class="navbar__item" onmouseover="menuOption(this, event, 'add')" onmouseout="menuOption(this, event, 'remove')" onclick="toggleMegamenu(this, event)">
                         <a href="#!" title="Grocery">Grocery
                             <img src="./icons/arrow-down.svg" class="header__icon" alt="">
                         </a>
 
                         <div class="megamenu" style="--arrow-position: 0;">
-                            <div class="megamenu__inner" from="1" onmouseover="keepMegamenu(this, event);">
+                            <div class="megamenu__inner" from="1" onmouseover="menuOption(this, event, 'keep')">
                                 <div class="megamenu__wrap">
                                     <div class="megamenu__wrap--real"> 
                                         <div class="megamenu__contents">
@@ -657,13 +657,13 @@
                             </div>
                         </div>
                     </li>
-                    <li class="navbar__item" onmouseover="toggleMegamenuOn(this, event)" onmouseout="toggleMegamenuOff(this, event)" onclick="toggleMegamenu(this, event)" >
+                    <li class="navbar__item" onmouseover="menuOption(this, event, 'add')" onmouseout="menuOption(this, event, 'remove')" onclick="toggleMegamenu(this, event)" >
                         <a href="#!" title="Beauty">Beauty
                             <img src="./icons/arrow-down.svg" class="header__icon" alt="">
                         </a>
 
                         <div class="megamenu" style="--arrow-position: 0;">
-                            <div class="megamenu__inner" from="2" onmouseover="keepMegamenu(this, event);">
+                            <div class="megamenu__inner" from="2" onmouseover="menuOption(this, event, 'keep')">
                                 <div class="megamenu__wrap">
                                     <div class="megamenu__wrap--real"> 
                                         <div class="megamenu__contents">
