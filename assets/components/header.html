@@ -14,9 +14,8 @@
                         <a href="#!" title="Departments" >Departments
                             <img src="./icons/arrow-down.svg" class="header__icon" alt="">
                         </a>
-
                         <div class="megamenu megamenu--mixed" style="--arrow-position: 0;">
-                            <div class="megamenu__inner">
+                            <div class="megamenu__inner" from="0" onmouseover="keepMegamenu(this, event);">
                                 <div class="megamenu__wrap">
                                     <div class="megamenu__wrap--real">
                                         <div class="megamenu__main">
@@ -425,7 +424,7 @@
                         </a>
 
                         <div class="megamenu" style="--arrow-position: 0;">
-                            <div class="megamenu__inner">
+                            <div class="megamenu__inner" from="1" onmouseover="keepMegamenu(this, event);">
                                 <div class="megamenu__wrap">
                                     <div class="megamenu__wrap--real"> 
                                         <div class="megamenu__contents">
@@ -658,13 +657,13 @@
                             </div>
                         </div>
                     </li>
-                    <li class="navbar__item" onmouseover="toggleMegamenuOn(this, event)" onmouseout="toggleMegamenuOff(this, event)" onclick="toggleMegamenu(this, event)">
+                    <li class="navbar__item" onmouseover="toggleMegamenuOn(this, event)" onmouseout="toggleMegamenuOff(this, event)" onclick="toggleMegamenu(this, event)" >
                         <a href="#!" title="Beauty">Beauty
                             <img src="./icons/arrow-down.svg" class="header__icon" alt="">
                         </a>
 
                         <div class="megamenu" style="--arrow-position: 0;">
-                            <div class="megamenu__inner">
+                            <div class="megamenu__inner" from="2" onmouseover="keepMegamenu(this, event);">
                                 <div class="megamenu__wrap">
                                     <div class="megamenu__wrap--real"> 
                                         <div class="megamenu__contents">

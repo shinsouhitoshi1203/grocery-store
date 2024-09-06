@@ -100,24 +100,35 @@ function loadCategory(group) {
 
 
 function categoryShow(e, v) {
+
+    function switchObject(selector="", classToToggle="",pointerType="directly", realPointer="") {
+        var object = document.querySelectorAll(selector);
+        if (selector==""||classToToggle==""||realPointer=="") return;
+        if (pointerType=="directly") {
+            object.forEach(c=>{c.classList.remove(classToToggle)});
+            e.classList.add(classToToggle);
+        } else if (pointerType=="targetToChild") {
+            var firstChild = e.querySelector(realPointer);
+            
+        }
+    }
     try {
         var allCategoriesLink = document.querySelectorAll(".megamenu__meta-item");
         allCategoriesLink.forEach(c=>{c.classList.remove("megamenu__meta-item--hover")})
         e.classList.add("megamenu__meta-item--hover");
         
-        document.querySelector(".megamenu__contents").innerText = "";
         var allCategories = document.querySelectorAll(".megamenu__submenu");
         var o = e.querySelector(".megamenu__submenu");
-        allCategories.forEach(c=>{c.classList.remove("megamenu__submenu--appeared")})
+        allCategories.forEach(c=>{c.querySelector(".megamenu__submenu").classList.remove("megamenu__submenu--appeared")})
         o.classList.add("megamenu__submenu--appeared");
 
     } catch (error) {
-        document.querySelector(".megamenu__contents").innerText = "";
+        alert("There isn't any item available right now")
     }
     v.stopPropagation();
 }
 
-// toggle navigation bar
+// toggle dropdown navigation bar
 function toggleNavigationBar(b, isForce=false) {
     //var o = document.querySelector(".navbar__overlay");
     var t = document.querySelector(b.getAttribute("target-item"));
@@ -152,11 +163,28 @@ function toggleNavigationBar(b, isForce=false) {
         }
         
     }
+
+    function keepMegamenu(e, event) {
+        var i = Number.parseInt(e.getAttribute("from"));
+        console.log(i);
+        if (window.innerWidth >= 991.98) {
+            document.querySelectorAll(".navbar__item")[i].classList.add("navbar__item--show");
+        }
+
+        event.stopPropagation();
+    }
     function toggleMegamenuOff (e, event) {
         setMegaMenuArrowPosition();
         if (window.innerWidth >= 991.98) {
-            if (event.target.parentNode.classList.contains("navbar__item")){
+        console.log('parent',event.target.parentNode)
+        console.log('child',event.target);
+        console.log('this', e)
+            con1 = event.target.parentNode.classList.contains("navbar__item");
+            con2 = event.target.classList.contains("megamenu__inner");
+            if ((con1)||(true)){
                 e.classList.remove("navbar__item--show");
+                // setTimeout(()=>{e.classList.remove("navbar__item--show")},3000) 
+                console.log(10);
             }
         }
     }
