@@ -16,12 +16,17 @@ html[theme="light"] {
 
     // navigation bar
     --navbar-close: brightness(3);
+
     //menu
     --megamenu: #ffffff;
     --megamenu-arrow: brightness(0) saturate(100%) invert(98%) sepia(98%) saturate(10%) hue-rotate(209deg) brightness(104%) contrast(102%);
     --megamenu-shadow: rgba(200, 200, 200, 0.4);
     --megamenu-seperator: #D2D1D6;
     --megamenu-link-hover: #0071DC;
+
+    // slideshow
+    --slideshow-caption-color: #FFFFFF;
+
     @include a.responsive(sm) {
         --header-bg: #ffffff;
     }

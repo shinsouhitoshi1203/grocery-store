@@ -1,0 +1,27 @@
+@use "./../abstracts" as a;
+%node {@include a.square-icon(14px,50%); border: 4px solid var(--slideshow-caption-color);} 
+.slideshow {
+    width: 100%; aspect-ratio: 3/1; position: relative;
+    &__inner {
+        width: 100%; height: 100%; display: flex; gap: 30px; overflow: hidden;
+        img {width: 100%; height: 100%;}
+    }
+    &__item {
+        flex: 1 0 100%;
+    }
+    &__controls {
+        position: absolute;bottom: 70px;left: 70px;
+        display: flex; align-items: center; gap: 10px;
+        span {color: var(--slideshow-caption-color); @extend %md-18}
+    }
+    &__bar {
+        display: flex; align-items: center; position: relative;
+        height: 4px; width: min(20vh, 184px);
+        background: var(--slideshow-caption-color);
+        margin-left: 7px; margin-right: 7px;
+    }
+    &__node {
+        &-left {@extend %node;position: absolute;left: -11px;}
+        &-right {@extend %node; position: absolute;right: -11px;} 
+    }
+}

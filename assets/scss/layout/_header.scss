@@ -14,7 +14,7 @@
         & > * {flex-shrink: 0; }
         .brand {z-index: 10;}
 
-        @include a.responsive(sm) {gap: 39px; justify-content: center;}
+        @include a.responsive(sm) {gap: 39px; justify-content: center; padding-top: 16px;padding-bottom: 16px;}
     }
     &__main {
         @include a.flex-center();
@@ -26,7 +26,6 @@
         ul {list-style-type: none; }
         &-list {
             @include a.flex-center(null, 30px);
-            
         }
     }
     &__nav-dropdown {
