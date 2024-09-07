@@ -1,7 +1,14 @@
 @use "./../abstracts" as a;
-%node {@include a.square-icon(14px,50%); border: 4px solid var(--slideshow-caption-color);} 
+%node {
+    @include a.square-icon(14px,50%); border: 4px solid var(--slideshow-caption-color);
+    @include a.responsive(md) {border-width: 3px;}
+} 
 .slideshow {
-    width: 100%; aspect-ratio: 3/1; position: relative;
+    width: 100%; position: relative;
+    aspect-ratio: 3/1;
+    @include a.responsive(md) {
+        aspect-ratio: 2/1;
+    }
     &__inner {
         width: 100%; height: 100%; display: flex; gap: 30px; overflow: hidden;
         img {width: 100%; height: 100%;}
@@ -10,15 +17,21 @@
         flex: 1 0 100%;
     }
     &__controls {
-        position: absolute;bottom: 70px;left: 70px;
+        $pos: clamp(20px, 4.5vw ,70px);
+        position: absolute;
+        bottom: $pos;left: $pos;
         display: flex; align-items: center; gap: 10px;
-        span {color: var(--slideshow-caption-color); @extend %md-18}
+        span {
+            color: var(--slideshow-caption-color); @extend %md-18;
+            @include a.responsive(md) {font-size: 1.4rem;}
+        }
     }
     &__bar {
         display: flex; align-items: center; position: relative;
-        height: 4px; width: min(20vh, 184px);
+        height: 4px; width: min(20vw, 184px);
         background: var(--slideshow-caption-color);
         margin-left: 7px; margin-right: 7px;
+        @include a.responsive(md) {height: 3px;}
     }
     &__node {
         &-left {@extend %node;position: absolute;left: -11px;}
