@@ -27,6 +27,11 @@ html[theme="light"] {
     // slideshow
     --slideshow-caption-color: #FFFFFF;
 
+    // category
+    --category-price: #000000;
+    --category-img: #ffffff;
+    --category-item: #EEEEEE;
+    --category-blur: #C1C1C1;
     @include a.responsive(sm) {
         --header-bg: #ffffff;
     }

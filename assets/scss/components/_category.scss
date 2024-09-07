@@ -1,0 +1,38 @@
+@use "./../abstracts" as a;
+.category {
+    &__title {
+        @extend %b-24;
+        @include a.responsive(sm) {font-size: 2.2rem;}
+    }
+    // container
+    &__container {
+        display: grid; grid-gap: 51px;
+        grid-template-columns: repeat(3,1fr);
+        @include a.responsive(xl) {grid-template-columns: repeat(2,1fr);grid-gap: 20px;}
+        @include a.responsive(md) {grid-template-columns: repeat(1,1fr);}
+    }
+    // item
+    &__item {
+        padding: 20px;border-radius: 16px; display: flex; align-items: center; gap: 20px;
+        background: var(--category-item);
+        @include a.responsive(sm) {border-radius: 10px;}
+    }
+    &__img {
+        background: var(--category-img); 
+        display: flex; align-items: center;justify-content: center;
+        @include a.square-icon(116px,8px);
+        flex-shrink: 0;
+        &-real {
+            @include a.square-icon(100%);
+            filter: drop-shadow(0 3px 10px var(--category-blur));
+        }
+        @include a.responsive(sm) {@include a.square-icon(88px,8px);}
+    }
+    &__price {
+        @extend %b-22; margin-bottom: 6px; color: var(--category-price);
+        @include a.responsive(sm) {font-size: 1.8rem;}
+    }
+    &__name {
+        @include a.responsive(sm) {font-size: 1.4rem;}
+    }
+}
