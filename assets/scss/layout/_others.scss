@@ -1,4 +1,7 @@
 @use "./../abstracts" as a;
+.container--fixed {
+    @include a.responsive(md) {--gutter-x: 40px}
+}
 .main {
     & > * {
         margin-top: 40px;margin-bottom: 40px;

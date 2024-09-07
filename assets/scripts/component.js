@@ -161,7 +161,6 @@ function menuOption(e,event, action="", fromInner=false) {
 }
 
 // toggle submenu
-
 function subMenuOption(e,event, action="") {
     const breakpoint = 992 - 0.02; 
     var target = ".megamenu__submenu";
@@ -248,3 +247,114 @@ function subMenuOption(e,event, action="") {
         event.stopPropagation();
     }
 }
+
+
+function productItem(name="",desc="",price="",rate="",thumb="",url="") {
+    this.productName = name;
+    this.productDesc = desc;
+    this.productPrice = price;
+    this.productRating = rate;
+    this.productThumbnail = thumb;
+    this.productUrl = url;
+
+}
+
+var productList = [
+    new productItem("Coffee Beans - Espresso Arabica and Robusta Beans","Larvatta", "$47.00", 4.3, "./products/cafe-01.png", "#!"),
+    new productItem("Lavazza Coffee Blends - Try the Italian Espresso","Lorem 1000", "$99.00", 3.3, "./products/cafe-02.png", "#!"),
+    new productItem("Lavazza - Caffè Espresso Black Tin - Ground coffee","Hello world", "$38.65", 5.0, "./products/cafe-03.png", "#!"),
+    new productItem("Qualità Oro Mountain Grown - Espresso Coffee Beans","Larvatta", "$20.00", 2.3, "./products/cafe-04.png", "#!"),
+]
+
+/* <div class="col">
+                        <div title="Coffee Beans - Espresso Arabica and Robusta Beans" class="product__item ">
+                            <a href="#!" class="product__item-wrapper"></a>
+                            <div class="product__thumbnail">
+                                <a href="#!"><img src="./products/cafe-01.png" alt="Coffee Beans - Espresso Arabica and Robusta Beans"></a>
+                                <button class="product__reaction" >
+                                    <img src="./icons/heart-color.svg" class="product__like" alt="">
+                                    <img src="./icons/heart.svg" class="product__unlike webpage__icon" alt="">
+                                </button>
+                            </div>
+                            <article class="product__meta">
+                                <h3 class="product__name">Coffee Beans - Espresso Arabica and Robusta Beans</h3>
+                                <p class="product__desc">Lavazza</p>
+                                <div class="product__sub">
+                                    <span class="product__price">$47.00</span>
+                                    <div class="product__rating">
+                                        <img src="./icons/star.svg" alt="" class="product__rating-img">
+                                        <span>4.3</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div> */
+    
+
+// load groups
+function loadGroup(type="", target="", handler) {
+
+    // load products and event listeners
+    async function loadProducts() {
+        var raw = [];
+        const httpResult = await fetch("./data/product.txt");
+        const json = (await httpResult.json());
+        for(var o of json) {
+            var name = o.productName, desc = o.productDesc, thumb = o.productThumbnail, rate = (o.productRating).toFixed(1), price = `\$${Number.parseFloat(o.productPrice).toFixed(2)}`, link = `./product/item/${o.productUrl}`;
+            var elementRaw = `<div class="col">
+                        <div title="${name}" class="product__item ">
+                            <a href="${link}" class="product__item-wrapper"></a>
+                            <div class="product__thumbnail">
+                                <a href="${link}"><img src="${thumb}" alt="${name}"></a>
+                                <button class="product__reaction" title="Add to favourite items">
+                                    <img src="./icons/heart-color.svg" class="product__like" alt="">
+                                    <img src="./icons/heart.svg" class="product__unlike webpage__icon" alt="">
+                                </button>
+                            </div>
+                            <article class="product__meta">
+                                <h3 class="product__name">${name}</h3>
+                                <p class="product__desc">${desc}</p>
+                                <div class="product__sub">
+                                    <span class="product__price">${price}</span>
+                                    <div class="product__rating">
+                                        <img src="./icons/star.svg" alt="" class="product__rating-img">
+                                        <span>${rate}</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>`;
+            raw.push(elementRaw);
+        }
+        return raw.join('');
+    }
+    function toggleReaction(e) {
+        function recursion(e) {
+            var obj = e, i=0;
+            while (!obj.classList.contains("product__item")) {
+                obj = obj.parentNode;
+                i++; if (i>10) return '';
+            }
+            return obj;
+        }
+        e.stopPropagation();
+        var target = recursion(e.target);
+        if (target) target.classList.toggle("product__item--liked");
+    }
+
+    switch (type) {
+        case 'product':
+            Promise.all([loadProducts()]).then(
+                ([e])=>{
+                    document.querySelector('.product__list').innerHTML = (e);
+                    var o = document.querySelectorAll(".product__reaction");
+                    o.forEach(e=>{e.addEventListener("click",toggleReaction)})
+                }
+            );
+            break;
+    
+        default:
+            break;
+    }
+} 
+

@@ -32,6 +32,14 @@ html[theme="light"] {
     --category-img: #ffffff;
     --category-item: #EEEEEE;
     --category-blur: #C1C1C1;
+
+    // products
+    --product-filter: #6C6C72;
+    --product-filter--hover: #1a162e;
+    --product-bg: #ffffff;
+    --product-shadow: rgba(237, 237, 246, 0.20);
+    --product-reaction: #ffffff;
+    
     @include a.responsive(sm) {
         --header-bg: #ffffff;
     }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" theme="light">
+<html lang="en" theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,7 @@
 
 <body>
     <header class="header"></header>
-    <div class="container">
+    <div class="container container--fixed">
         <main class="main">
             <div class="slideshow">
                 <div class="slideshow__inner">
@@ -61,35 +61,81 @@
                 <div class="category__heading section__heading">
                     <h2 class="category__title">Browse Categories</h2>
                 </div>
-                <div class="category__container">
-                    <a href="#!" title="New sumatra mandeling coffe blend" class="category__item">
-                        <div class="category__img">
-                            <img src="./products/categories/1.png" alt="New sumatra mandeling coffe blend" class="category__img-real">
-                        </div>
-                        <div class="category__meta">
-                            <span class="category__price">$24 - $150</span>
-                            <div class="category__name">New sumatra mandeling coffe blend</div>
-                        </div>
-                    </a>
-                    <a href="#!" title="New sumatra mandeling coffe blend" class="category__item">
-                        <div class="category__img">
-                            <img src="./products/categories/2.png" alt="New sumatra mandeling coffe blend" class="category__img-real">
-                        </div>
-                        <div class="category__meta">
-                            <span class="category__price">$37 - $160</span>
-                            <div class="category__name">Espresso arabica and robusta beans</div>
-                        </div>
-                    </a>
-                    <a href="#!" title="New sumatra mandeling coffe blend" class="category__item">
-                        <div class="category__img">
-                            <img src="./products/categories/3.png" alt="New sumatra mandeling coffe blend" class="category__img-real">
-                        </div>
-                        <div class="category__meta">
-                            <span class="category__price">$32 - $160</span>
-                            <div class="category__name">Lavazza top class whole bean coffee blend</div>
-                        </div>
-                    </a>
+                <div class="row category__container row-cols-3 row-cols-lg-2 row-cols-md-1 gx-md-1 gy-3">
+                    <div class="col">
+                        <a href="#!" title="New sumatra mandeling coffe blend" class="category__item">
+                            <div class="category__img">
+                                <img src="./products/categories/1.png" alt="New sumatra mandeling coffe blend" class="category__img-real">
+                            </div>
+                            <div class="category__meta">
+                                <span class="category__price">$24 - $150</span>
+                                <div class="category__name">New sumatra mandeling coffe blend</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#!" title="New sumatra mandeling coffe blend" class="category__item">
+                            <div class="category__img">
+                                <img src="./products/categories/2.png" alt="New sumatra mandeling coffe blend" class="category__img-real">
+                            </div>
+                            <div class="category__meta">
+                                <span class="category__price">$37 - $160</span>
+                                <div class="category__name">Espresso arabica and robusta beans</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#!" title="New sumatra mandeling coffe blend" class="category__item">
+                            <div class="category__img">
+                                <img src="./products/categories/3.png" alt="New sumatra mandeling coffe blend" class="category__img-real">
+                            </div>
+                            <div class="category__meta">
+                                <span class="category__price">$32 - $160</span>
+                                <div class="category__name">Lavazza top class whole bean coffee blend</div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+            </section>
+            <section class="product section">
+                <div class="product__heading section__heading">
+                    <h2 class="product__title">Total LavAzza 1320</h2>
+                    <button class="product__filter-button">
+                        <span>Filter</span>
+                        <img src="./icons/filter.svg" class="webpage__icon" alt="">
+                    </button>
+                </div>
+                <div class="row gy-3 row-cols-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 product__list" >
+                <!-- 
+                    <div class="col">
+                        <div title="Coffee Beans - Espresso Arabica and Robusta Beans" class="product__item ">
+                            <a href="#!" class="product__item-wrapper"></a>
+                            <div class="product__thumbnail">
+                                <a href="#!"><img src="./products/cafe-01.png" alt="Coffee Beans - Espresso Arabica and Robusta Beans"></a>
+                                <button class="product__reaction" onclick="toggleReaction(this,event)">
+                                    <img src="./icons/heart-color.svg" class="product__like" alt="">
+                                    <img src="./icons/heart.svg" class="product__unlike webpage__icon" alt="">
+                                </button>
+                            </div>
+                            <article class="product__meta">
+                                <h3 class="product__name">Coffee Beans - Espresso Arabica and Robusta Beans</h3>
+                                <p class="product__desc">Lavazza</p>
+                                <div class="product__sub">
+                                    <span class="product__price">$47.00</span>
+                                    <div class="product__rating">
+                                        <img src="./icons/star.svg" alt="" class="product__rating-img">
+                                        <span>4.3</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="col">2</div>
+                    <div class="col">3</div>
+                    <div class="col">4</div>
+                 -->
+                </div>
+
             </section>
         </main>
     </div>
@@ -98,10 +144,4 @@
 </html>
 
 <style>
-    .box {
-        align-items: center; justify-content: center; gap: 30px; width: 300px; height: 100px; background: #ccc;
-    }
-    .item {
-        width: 30px;height: 30px;background: #000;
-    }
 </style>

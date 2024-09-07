@@ -6,10 +6,8 @@
     }
     // container
     &__container {
-        display: grid; grid-gap: 51px;
-        grid-template-columns: repeat(3,1fr);
-        @include a.responsive(xl) {grid-template-columns: repeat(2,1fr);grid-gap: 20px;}
-        @include a.responsive(md) {grid-template-columns: repeat(1,1fr);}
+        --gutter-x: 51px;
+        @include a.responsive(xl) {--gutter-x: 20px; --gutter-y: 20px;}
     }
     // item
     &__item {
@@ -17,14 +15,16 @@
         background: var(--category-item);
         @include a.responsive(sm) {border-radius: 10px;}
     }
+    &__item:hover &__img-real {transform: scale(1.15)}
     &__img {
         background: var(--category-img); 
         display: flex; align-items: center;justify-content: center;
         @include a.square-icon(116px,8px);
-        flex-shrink: 0;
+        flex-shrink: 0; overflow: hidden;
         &-real {
             @include a.square-icon(100%);
             filter: drop-shadow(0 3px 10px var(--category-blur));
+            transition: transform .3s;
         }
         @include a.responsive(sm) {@include a.square-icon(88px,8px);}
     }

@@ -1,12 +1,12 @@
 
 //variables
 $grid-breakpoints: (
+    xs: 0,
     xxl: 1400px,
     xl: 1200px,
     lg: 992px,
     md: 768px,
-    sm: 576px,
-    xs: 0
+    sm: 576px
 );
 $container-max-widths: (
     
@@ -40,7 +40,7 @@ $gutters: (
     @if ($bp==xs) {
         @content;
     } @else {
-        @media all and (max-width: #{$mw - 0.02px}) {
+        @media (max-width: #{$mw - 0.02px}) {
             @content;
         }
     }
@@ -49,7 +49,7 @@ $gutters: (
 @mixin row-cols($prefix) {
     @for $i from 1 through 6 {
         .row-cols#{$prefix}-#{$i}{
-            &> * {
+            & > * {
                 flex: 0 0 auto;
                 width: calc(100% / #{$i})
             }

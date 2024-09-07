@@ -69,7 +69,7 @@
     }
     &__search {padding: 0; @include a.square-icon(100%, $center: true)}
     &__button-separate {width: 2px; height: 30px; background: var(--seperator);}
-    &__icon {filter: var(--icon-caption);}
+    
 } 
 
 .navbar {

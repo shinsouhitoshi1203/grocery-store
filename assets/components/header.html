@@ -1,28 +1,28 @@
 <div class="container">
     <div class="header__wrapper">
         <button href="javascript:;" class="header__nav-dropdown" title="View menu" target-item=".header__nav" onclick="toggleNavigationBar(this)">
-            <img src="./icons/menu-dropdown.svg" alt="" class="header__icon">
+            <img src="./icons/menu-dropdown.svg" alt="" class="webpage__icon">
         </button>
         <section class="header__main">
             <a href="./index.html" class="brand"></a>
             <nav class="header__nav navbar navbar--hide w-initial w-lg-40 w-md-50  w-sm-70">
                 <a href="#!" class="navbar__dropdown-close d-none d-lg-block" target-item=".header__nav" onclick="toggleNavigationBar(this)">
-                    <img src="./icons/arrow-left.svg" alt="" class="header__icon">
+                    <img src="./icons/arrow-left.svg" alt="" class="webpage__icon">
                 </a>
                 <a href="#!" class="navbar__button d-none d-lg-flex">
-                    <img src="./icons/cart.svg" alt="" class="header__icon">
+                    <img src="./icons/cart.svg" alt="" class="webpage__icon">
                     <span>Card</span>
                     <span class="navbar__button-value">3</span>
                 </a>
                 <a href="#!" class="navbar__button d-none d-lg-flex">
-                    <img src="./icons/heart.svg" alt="" class="header__icon">
+                    <img src="./icons/heart.svg" alt="" class="webpage__icon">
                     <span>Favourite</span>
                     <span class="navbar__button-value">3</span>
                 </a>
                 <ul class="header__nav-list">
                     <li class="navbar__item" onmouseover="menuOption(this, event, 'add')" onmouseout="menuOption(this, event, 'remove')" onclick="menuOption(this, event, 'toggle')">
                         <a href="#!" title="Departments" >Departments
-                            <img src="./icons/arrow-down.svg" class="header__icon navbar__dropdown" alt="">
+                            <img src="./icons/arrow-down.svg" class="webpage__icon navbar__dropdown" alt="">
                         </a>
                         <div class="megamenu megamenu--mixed" style="--arrow-position: 0;">
                             <div class="megamenu__inner" from="0" onmouseover="menuOption(this, event, 'keep')" onmouseout="menuOption(this, event, 'remove', true)">
@@ -430,7 +430,7 @@
                     </li>
                     <li class="navbar__item" onmouseover="menuOption(this, event, 'add')" onmouseout="menuOption(this, event, 'remove')" onclick="menuOption(this, event, 'toggle')">
                         <a href="#!" title="Grocery">Grocery
-                            <img src="./icons/arrow-down.svg" class="header__icon navbar__dropdown" alt="">
+                            <img src="./icons/arrow-down.svg" class="webpage__icon navbar__dropdown" alt="">
                         </a>
 
                         <div class="megamenu" style="--arrow-position: 0;">
@@ -669,7 +669,7 @@
                     </li>
                     <li class="navbar__item" onmouseover="menuOption(this, event, 'add')" onmouseout="menuOption(this, event, 'remove')" onclick="menuOption(this, event, 'toggle')" >
                         <a href="#!" title="Beauty">Beauty
-                            <img src="./icons/arrow-down.svg" class="header__icon navbar__dropdown" alt="">
+                            <img src="./icons/arrow-down.svg" class="webpage__icon navbar__dropdown" alt="">
                         </a>
 
                         <div class="megamenu" style="--arrow-position: 0;">
@@ -914,17 +914,17 @@
         <div class="header__dashboard">
             <div class="header__button-container d-flex d-sm-none">
                 <button class="header__button header__search">
-                    <img src="./icons/search.svg" class="header__icon" alt="Search items">
+                    <img src="./icons/search.svg" class="webpage__icon" alt="Search items">
                 </button>
             </div>
             <div class="header__button-container header__button-container--long d-flex d-sm-none">
                 <button class="header__button header__fav">
-                    <img src="./icons/heart.svg" class="header__icon" alt="Favourite items">
+                    <img src="./icons/heart.svg" class="webpage__icon" alt="Favourite items">
                     <span class="d-inline d-md-none">03</span>
                 </button>
                 <div class="header__button-separate"></div>
                 <button class="header__button header__cart">
-                    <img src="./icons/cart.svg" class="header__icon" alt="Cart">
+                    <img src="./icons/cart.svg" class="webpage__icon" alt="Cart">
                     <span class="d-inline d-md-none">$65.42</span>
                 </button>
             </div>

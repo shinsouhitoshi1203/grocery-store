@@ -15,6 +15,7 @@ var li = [
 ];
 document.addEventListener("DOMContentLoaded", () => {
     loadElements(li);
+    loadGroup("product","","");
 })
 
 // relocate the cursor of each megamenu
