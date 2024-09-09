@@ -2260,6 +2260,10 @@ a {
 }
 .product__desc {
   color: #9E9DA8;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .product__sub {
   display: flex;

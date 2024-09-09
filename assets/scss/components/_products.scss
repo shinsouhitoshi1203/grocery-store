@@ -29,7 +29,7 @@
     }
     &__meta {display: grid; grid-gap: 16px;}
     &__name {@extend %md-16; @include a.linelimit(2)}
-    &__desc {@extend %rg-15; color: #9E9DA8;}
+    &__desc {@extend %rg-15; color: #9E9DA8; @include a.linelimit(1)}
     &__sub {@include a.flex-center(space-between,20px); @extend %md-16;}
     &__rating {@include a.flex-center($g: 6px);}
         // items >> reactions
