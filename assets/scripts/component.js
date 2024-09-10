@@ -358,3 +358,8 @@ function loadGroup(type="", target="", handler) {
     }
 } 
 
+function addEventGroup(target, event, handler) {
+    target.forEach(o=>{
+        o.addEventListener(event, handler);
+    })
+}

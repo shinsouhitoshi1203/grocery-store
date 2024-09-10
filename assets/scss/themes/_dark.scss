@@ -38,7 +38,18 @@ html[theme="dark"] {
     --product-filter: #ffffff;
     --product-filter--hover: #00ff2a;
     --product-bg: #171C28;
-    --product-shadow: rgba(237, 237, 246, 0.20);
+    --product-shadow: rgba(17, 17, 35, 0.2);
     --product-reaction: #292E39;
     --product-name-hover: #00ff2a;
+
+    --filter-dialog: #292E39;
+    
+    
+    // css components 
+    --slider-thumb: #171C28;
+
+    --button-type-3-bg: #171C28;
+    --button-type-3-bg-selected: #752708;
+    --button-type-3-color: #9E9DA8;
+    --button-type-3-color-selected: var(--txt-caption);
 }

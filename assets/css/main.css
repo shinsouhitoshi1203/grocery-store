@@ -164,6 +164,7 @@ button, input {
 
 *, ::before, ::after {
   box-sizing: border-box;
+  color: inherit;
 }
 
 button {
@@ -1546,7 +1547,7 @@ a {
   visibility: hidden;
 }
 
-.category__price, .category__title, .product__filter-button span, .slideshow__controls span, .product__name, .product__sub, .megamenu__meta-title, .header__button span, .navbar__item > a, .navbar__button span, .megamenu__meta-list a:hover, .megamenu__meta-item--hover > a, .product__desc, .megamenu__meta-list a {
+.category__price, .category__title, .product__filter-button span, .filter__title, .dialog__criteria-name, .slideshow__controls span, .product__name, .product__sub, .megamenu__meta-title, .button__type-1, .filter__action > *:hover, .header__button span, .navbar__item > a, .navbar__button span, .combobox__value span, .button__type-3, .txtbox__type-1, .range-desc label, .range-desc input, .megamenu__meta-list a:hover, .megamenu__meta-item--hover > a, .product__desc, .megamenu__meta-list a {
   line-height: 1.42;
 }
 
@@ -1560,12 +1561,12 @@ a {
   font-weight: 400;
 }
 
-.megamenu__meta-list a:hover, .megamenu__meta-item--hover > a {
+.combobox__value span, .button__type-3, .txtbox__type-1, .range-desc label, .range-desc input, .megamenu__meta-list a:hover, .megamenu__meta-item--hover > a {
   font-size: 1.4rem;
   font-weight: 500;
 }
 
-.header__button span, .navbar__item > a, .navbar__button span {
+.button__type-1, .filter__action > *:hover, .header__button span, .navbar__item > a, .navbar__button span {
   font-size: 1.5rem;
   font-weight: 500;
 }
@@ -1577,6 +1578,11 @@ a {
 
 .slideshow__controls span {
   font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.filter__title, .dialog__criteria-name {
+  font-size: 2.2rem;
   font-weight: 500;
 }
 
@@ -2183,6 +2189,9 @@ a {
   }
 }
 
+.product {
+  position: relative;
+}
 @media all and (max-width: 767.98px) {
   .product {
     --gutter-x: 20px;
@@ -2203,12 +2212,20 @@ a {
   gap: 14px;
   border-radius: 6px;
   padding: 6px 12px;
+  position: relative;
+}
+.product__filter-button-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.product__filter-button-wrapper:hover span {
+  color: var(--product-filter--hover);
 }
 .product__filter-button span {
   color: var(--product-filter);
-}
-.product__filter-button:hover span {
-  color: var(--product-filter--hover);
 }
 .product__filter-button img {
   width: 24px;
@@ -2316,6 +2333,223 @@ a {
 .product__item--liked .product__like {
   display: block;
 }
+.product__filter {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  z-index: 60;
+  padding: 30px;
+  border-radius: 20px;
+  filter: drop-shadow(0px 40px 90px rgba(200, 200, 200, 0.4));
+  visibility: hidden;
+  width: 100%;
+  max-width: 1240px;
+  background: var(--filter-dialog);
+}
+.product__filter::before {
+  content: url(./../../../icons/megamenu-arrow-down.svg);
+  position: absolute;
+  top: -10px;
+  right: 22px;
+  filter: var(--megamenu-arrow);
+}
+
+.filter--show {
+  visibility: visible;
+}
+.filter__heading {
+  margin-bottom: 30px;
+}
+.filter__form {
+  display: flex;
+  align-items: stretch;
+  gap: 30px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.filter__form > * {
+  flex-shrink: 0;
+}
+@media all and (max-width: 767.98px) {
+  .filter__form {
+    gap: 20px;
+  }
+}
+.filter__seperator {
+  width: 1px;
+  background: #eee;
+}
+@media all and (max-width: 767.98px) {
+  .filter__seperator {
+    width: 100%;
+    height: 2px;
+  }
+}
+.filter__action {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.filter__submit {
+  padding: 9px 10px;
+}
+
+.dialog__criteria {
+  display: grid;
+  gap: 20px;
+  flex: 1 0;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+@media all and (max-width: 991.98px) {
+  .dialog__criteria {
+    flex-basis: 33%;
+  }
+}
+.dialog__criteria > * {
+  width: 100%;
+}
+.dialog__list-keyword {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.range {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.range__thumb {
+  position: absolute;
+  left: var(--range-thumb-pos);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--slider-thumb);
+  border: 6px solid #FFB700;
+  z-index: 11;
+  cursor: pointer;
+}
+.range__bar {
+  width: 100%;
+  height: 2px;
+  background: #d2d1d6;
+}
+
+.range-desc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.range-desc input, .range-desc label {
+  display: block;
+}
+.range-desc label {
+  margin-bottom: 10px;
+}
+.txtbox {
+  border-radius: 6px;
+  color: var(--txt-caption);
+  border: 1px solid #d2d1d6;
+}
+.txtbox__type-1 {
+  padding: 10px 16px;
+  background: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.txtbox__type-1 > * {
+  flex-shrink: 0;
+}
+.txtbox__type-1--real {
+  flex-grow: 1;
+  color: inherit;
+}
+.txtbox__type-2 {
+  padding: 8px 12px;
+  background: inherit;
+}
+.txtbox__type-2--real {
+  width: 100%;
+  min-width: 0;
+  color: inherit;
+}
+.txtbox__search {
+  width: 24px;
+  height: 24px;
+}
+
+.button__type-3, .button__type-1 {
+  border-radius: 6px;
+}
+
+.button__type-1 {
+  background: #FFB700;
+  color: #1A162E;
+  transition: background 0.3s;
+}
+.button__type-1:hover {
+  background: #ffc226;
+}
+.button__type-3 {
+  padding: 6px 12px;
+  background: var(--button-type-3-bg);
+  color: var(--button-type-3-color);
+  transition: background 0.3s, color 0.3s;
+}
+.button__type-3:hover {
+  color: var(--button-type-3-color-selected);
+}
+.button__type-3--selected {
+  background: var(--button-type-3-bg-selected);
+  color: var(--button-type-3-color-selected);
+}
+
+.combobox {
+  border-radius: 6px;
+  background: inherit;
+  border: 1px solid #d2d1d6;
+}
+.combobox__type-2 {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.combobox__type-2--first {
+  padding: 5px 14px;
+  flex: 1 0;
+}
+.combobox__type-2--last {
+  padding: 5px 14px;
+  flex-shrink: 0;
+}
+.combobox__value {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.combobox__value img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+}
+.combobox__value:hover > img {
+  transform: translateY(3px);
+}
+.combobox__seperator {
+  width: 1px;
+  height: 25px;
+  background: #d2d1d6;
+}
 
 html[theme=dark] {
   --body-bg: #292e39;
@@ -2342,9 +2576,15 @@ html[theme=dark] {
   --product-filter: #ffffff;
   --product-filter--hover: #00ff2a;
   --product-bg: #171C28;
-  --product-shadow: rgba(237, 237, 246, 0.20);
+  --product-shadow: rgba(17, 17, 35, 0.2);
   --product-reaction: #292E39;
   --product-name-hover: #00ff2a;
+  --filter-dialog: #292E39;
+  --slider-thumb: #171C28;
+  --button-type-3-bg: #171C28;
+  --button-type-3-bg-selected: #752708;
+  --button-type-3-color: #9E9DA8;
+  --button-type-3-color-selected: var(--txt-caption);
 }
 
 html[theme=light] {
@@ -2374,6 +2614,12 @@ html[theme=light] {
   --product-shadow: rgba(237, 237, 246, 0.20);
   --product-reaction: #ffffff;
   --product-name-hover: #0088ff;
+  --filter-dialog: #ffffff;
+  --slider-thumb: #ffffff;
+  --button-type-3-bg: #F8F8FB;
+  --button-type-3-bg-selected: #5b54ac;
+  --button-type-3-color: #9E9DA8;
+  --button-type-3-color-selected: var(--txt-caption);
 }
 @media all and (max-width: 575.98px) {
   html[theme=light] {

@@ -16,6 +16,8 @@ var li = [
 document.addEventListener("DOMContentLoaded", () => {
     loadElements(li);
     loadGroup("product","","");
+    addEventGroup(document.querySelectorAll(".product__filter-button-wrapper"), "click", (o)=>{var a = `.${o.target.parentNode.getAttribute("data-from")}`;document.querySelector(a).classList.toggle("filter--show")})
+    addEventGroup(document.querySelectorAll(".button__type-3"), "click", (o)=>{o.target.classList.toggle("button__type-3--selected")})
 })
 
 // relocate the cursor of each megamenu

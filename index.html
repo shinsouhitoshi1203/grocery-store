@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" theme="dark">
+<html lang="en" theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,7 +100,8 @@
             <section class="product section">
                 <div class="product__heading section__heading">
                     <h2 class="product__title">Total LavAzza 1320</h2>
-                    <button class="product__filter-button">
+                    <button class="product__filter-button" data-from="product__filter">
+                        <div class="product__filter-button-wrapper"></div>
                         <span>Filter</span>
                         <img src="./icons/filter.svg" class="webpage__icon" alt="">
                     </button>
@@ -135,8 +136,78 @@
                     <div class="col">4</div>
                  -->
                 </div>
-
+                <div class="product__filter filter">
+                    <div class="filter__heading">
+                        <p class="filter__title">Filter</p>
+                    </div>
+                    <form action="" class="filter__form dialog">
+                        <div class="dialog__criteria">
+                            <p class="dialog__criteria-name">Price</p>
+                            <div class="dialog__range range">
+                                <div class="range__bar"></div>
+                                <div class="range__thumb" style="--range-thumb-pos: 18px"></div>
+                                <div class="range__thumb" style="--range-thumb-pos: 160px"></div>
+                            </div>
+                            <div class="dialog__range-desc range-desc">
+                                <div class="range__min ">
+                                    <label for="range__input-min">Minimum</label>
+                                    <div class="txtbox txtbox__type-2">
+                                        <input type="text" name="range__input-min" id="range__input-min" class="txtbox__type-2--real" value="$30.00">
+                                    </div>
+                                   
+                                </div>
+                                <div class="range__max ">
+                                    <label for="range__input-max">Maximum</label>
+                                    <div class="txtbox txtbox__type-2">
+                                        <input type="text" name="range__input-max" id="range__input-max" class="txtbox__type-2--real" value="$100.00">
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter__seperator"></div>
+                        <div class="dialog__criteria">
+                            <p class="dialog__criteria-name">Size/Weight</p>
+                            <div class="combobox combobox__type-2">
+                                <div class="combobox__value combobox__type-2--first">
+                                    <span>500g</span>
+                                    <img src="./icons/arrow-down.svg" alt="" class="webpage__icon">
+                                </div>
+                                <div class="combobox__seperator"></div>
+                                <div class="combobox__value combobox__type-2--last">
+                                    <span>Gram</span>
+                                    <img src="./icons/arrow-down.svg" alt="" class="webpage__icon">
+                                </div>
+                            </div>
+                            <div class="dialog__list-keyword">
+                                <button type="button" class="button button__type-3">Small</button>
+                                <button type="button" class="button button__type-3">Medium</button>
+                                <button type="button" class="button button__type-3">Large</button>
+                            </div>
+                        </div>
+                        <div class="filter__seperator d-block d-lg-none d-md-block"></div>
+                        <div class="dialog__criteria">
+                            <p class="dialog__criteria-name">Brand</p>
+                            <div class="txtbox txtbox__type-1">
+                                <input type="text" class="txtbox__type-1--real">
+                                <div class="txtbox__search">
+                                    <img src="./icons/search.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="dialog__list-keyword">
+                                <button type="button" class="button button__type-3">Lavazza</button>
+                                <button type="button" class="button button__type-3">Nescafe</button>
+                                <button type="button" class="button button__type-3">Starbucks</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="filter__action">
+                        <button class="filter__cancel">Cancel</button>
+                        <button class="webpage__button filter__submit button__type-1">Show Result</button>
+                    </div>
+                </div>
             </section>
+
         </main>
     </div>
     <footer></footer>

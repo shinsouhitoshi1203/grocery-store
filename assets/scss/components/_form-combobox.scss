@@ -1,0 +1,19 @@
+@use "./../abstracts" as a;
+
+.combobox {
+    border-radius: 6px; background: inherit; border: 1px solid #d2d1d6;
+    &__type-2 {
+        overflow: hidden;
+        @include a.flex-center();
+        &--first {padding: 5px 14px; flex: 1 0;}
+        &--last {padding: 5px 14px; flex-shrink: 0;}
+    }
+    &__value {
+        cursor: pointer;
+        @include a.flex-center(space-between);
+        span {@extend %md-14}
+        img {@include a.square-icon(24px); transition: transform .3s;}
+        &:hover > img {transform: translateY(3px);}
+    }
+    &__seperator {width: 1px; height: 25px; background: #d2d1d6;}
+}

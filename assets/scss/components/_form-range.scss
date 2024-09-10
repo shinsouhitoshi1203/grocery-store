@@ -1,0 +1,23 @@
+@use "./../abstracts" as a;
+.range {
+    display: flex; align-items: center; position: relative;
+    &__thumb {
+        position: absolute; left: var(--range-thumb-pos);
+        @include a.square-icon(22px, 50%); background: var(--slider-thumb);
+        border: 6px solid #FFB700;z-index: 11;  cursor: pointer;
+    }
+    &__bar {width: 100%; height: 2px; background: #d2d1d6;}
+
+    
+
+}
+
+// range max min
+.range {
+    &-desc {
+        @include a.flex(center, space-between,30px);
+        input, label {display: block;}
+        label {@extend %md-14; margin-bottom: 10px;}
+        input {@extend %md-14; }
+    }
+}

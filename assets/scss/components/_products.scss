@@ -1,17 +1,21 @@
 @use "./../abstracts" as a;
 .product {
+    position: relative;
     @include a.responsive(md) {--gutter-x: 20px}
     &__heading {@include a.flex-center(space-between, 20px); flex-wrap: wrap;}
     &__filter-button {
         background: var(--product-bg);
         @include a.flex-center($g: 14px);
-        border-radius: 6px; padding: 6px 12px;
-        span {
-            @extend %b-14; color: var(--product-filter);
+        border-radius: 6px; padding: 6px 12px; position: relative;
+        &-wrapper {
+            position: absolute; top: 0; left: 0; @include a.square-icon(100%);
+            &:hover span {color: var(--product-filter--hover);}
         }
-        &:hover span {color: var(--product-filter--hover);}
+        span {@extend %b-14; color: var(--product-filter);}
         img {@include a.square-icon(24px)}
     }
+
+
     // product items
     &__item {
         display: block; width: 100%; height: 100%;
@@ -35,6 +39,7 @@
     &__desc {@extend %rg-15; color: #9E9DA8; @include a.linelimit(1)}
     &__sub {@include a.flex-center(space-between,20px); @extend %md-16;}
     &__rating {@include a.flex-center($g: 6px);}
+
         // items >> reactions
         &__reaction {
             @include a.square-icon(50px, 50%); @include a.flex-center(center); position: absolute; right: 0;bottom: 0; background: var(--product-reaction); box-shadow: 0px 20px 60px rgba(124, 124, 124, 0.20); z-index: 10;
@@ -47,4 +52,44 @@
         &__item &__like {display: none;}
         &__item--liked &__like  {display: block;}
 
+        
+        // product filter dialog
+        &__filter {
+            position: absolute; top: 60px; right: 0; z-index: 60;
+            padding: 30px; border-radius: 20px; 
+            filter: drop-shadow(0px 40px 90px rgba(200, 200, 200, 0.40));
+            visibility: hidden;
+            width: 100%; max-width: 1240px;
+            background: var(--filter-dialog);
+            &::before {content: url(./../../../icons/megamenu-arrow-down.svg);position: absolute; top: -10px; right: 22px; filter: var(--megamenu-arrow);}
+
+        }
+}
+.filter {
+    &--show {visibility: visible;}
+    &__heading {margin-bottom: 30px;}
+    &__title {@extend %md-22}
+    &__form {
+        display: flex; align-items: stretch; gap: 30px;margin-bottom: 18px; flex-wrap: wrap;
+        & > * { flex-shrink: 0;}
+        @include a.responsive(md) {gap: 20px;}
+    }
+    &__seperator {
+        width: 1px; background: #eee;
+        @include a.responsive(md) {width: 100%; height: 2px;}
+    }
+    &__action {
+        @include a.flex-center(flex-end,20px);
+        & > *:hover {@extend %md-15}
+    }
+    &__submit {@include a.padding(9px, 10px)}
+}
+.dialog {
+    &__criteria {
+        display: grid;gap: 20px; flex: 1 0; align-items: flex-start;align-content: flex-start;
+        @include a.responsive(lg) {flex-basis: 33%}
+        & > * {width: 100%;}
+    }
+    &__criteria-name {@extend %md-22}
+    &__list-keyword {@include a.flex(flex-start,flex-start); flex-wrap: wrap; gap: 10px 20px}
 }

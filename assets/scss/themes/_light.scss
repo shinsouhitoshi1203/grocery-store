@@ -40,7 +40,19 @@ html[theme="light"] {
     --product-shadow: rgba(237, 237, 246, 0.20);
     --product-reaction: #ffffff;
     --product-name-hover: #0088ff;
+
+    --filter-dialog: #ffffff;
     
+    
+    // css components 
+    --slider-thumb: #ffffff;
+
+    --button-type-3-bg: #F8F8FB;
+    --button-type-3-bg-selected: #5b54ac;
+    --button-type-3-color: #9E9DA8;
+    --button-type-3-color-selected: var(--txt-caption);
+
+
     @include a.responsive(sm) {
         --header-bg: #ffffff;
     }

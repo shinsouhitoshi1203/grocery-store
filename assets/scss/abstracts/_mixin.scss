@@ -15,7 +15,7 @@
         @include flex-center()
     }
 }
-
+@mixin padding($tb, $rl) {padding: $tb $rl}
 
 @mixin responsive($bp) {
     $bp-list: sm md lg xl xxl;
@@ -40,6 +40,7 @@
 %md-15 {font-size: 1.5rem; font-weight: 500; @extend %common-lh;}
 %md-16 {font-size: 1.6rem; font-weight: 500; @extend %common-lh;}
 %md-18 {font-size: 1.8rem; font-weight: 500; @extend %common-lh;}
+%md-22 {font-size: 2.2rem; font-weight: 500; @extend %common-lh;}
 
 %b-14 {font-size: 1.4rem; font-weight: 700; @extend %common-lh;}
 %b-24 {font-size: 2.4rem; font-weight: 700; @extend %common-lh;}

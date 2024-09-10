@@ -1,0 +1,16 @@
+@use "./../abstracts" as a;
+.txtbox {
+    border-radius: 6px; color: var(--txt-caption); border: 1px solid #d2d1d6;
+    &__type-1 { //search
+        @extend %md-14;
+        @include a.padding(10px, 16px); background: inherit;
+        @include a.flex(center, space-between, 20px);
+        & > * {flex-shrink: 0}
+        &--real {flex-grow: 1; color: inherit;}
+    } 
+    &__type-2 { 
+        @include a.padding(8px, 12px); background: inherit;
+        &--real {width: 100%; min-width: 0; color: inherit;}
+    }
+    &__search { @include a.square-icon(24px); }
+}
