@@ -303,7 +303,7 @@ function loadGroup(type="", target="", handler) {
             var name = o.productName, desc = o.productDesc, thumb = o.productThumbnail, rate = (o.productRating).toFixed(1), price = `\$${Number.parseFloat(o.productPrice).toFixed(2)}`, link = `./product/item/${o.productUrl}`;
             var elementRaw = `<div class="col">
                         <div title="${name}" class="product__item ">
-                            <a href="${link}" class="product__item-wrapper"></a>
+                             
                             <div class="product__thumbnail">
                                 <a href="${link}"><img src="${thumb}" alt="${name}"></a>
                                 <button class="product__reaction" title="Add to favourite items">
@@ -312,7 +312,7 @@ function loadGroup(type="", target="", handler) {
                                 </button>
                             </div>
                             <article class="product__meta">
-                                <h3 class="product__name">${name}</h3>
+                                <a href="${link}"><h3 class="product__name">${name}</h3></a>
                                 <p class="product__desc">${desc}</p>
                                 <div class="product__sub">
                                     <span class="product__price">${price}</span>

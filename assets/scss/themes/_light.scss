@@ -39,6 +39,7 @@ html[theme="light"] {
     --product-bg: #ffffff;
     --product-shadow: rgba(237, 237, 246, 0.20);
     --product-reaction: #ffffff;
+    --product-name-hover: #0088ff;
     
     @include a.responsive(sm) {
         --header-bg: #ffffff;
