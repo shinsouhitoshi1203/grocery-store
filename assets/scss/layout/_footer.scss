@@ -24,8 +24,9 @@
         &-nodes {
             list-style-type: none; justify-items: flex-start; justify-content: flex-start; gap: 20px; flex-wrap: wrap;
             a {
-                display: inline-block; @extend %md-16; color: var(--footer-text);transition: color .3s;
-                &:hover {color: #fff}
+                display: inline-block; 
+                h3 {@extend %md-16; color: var(--footer-text);transition: color .3s;}
+                &:hover h3 {color: #fff}
             }
         } 
     }
