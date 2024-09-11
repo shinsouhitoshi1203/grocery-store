@@ -28,9 +28,9 @@ async function loadElements(list) {
          
     });
     function dataHandler(target,raw) {
-        var o = document.querySelector(target);
+        var o = document.querySelectorAll(target);
         localStorage.setItem(target, raw);
-        if (!o.innerHTML) o.innerHTML = raw;
+        o.forEach( (e)=>{if (!e.innerHTML) e.innerHTML = raw;} )
     }
     Promise.all(arr).then((a)=>{
         a.forEach(o=>{

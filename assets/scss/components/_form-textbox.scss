@@ -8,6 +8,7 @@
         & > * {flex-shrink: 0}
         &--real {flex-grow: 1; color: inherit;}
     } 
+    
     &__type-2 { 
         @include a.padding(8px, 12px); background: inherit;
         &--real {width: 100%; min-width: 0; color: inherit;}

@@ -33,7 +33,7 @@
     }
     &__meta {display: grid; grid-gap: 16px;}
     &__name {
-        @extend %md-16; @include a.linelimit(2); transition: color .3s;
+        @extend %md-16; @include a.linelimit(2); transition: color .3s; height: 45.2px;
         &:hover{color:var(--product-name-hover)}
     }
     &__desc {@extend %rg-15; color: #9E9DA8; @include a.linelimit(1)}

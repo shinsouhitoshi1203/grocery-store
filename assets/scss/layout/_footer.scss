@@ -1,0 +1,70 @@
+@use "./../abstracts" as a;
+.footer {
+    background: var(--footer-bg); padding-top: 88px; padding-bottom: 56px;
+    &__wrapper {@include a.flex(flex-start, space-between, 0); flex-wrap: wrap;}
+    & > * {flex: 1 0;}
+    &__seperator {width: calc(100% - 40px); height: 1.5px; background: var(--txt-caption); margin-left: 20px;margin-right: 20px; order: 1;}
+    // company information
+    &__company-info {display: grid; grid-gap: 20px; justify-items: flex-start;}
+    &__meta {
+        @include a.flex(center,$g:16px);
+        img {@include a.square-icon(24px);}
+        a {
+            @include a.flex-center(); 
+        }
+    }
+    // product list
+    &__product {
+        &-list {
+            @include a.flex(flex-start, space-between, 88px); flex-wrap: wrap; color: var(--footer-text);
+            & * {color: inherit;}
+        }
+        &-item {flex: 1 0;}
+        &-title {@extend %b-14; font-size: 1.6rem; margin-bottom: 26px; color: var(--footer-title);}
+        &-nodes {
+            list-style-type: none; justify-items: flex-start; justify-content: flex-start; gap: 20px; flex-wrap: wrap;
+            a {
+                display: inline-block; @extend %md-16; color: var(--footer-text);transition: color .3s;
+                &:hover {color: #fff}
+            }
+        } 
+    }
+    // subscribe
+    &__subscribe {
+        &-title {@extend .footer__product-title; }
+    }
+    &__email {
+        &-caption {margin-bottom: 8px; display: block;}
+        &-txtwrapper {
+            margin-bottom: 16px; padding: 16px; min-width: 250px; 
+            input {@extend %md-16}
+        }
+        &-send {padding: 10px 48px; border-radius: 20px;}
+    }
+}
+
+
+// re-arranging items here 
+@include a.responsive(xl) {
+    .footer {
+        &__wrapper {gap: 36px 0;}
+        &__product-list {order: 1; flex-basis: 100%; }
+        &__company-info {order: 2; flex-basis: 45%;}
+        &__subscribe {order: 3; flex-basis: 45%;}
+    }
+}
+@include a.responsive(md) {
+    .footer {
+        &__product-list {gap: 26px;flex-direction: column;}
+    }
+}
+@include a.responsive(sm) {
+    .footer {
+        padding-top: 45px; padding-bottom: 60px;
+        &__company-info, &__subscribe {flex-basis: 100%;}
+        &__wrapper > * {
+            padding-left: 20px; padding-right: 20px;
+        }
+        &__subscribe {margin-top: 20px;}
+    }
+}
