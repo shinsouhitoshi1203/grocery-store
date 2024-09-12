@@ -1,5 +1,8 @@
 @use "./../abstracts/mixin" as a;
 .brand {
+    &-like-text &__icon {
+        filter: var(--icon-caption)
+    }
     @include a.flex-center(flex-start, 14px);
     transition: transform .3s;
     &__icon {

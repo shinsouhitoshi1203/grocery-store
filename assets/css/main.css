@@ -177,7 +177,7 @@ html {
 
 body {
   font-family: "Gordita";
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.6rem;
   color: var(--txt-caption);
   background: var(--body-bg);
@@ -1608,6 +1608,9 @@ a {
   gap: 14px;
   transition: transform 0.3s;
 }
+.brand-like-text .brand__icon {
+  filter: var(--icon-caption);
+}
 .brand__icon {
   width: 32px;
   height: 32px;
@@ -2188,7 +2191,7 @@ a {
 .txtbox {
   border-radius: 6px;
   color: var(--txt-caption);
-  border: 1px solid #d2d1d6;
+  border: 1px solid currentColor;
 }
 .txtbox__type-1 {
   padding: 10px 16px;
@@ -2230,6 +2233,13 @@ a {
 }
 .button__type-1:hover {
   background: #ffc226;
+}
+.button__type-2 {
+  color: var(--text-caption);
+  transition: color 0.3s;
+}
+.button__type-2:hover {
+  color: #77DAE6;
 }
 .button__type-3 {
   padding: 6px 12px;
@@ -2365,7 +2375,7 @@ a {
   gap: 20px;
   border-radius: 8px;
 }
-.header__dashboard > * {
+.header__dashboard-item {
   border-radius: inherit;
 }
 .header__user-avatar {
@@ -2419,6 +2429,14 @@ a {
   width: 2px;
   height: 30px;
   background: var(--seperator);
+}
+.header__sign-up {
+  padding: 12px 18px;
+  color: initial;
+}
+.header__sign-in {
+  padding-left: 14px;
+  padding-right: 14px;
 }
 
 @media all and (max-width: 991.98px) {
@@ -2756,7 +2774,7 @@ html[theme=light] {
   --button-type-3-bg-selected: #5b54ac;
   --button-type-3-color: #9E9DA8;
   --button-type-3-color-selected: var(--txt-caption);
-  --footer-bg: #76AEFF;
+  --footer-bg: #77DAE6;
   --footer-title: #343047;
   --footer-text: #343047;
 }

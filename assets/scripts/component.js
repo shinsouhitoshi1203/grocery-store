@@ -3,7 +3,7 @@ const breakpoint = 992 - 0.02;
 
 // Load components
 async function loadElements(list) {
-    var arr = [], inner=[];
+    var arr = [], handler=[];
     async function getData(t,s) {
         var httpResult = await fetch(s);
         var rawResult = await httpResult.text();
@@ -13,12 +13,14 @@ async function loadElements(list) {
     list.forEach((obj)=>{
         var t = obj.target;
         var s = obj.src;
+        var app = obj.append;
         arr.push (
             new Promise (
                 function(resolve) {
                     fetch(s).then((h)=>h.text()).then((r)=>{
                         resolve({
                             target: t,
+                            append: app,
                             html: r,
                         }); 
                     })
@@ -27,14 +29,24 @@ async function loadElements(list) {
         )
          
     });
-    function dataHandler(target,raw) {
+    function dataHandler(target,raw,append) {
         var o = document.querySelectorAll(target);
         localStorage.setItem(target, raw);
-        o.forEach( (e)=>{if (!e.innerHTML) e.innerHTML = raw;} )
+        o.forEach( (e)=>{
+            if (true) {
+                // console.log(raw)
+                // console.log(append)
+                if (append) {
+                    e.innerHTML += raw;
+                } else {
+                    e.innerHTML = raw;
+                }
+            }
+        } )
     }
     Promise.all(arr).then((a)=>{
         a.forEach(o=>{
-            dataHandler(o.target, o.html)
+            dataHandler(o.target, o.html, o.append)
         })
     })
 }

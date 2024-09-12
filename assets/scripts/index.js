@@ -1,19 +1,46 @@
 var li = [
     {
         target : "header",
+        append : false,
         src : "./assets/components/header.html"
     },
     {
         target : "footer",
+        append : false,
         src : "./assets/components/footer.html"
     },
     {
         target : ".brand",
+        append : false,
         src : "./assets/components/brand.html"
-    }
+    },
+    // The following list is for objects that are supposed to be included later
+    {
+        target : ".brand",
+        append : false,
+        src : "./assets/components/brand.html"
+    },
+    
     
 ];
 document.addEventListener("DOMContentLoaded", () => {
+    if (true) {
+        li = [
+            ...li, {
+                target : ".header__dashboard",
+                append : true,
+                src : "./assets/components/not-signed-in.html"
+            }
+        ]
+    } else {
+        li = [
+            ...li, {
+                target : ".header__dashboard",
+                append : true,
+                src : "./assets/components/signed-in.html"
+            }
+        ]
+    }
     loadElements(li);
     loadGroup("product","","");
     addEventGroup(document.querySelectorAll(".product__filter-button-wrapper"), "click", (o)=>{var a = `.${o.target.parentNode.getAttribute("data-from")}`;document.querySelector(a).classList.toggle("filter--show")})

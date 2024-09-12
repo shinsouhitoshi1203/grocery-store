@@ -6,6 +6,10 @@
         background: #FFB700; color: #1A162E; transition: background .3s;
         &:hover {background: #ffc226}
     }
+    &__type-2 {
+        color: var(--text-caption); transition: color .3s;
+        &:hover {color: #77DAE6}
+    }
     &__type-3 {
         @extend %bdrs; @extend %md-14;@include a.padding(6px, 12px); background: var(--button-type-3-bg); color: var(--button-type-3-color); transition: background .3s, color .3s;
         &:hover {color: var(--button-type-3-color-selected);}

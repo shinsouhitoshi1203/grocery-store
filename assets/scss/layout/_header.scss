@@ -39,7 +39,7 @@
     &__dashboard {
         @include a.flex-center($g: 20px);
         border-radius: 8px;
-        & > * {border-radius: inherit;}
+        &-item {border-radius: inherit;}
     }
     &__user-avatar {
         @include a.square-icon(50px);
@@ -51,10 +51,7 @@
         transition: filter .3s;
         @include a.flex-center($g: 10px);
         img {@include a.square-icon(24px)}
-        span {
-            @extend %md-15;
-            
-        }
+        span {@extend %md-15}
         &:hover {
             filter: brightness(0.7);
         }
@@ -69,7 +66,10 @@
     }
     &__search {padding: 0; @include a.square-icon(100%, $center: true)}
     &__button-separate {width: 2px; height: 30px; background: var(--seperator);}
-    
+    &__sign {
+        &-up {padding: 12px 18px;color: initial;}
+        &-in {padding-left: 14px;padding-right: 14px;}
+    }
 } 
 
 .navbar {
