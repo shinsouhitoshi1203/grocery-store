@@ -48,13 +48,46 @@ html[theme="dark"] {
     // css components 
     --slider-thumb: #171C28;
 
-    --button-type-3-bg: #171C28;
-    --button-type-3-bg-selected: #752708;
-    --button-type-3-color: #9E9DA8;
-    --button-type-3-color-selected: var(--txt-caption);
-
     // footers
     --footer-bg: #171C28;
     --footer-title: #ffffff;
     --footer-text: #b4b4b4;
+}
+
+
+///////////////need to be fixed///////////////////////
+/// 
+/// 
+
+
+html[theme="dark"] {
+    // page sign...
+    --log-title: #1A162E;
+    --log-desc: #9E9DA8;
+    --log-form-border: #D2D1D6;
+    
+    
+
+}
+
+// css components
+html[theme="dark"] {
+    // buttons
+        //3
+        --button-type-3-bg: #F8F8FB;
+        --button-type-3-bg-selected: #5b54ac;
+        --button-type-3-color: #9E9DA8;
+        --button-type-3-color-selected: var(--txt-caption);
+        //4
+        --button-type-3: #ffffff;
+        --button-type-3-txt: #1A162E;
+        --button-type-3-hover: #1A162E;
+        --button-type-3-hover-txt: #ffffff;
+    
+    // txtboxs
+        //3
+        --txtbox-3-unfocus: #D2D1D6;
+        --txtbox-3-unfocus-icon: brightness(0) saturate(100%) invert(95%) sepia(81%) saturate(160%) hue-rotate(181deg) brightness(86%) contrast(93%);
+        --txtbox-3-focus: #1A162E;
+        --txtbox-3-focus-icon: brightness(0) saturate(100%) invert(8%) sepia(33%) saturate(1402%) hue-rotate(213deg) brightness(86%) contrast(95%);
 }

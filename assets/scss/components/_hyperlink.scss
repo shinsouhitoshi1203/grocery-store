@@ -1,0 +1,10 @@
+@use "./../abstracts" as a;
+
+.hyperlink {
+    @extend %md-15;
+    transition: color .3s; 
+    &__type-1 {
+        color: #0071DC;
+        &:hover{color: #5c9ad4;}
+    }
+}

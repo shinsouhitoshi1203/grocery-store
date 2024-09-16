@@ -3,8 +3,11 @@
 @forward "./slideshow";
 @forward "./category";
 @forward "./products";
+// include components
+@forward "./hyperlink";
 // include form components;
 @forward "./form-range";
 @forward "./form-textbox";
 @forward "./form-button";
 @forward "./form-combobox";
+@forward "./form-check";

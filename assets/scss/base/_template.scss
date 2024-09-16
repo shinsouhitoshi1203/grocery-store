@@ -25,4 +25,9 @@ a {color: inherit}
 
 .webpage {
     &__icon {filter: var(--icon-caption);}
+    &__rotate {
+        &-90 {rotate: 90deg}
+        &-180 {rotate: 180deg}
+        &-270 {rotate: 270deg}
+    }
 }
