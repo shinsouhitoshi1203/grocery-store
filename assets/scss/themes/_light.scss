@@ -70,6 +70,7 @@ html[theme="light"] {
     
     --log-node-item-1: #B9BABE;
     --log-node-item-2: #EDEDF6;
+    --log-next: brightness(0) saturate(100%) invert(86%) sepia(8%) saturate(94%) hue-rotate(191deg) brightness(86%) contrast(89%);
 
 }
 
@@ -82,10 +83,12 @@ html[theme="light"] {
         --button-type-3-color: #9E9DA8;
         --button-type-3-color-selected: var(--txt-caption);
         //4
-        --button-type-3: #ffffff;
-        --button-type-3-txt: #1A162E;
-        --button-type-3-hover: #1A162E;
-        --button-type-3-hover-txt: #ffffff;
+        --button-type-4: #B9BABE;
+        --button-type-4-txt: #1A162E;
+        --button-type-4-hover: #1A162E;
+        --button-type-4-hover-txt: #ffffff;
+        --button-type-4-hover-icon: brightness(60);
+
     
     // txtboxs
         //3

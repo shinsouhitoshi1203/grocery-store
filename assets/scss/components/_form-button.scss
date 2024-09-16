@@ -17,13 +17,13 @@
         &:hover {color: var(--button-type-3-color-selected);}
         &--selected {background: var(--button-type-3-bg-selected); color: var(--button-type-3-color-selected);}
     }
-    &__type-4 { // button type 1 but with transparent color
+    &__type-4 { // button type 1 but with inherit color
         @extend %md-15; @extend %bdrs;
-        background: var(--button-type-3); color: var(--button-type-3-txt); border: 1px solid #D2D1D6;
+        background: var(--button-type-4); color: var(--button-type-4-txt); border: 1px solid #D2D1D6;
         transition: background .3s, color .3s, filter .3s;
         &:hover {
-            background: var(--button-type-3-hover); color: var(--button-type-3-hover-txt); border-color: none;
-            img {filter: brightness(6900);}
+            background: var(--button-type-4-hover); color: var(--button-type-4-hover-txt); border-color: none;
+            img {filter: var(--button-type-4-hover-icon);}
         }
     }
 }

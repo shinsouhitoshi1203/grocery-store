@@ -42,7 +42,7 @@
         &[data-item="1"] {background: var(--log-node-item-1);}
         &[data-item="2"] {background: var(--log-node-item-2);}
     }
-    &__next img {@include a.square-icon(44px);}
+    &__next img {@include a.square-icon(44px); filter: var(--log-next);}
     // container real
     &__container {background: var(--log-container);}
     
@@ -59,13 +59,13 @@
                 button {padding-top: 12px;padding-bottom: 12px; border-radius: var(--form-bdrs);}
             }
             &-control {
-                justify-content: space-between; gap: 50px; flex-wrap: wrap;
+                justify-content: space-between; gap: 10px 50px; flex-wrap: wrap;
                 .log__recovery {@extend %md-15;}
             }
         }
         &__txtbox-far{margin-bottom: 10px;}
         &__switch-page{
-            font-size: 1.8rem; margin-top: clamp(40px, 10vh,108px);
+            font-size: 1.8rem; margin-top: clamp(40px, 10vh,108px); display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: var(--log-desc);
             a {font-size: inherit;} 
         }
     // modifier for objects
