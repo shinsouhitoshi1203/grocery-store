@@ -4,26 +4,12 @@ var li = [
         append : false,
         src : "./assets/components/brand.html"
     },
-    {
-        target : ".log__container",
-        append : false,
-        src : "./assets/components/sign-up-form.html"
-    }
 ];
 document.addEventListener("DOMContentLoaded", () => {
-    const load = new Promise (
-        (resolve)=>{
-            loadElements(li);
-            setTimeout(()=>resolve(),200);
-        }
-    );
-    load.then(
-        ()=>{
-            triggerTextFocusList(".txtbox__type-3");
-            tickCheckbox();
-            document.querySelector(".log__next").addEventListener("click",()=>{switchToForm()}); 
-        }
-    );
+    loadElements(li);
+    triggerTextFocusList(".txtbox__type-3");
+    tickCheckbox();
+    document.querySelector(".log__next").addEventListener("click",()=>{switchToForm()}); 
 })
 
 function switchToForm() {
