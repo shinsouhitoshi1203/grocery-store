@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store / Sign In</title>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#77DAE600">
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/font_settings.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <!-- script -->
+    
+    <script src="./assets/scripts/component.js"></script>
+    <script src="./assets/scripts/theme.js"></script>
+    <script src="./assets/scripts/sign.js"></script>
+    <!-- meta information -->
+</head>
+<body>
+    <main class="log">
+        <div class="log__features">
+            <div class="log__wrapper log__wrapper--features d-flex">
+                <a href="./index.html" class="brand log__brand d-none d-md-flex" title="Grocerymart"></a>
+                <div class="log__meta">
+                    <img src="./img/signin/icon-1.svg" alt="The best of luxury brand values, high quality products, and innovative services" class="log__meta-img">
+                    <p class="log__meta-desc">The best of luxury brand values, high quality products, and innovative services</p>
+                </div>
+                <div class="log__nav d-none d-md-flex">
+                    <button class="log__node" data-item=1></button>
+                    <button class="log__node" data-item=2></button>
+                    <button class="log__next" title="click next to do works">
+                        <img src="./icons/arrow-left.svg" class="webpage__rotate-180" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <article class="log__container log__in">
+            <div class="log__wrapper d-flex">
+                <a href="./index.html" class="brand log__brand" title="Grocerymart"></a>
+                <div class="log__heading d-grid">
+                    <h1 class="log__title">Hello Again!</h1>
+                    <p class="log__desc"> Welcome back to sign in. As a returning customer, you have access to your previously saved all information.</p>
+                </div>
+                <form action="./index.html" class="log__form log__form--sign-up">
+                    <div class="log__form-field d-grid">
+                        <label for="form-input-email" class="txtbox txtbox__type-3 log__txtbox-far">
+                            <input type="text" class="txtbox__type-3--real" placeholder="Email" id="form-input-email">
+                            <div class="txtbox__icon"><img src="./icons/mail.svg" alt=""></div>
+                        </label>
+                        <label for="form-input-password" class="txtbox txtbox__type-3 ">
+                            <input type="password" class="txtbox__type-3--real" placeholder="Password" id="form-input-password">
+                            <div class="txtbox__icon"><img src="./icons/lock.svg" alt=""></div>
+                        </label>
+                        <div class="log__form-control d-flex">
+                            <label class="checkbox">
+                                <input type="checkbox" name="checkbox-K32nc" class="checkbox__real" hidden>
+                                <span class="checkbox__pseudo"></span>
+                                <span class="checkbox__caption">Set as default account</span>
+                            </label>
+                            <a href="./forgot.html" title="Recovery Password" class="hyperlink hyperlink__type-1 log__recovery">Recovery Password</a>
+                        </div>
+                    </div>
+                    <div class="log__form-action d-grid">
+                        <button class="button button__type-1">Login</button>
+                        <button class="button button__type-4">
+                            <img src="./icons/google.svg" alt="">
+                            Sign in with Gmail
+                        </button>
+                    </div>
+                </form>
+                <p class="log__switch-page">
+                    <span>Don’t have an account yet?</span>
+                    <a href="./sign-up.html" class="hyperlink hyperlink__type-1" title="Sign up">Sign Up</a>
+                </p>
+            </div>
+        </article>
+    </main>
+</body>
+</html>

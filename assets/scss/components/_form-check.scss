@@ -1,0 +1,16 @@
+@use "./../abstracts" as a;
+
+.checkbox {
+    @include a.flex-center($g: 10px); display: inline-flex; cursor: pointer;
+    &__pseudo {
+        display: inline-flex; align-items: center; justify-content: center;
+        margin: 2.75px; @include a.square-icon(18.5px, 4.5px); border: 1.5px solid #000;
+        &::after {content: url(./../../../icons/checked.svg); filter: var(--icon-caption); margin-top: -4px; visibility: hidden}
+        &--checked::after {visibility: visible;}
+    }
+    
+    span, a {
+        @extend %md-15;
+    }
+    &:hover &__pseudo:not(.checkbox__pseudo--checked) {background: #858585;}
+}

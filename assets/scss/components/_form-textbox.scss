@@ -1,7 +1,7 @@
 @use "./../abstracts" as a;
 .txtbox {
     border-radius: 6px; color: var(--txt-caption); border: 1px solid currentColor;
-    &__type-1 { //search
+    &__type-1 { //search 
         @extend %md-14;
         @include a.padding(10px, 16px); background: inherit;
         @include a.flex(center, space-between, 20px);
@@ -13,5 +13,20 @@
         @include a.padding(8px, 12px); background: inherit;
         &--real {width: 100%; min-width: 0; color: inherit;}
     }
-    &__search { @include a.square-icon(24px); }
+
+    &__type-3 { // search with icons
+        @extend %md-18;
+        @include a.padding(12px, 12px); 
+        @include a.flex(center, space-between, 20px);
+        background: inherit; color: var(--txtbox-3-unfocus);
+        & > * {flex-shrink: 0}
+        &--real {flex-grow: 1; color: inherit;}
+        img {filter: var(--txtbox-3-unfocus-icon)};
+        &--focus {
+            color: var(--txtbox-3-focus);
+            img {filter: var(--txtbox-3-focus-icon)};
+        }
+    }
+
+    &__icon { @include a.square-icon(24px); }
 }

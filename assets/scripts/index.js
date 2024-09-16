@@ -23,6 +23,7 @@ var li = [
     
     
 ];
+
 document.addEventListener("DOMContentLoaded", () => {
     if (true) {
         li = [
@@ -59,8 +60,8 @@ window.onscroll = (e) => {
     }
 }
 
+// toggle for responsive dropdown navigations
 window.addEventListener("resize", ()=>{
-    
     if (window.innerWidth >= breakpoint) {
         document.querySelectorAll(".navbar__item").forEach(
             (e)=>{e.classList.remove("navbar__item--show")}

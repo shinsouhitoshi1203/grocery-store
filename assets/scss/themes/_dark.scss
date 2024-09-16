@@ -48,13 +48,53 @@ html[theme="dark"] {
     // css components 
     --slider-thumb: #171C28;
 
-    --button-type-3-bg: #171C28;
-    --button-type-3-bg-selected: #752708;
-    --button-type-3-color: #9E9DA8;
-    --button-type-3-color-selected: var(--txt-caption);
-
     // footers
     --footer-bg: #171C28;
     --footer-title: #ffffff;
     --footer-text: #b4b4b4;
+}
+
+
+///////////////need to be fixed///////////////////////
+/// 
+/// 
+
+
+html[theme="dark"] {
+    // page sign...
+    --log-title: #B9BABE;
+    --log-desc: #9E9DA8;
+    --log-form-border: #B9BABE;
+    
+    //features
+    --log-feature: #171C28;
+    --log-feature-text: #B9BABE;
+    --log-container: #292E39;
+    
+    --log-node-item-1: #B9BABE;
+    --log-node-item-2: #B9BABE;
+    --log-next: brightness(0) saturate(100%) invert(86%) sepia(8%) saturate(94%) hue-rotate(191deg) brightness(86%) contrast(89%);
+}
+
+// css components
+html[theme="dark"] {
+    // buttons
+        //3
+        --button-type-3-bg: #F8F8FB;
+        --button-type-3-bg-selected: #5b54ac;
+        --button-type-3-color: #9E9DA8;
+        --button-type-3-color-selected: var(--txt-caption);
+        //4
+        --button-type-4: #292E39;
+        --button-type-4-txt: #B9BABE;
+        --button-type-4-hover: #B9BABE;
+        --button-type-4-hover-txt: #292E39;
+        --button-type-4-hover-icon: brightness(0) saturate(100%) invert(17%) sepia(3%) saturate(3411%) hue-rotate(184deg) brightness(91%) contrast(93%);
+    
+    // txtboxs
+        //3
+        --txtbox-3-unfocus: #B9BABE;
+        --txtbox-3-unfocus-icon: brightness(0) saturate(100%) invert(86%) sepia(8%) saturate(94%) hue-rotate(191deg) brightness(86%) contrast(89%);
+        --txtbox-3-focus: #ffffff;
+        --txtbox-3-focus-icon: brightness(111);
 }
