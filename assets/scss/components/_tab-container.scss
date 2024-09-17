@@ -1,0 +1,24 @@
+@use "./../abstracts" as a;
+.tab {
+    &-container {}
+    &-heading{
+        @include a.flex-center(flex-start,60px); flex-wrap: wrap; margin-bottom: 30px;
+        @include a.responsive(md) {
+            gap: 20px;
+        }
+        &-item {
+            @extend %md-22; color: #9E9DA8;
+            @include a.responsive(md) {font-size: 1.6rem;}
+        }
+    }
+
+    &-page {
+        &-list {position: relative;}
+        &-item {display: none;}
+    }
+
+    &-selected {
+        color: var(--txt-caption);
+        display: block;
+    }
+}

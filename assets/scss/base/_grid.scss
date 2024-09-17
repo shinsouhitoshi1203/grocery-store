@@ -61,7 +61,7 @@ $gutters: (
     @for $i from 1 through 12 {
         .col#{$prefix}-#{$i}{
             flex: 0 0 auto;
-            width: calc(100% / #{$grid-columns} * #{$i})
+            width: calc(100% / #{$grid-columns} * #{$i})!important
         }
     }
 }
@@ -70,6 +70,15 @@ $gutters: (
     @for $i from 0 through 11 {
         .offset#{$prefix}-#{$i}{
             margin-left: calc(100% / #{$grid-columns} * #{$i})
+        }
+    }
+}
+
+@mixin justify($prefix){
+    $options: center, flex-start, flex-end, space-between;
+    @each $option in $options {
+        .row-jc#{$prefix}-#{$option}{
+            justify-content: $option;
         }
     }
 }
@@ -122,6 +131,7 @@ $gutters: (
         @include col($prefix);
         @include offset($prefix);
         @include gutters($prefix);
+        @include justify($prefix);
 
     }
 }

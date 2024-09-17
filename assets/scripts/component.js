@@ -312,7 +312,7 @@ function loadGroup(type="", target="", handler) {
         const httpResult = await fetch("./data/product.txt");
         const json = (await httpResult.json());
         for(var o of json) {
-            var name = o.productName, desc = o.productDesc, thumb = o.productThumbnail, rate = (o.productRating).toFixed(1), price = `\$${Number.parseFloat(o.productPrice).toFixed(2)}`, link = `./product/item/${o.productUrl}`;
+            var name = o.productName, desc = o.productDesc, thumb = o.productThumbnail, rate = (o.productRating).toFixed(1), price = `\$${Number.parseFloat(o.productPrice).toFixed(2)}`,link = `./product.html`; //link = `./product/item/${o.productUrl}`;
             var elementRaw = `<div class="col">
                         <div title="${name}" class="product__item ">
                              
@@ -358,7 +358,8 @@ function loadGroup(type="", target="", handler) {
         case 'product':
             Promise.all([loadProducts()]).then(
                 ([e])=>{
-                    document.querySelector('.product__list').innerHTML = (e);
+                    console.log(document.querySelector('.product__list'));
+                    document.querySelector('.product__list').innerHTML += (e);
                     var o = document.querySelectorAll(".product__reaction");
                     o.forEach(e=>{e.addEventListener("click",toggleReaction)})
                 }

@@ -1,4 +1,5 @@
 @use "./../abstracts" as a;
+@use "./../components/products";
 %bdrs {border-radius: 6px;}
 .button {
     @include a.flex-center(center, 10px);
@@ -17,13 +18,26 @@
         &:hover {color: var(--button-type-3-color-selected);}
         &--selected {background: var(--button-type-3-bg-selected); color: var(--button-type-3-color-selected);}
     }
-    &__type-4 { // button type 1 but with inherit color
+    &__type-4 { // button type 1 but with inherit color, invert bg and text color when hovering
         @extend %md-15; @extend %bdrs;
-        background: var(--button-type-4); color: var(--button-type-4-txt); border: 1px solid #D2D1D6;
+        background: inherit;//var(--button-type-4); 
+        color: var(--button-type-4-txt); border: 1px solid #D2D1D6;
         transition: background .3s, color .3s, filter .3s;
         &:hover {
             background: var(--button-type-4-hover); color: var(--button-type-4-hover-txt); border-color: none;
             img {filter: var(--button-type-4-hover-icon);}
         }
+    }
+    &__type-5 { // button type 1 but with inherit color, no hovering
+        @extend %md-15; @extend %bdrs;
+        background: inherit;//var(--button-type-4); 
+        color: var(--button-type-4-txt); border: 1px solid #D2D1D6;
+        transition: background .3s, color .3s, filter .3s;
+            img {@include a.square-icon(24px); transition: transform .3s;object-fit: contain;}
+            &:hover img {transform: scale(1.2);}
+        &__unlike {display: block;}
+        &__like {display: none;}
+        &--liked &__unlike  {display: none;}
+        &--liked &__like  {display: block;}
     }
 }

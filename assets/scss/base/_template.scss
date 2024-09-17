@@ -31,3 +31,5 @@ a {color: inherit}
         &-270 {rotate: 270deg}
     }
 }
+
+main {min-height: calc(100vh - 562px);}

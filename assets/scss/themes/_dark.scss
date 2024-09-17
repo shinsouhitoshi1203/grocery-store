@@ -78,6 +78,14 @@ html[theme="dark"] {
 
 // css components
 html[theme="dark"] {
+    // breakcumbs
+        --bk: #171C28;
+        --bk-regular: #9E9DA8;
+        --bk-regular-hover: #6e69aa;
+        --bk-current: #FFFFFF;
+        --bk-icon: brightness(0) saturate(100%) invert(66%) sepia(34%) saturate(0%) hue-rotate(302deg) brightness(91%) contrast(84%);
+        --bk-icon-current: brightness(69);
+        --bk-shadow: rgba(23, 28, 40, 0.20);
     // buttons
         //3
         --button-type-3-bg: #F8F8FB;

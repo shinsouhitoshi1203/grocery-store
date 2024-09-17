@@ -1,0 +1,23 @@
+@use "./../abstracts" as a;
+.bk {
+    @include a.flex(center,flex-start,20px); flex-wrap: wrap;
+    background: var(--bk); padding: 20px; border-radius: 10px; 
+    box-shadow: 0px 20px 60px 10px var(--bk-shadow);
+
+    &__item {
+        @include a.flex(center,center,8px);
+        span {@extend %md-16; color: var(--bk-regular); transition: color .3s;}
+        img {
+            @include a.square-icon(24px); filter: var(--bk-icon); transition: filter .3s;
+            
+        }
+        &:hover {
+            span {color: var(--bk-regular-hover);}
+            img {filter: var(--bk-icon-current);}
+        }
+        &--last {
+            span {color: var(--bk-icon-current);}
+            img{display: none;}
+        }
+    }
+}

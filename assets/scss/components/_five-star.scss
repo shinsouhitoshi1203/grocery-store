@@ -1,0 +1,6 @@
+.star {
+    &-list {
+        display: grid; grid-template-columns: repeat(5,24px); grid-gap: 8px;
+        
+    }
+}
