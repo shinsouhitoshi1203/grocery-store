@@ -1,0 +1,5 @@
+.search-bar {
+    display: none;
+    &__real {border: var(--rv-item); border-radius: 10px;}
+    &__appeared {display: block;}
+}

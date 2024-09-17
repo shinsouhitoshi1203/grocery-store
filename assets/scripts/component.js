@@ -354,6 +354,32 @@ function loadGroup(type="", target="", handler) {
         if (target) target.classList.toggle("product__item--liked");
     }
 
+    // toggle tabs
+    function tabSelect (e) {
+        let n = 0;
+
+        function recursion(e) {
+            var obj = e, i=0;
+            while (!obj.classList.contains("tab-heading-item")) {
+                obj = obj.parentNode;
+                i++; if (i>10) return '';
+            }
+            return obj;
+        }
+        function remove() {
+            var o = document.querySelectorAll(".tab-heading-item");
+            o.forEach(e=>{e.classList.remove("tab-selected")});
+            o = document.querySelectorAll(".tab-page-item");
+            o.forEach((e,i)=>{
+                e.classList.remove("tab-selected");
+            })
+        } 
+        remove();
+        var t = recursion(e.target);
+        t.classList.add("tab-selected");
+        n = t.getAttribute("data-target");
+        document.querySelectorAll(".tab-page-item")[n].classList.add("tab-selected");
+    }
     switch (type) {
         case 'product':
             Promise.all([loadProducts()]).then(
@@ -365,7 +391,10 @@ function loadGroup(type="", target="", handler) {
                 }
             );
             break;
-    
+        case 'tab-toggle':
+            var o = document.querySelectorAll(".tab-heading-item");
+            o.forEach(e=>{e.addEventListener("click",tabSelect)})
+            break; 
         default:
             break;
     }
@@ -375,4 +404,9 @@ function addEventGroup(target, event, handler) {
     target.forEach(o=>{
         o.addEventListener(event, handler);
     })
+}
+
+function searchHandler() {
+    var o=document.querySelector('html').getAttribute('theme'); document.querySelector('html').setAttribute('theme',o=='light'?'dark':'light')
+    var o=document.querySelector('.search-bar'); o.classList.toggle("search-bar__appeared")
 }

@@ -2387,6 +2387,17 @@ main {
   grid-gap: 8px;
 }
 
+.search-bar {
+  display: none;
+}
+.search-bar__real {
+  border: var(--rv-item);
+  border-radius: 10px;
+}
+.search-bar__appeared {
+  display: block;
+}
+
 .range {
   display: flex;
   align-items: center;
@@ -3090,6 +3101,7 @@ html[theme=dark] {
 }
 
 html[theme=dark] {
+  --rv-item: #171C28;
   --bk: #171C28;
   --bk-regular: #9E9DA8;
   --bk-regular-hover: #6e69aa;
@@ -3110,6 +3122,11 @@ html[theme=dark] {
   --txtbox-3-unfocus-icon: brightness(0) saturate(100%) invert(86%) sepia(8%) saturate(94%) hue-rotate(191deg) brightness(86%) contrast(89%);
   --txtbox-3-focus: #ffffff;
   --txtbox-3-focus-icon: brightness(111);
+}
+
+html[theme=dark] {
+  --bg-pageproduct: #292E39;
+  --product-meta-bg: #171C28;
 }
 
 html[theme=light] {
@@ -3188,7 +3205,7 @@ html[theme=light] {
 }
 
 html[theme=light] {
-  --bg-page-product: #Ffffff;
+  --bg-pageproduct: #Ffffff;
   --product-meta-bg: #F6F6F6;
 }
 

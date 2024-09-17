@@ -78,6 +78,8 @@ html[theme="dark"] {
 
 // css components
 html[theme="dark"] {
+    // reviews
+        --rv-item: #171C28;
     // breakcumbs
         --bk: #171C28;
         --bk-regular: #9E9DA8;
@@ -105,4 +107,12 @@ html[theme="dark"] {
         --txtbox-3-unfocus-icon: brightness(0) saturate(100%) invert(86%) sepia(8%) saturate(94%) hue-rotate(191deg) brightness(86%) contrast(89%);
         --txtbox-3-focus: #ffffff;
         --txtbox-3-focus-icon: brightness(111);
+}
+
+
+// page/product 
+html[theme="dark"] {
+    --bg-pageproduct: #292E39; 
+    --product-meta-bg: #171C28;
+
 }

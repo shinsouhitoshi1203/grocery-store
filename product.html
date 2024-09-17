@@ -27,6 +27,12 @@
     <header class="header"></header>
     <div class="container container--fixed">
         <main class="main">
+            <div class="search-bar">
+                <div class="txtbox txtbox__type-3 search-bar__real">
+                    <input type="text" class="txtbox__type-3--real" placeholder="search">
+                    <img src="./icons/search.svg" class="txtbox__icon" alt="">
+                </div>
+            </div>
             <div class="breakcumbs bk">
                 <a href="./products/category.html" class="bk__item" title="Departments">
                     <span>Departments</span>
@@ -162,19 +168,19 @@
             <div class="row gy-3">
                 <div class="col-8 col-lg-12 product-page__tab-container tab-container">
                     <div class="tab-heading">
-                        <a href="#!" class="tab-heading-item tab-selected" title="Description">
+                        <a href="#desc-3fcjc"  data-target="0" class="tab-heading-item tab-selected" title="Description">
                             <span>Description</span>
                         </a>
-                        <a href="#!" class="tab-heading-item" title="Features">
+                        <a href="#feature-3fcjc" data-target="1" class="tab-heading-item" title="Features">
                             <span>Features</span>
                         </a>
-                        <a href="#!" class="tab-heading-item" title="Review (1100)">
+                        <a href="#review-3fcjc"  data-target="2" class="tab-heading-item" title="Review (1100)">
                             <span>Review (1100)</span>
                         </a>
                     </div>
                     <div class="tab-page-list">
-                        <article class="tab-page-item ">
-                            <div class="text-md-editor">
+                        <article class="tab-page-item tab-selected">
+                            <div class="text-md-editor" id="desc-3fcjc">
                                 <h2>Lorem ipsum dolor sit.</h2>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel labore magnam laboriosam unde culpa rerum deleniti velit inventore in officia! Optio obcaecati maiores ad debitis? Eius ex minus ullam in.</p>
                                 <p class="quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque repellat ipsam officiis delectus obcaecati modi laborum dolorum illo, alias est, in dolorem eos a mollitia repellendus corrupti sunt. Quam, beatae!</p>
@@ -199,7 +205,7 @@
                         </article>
                         <article class="tab-page-item">
                             <div class="row row-cols-2 gy-3">
-                                <div class="col-12">
+                                <div class="col-12" id="#feature-3fcjc">
                                     <h2>feature list</h2>
                                 </div>
                                 <div class="col-12">
@@ -213,9 +219,9 @@
                                 <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, officiis. Sint!</div>
                             </div>
                         </article>
-                        <article class="tab-page-item tab-selected">
+                        <article class="tab-page-item ">
                             <div class="row row-cols-2 row-cols-md-1 gy-3 gx-3 review__list">
-                                <div class="col-12">
+                                <div class="col-12" id="#feature-3fcjc">
                                     <h2>What our customers are saying</h2>
                                 </div>
                                 <div class="col">

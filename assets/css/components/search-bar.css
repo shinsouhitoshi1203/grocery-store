@@ -1,0 +1,12 @@
+.search-bar {
+  display: none;
+}
+.search-bar__real {
+  border: var(--rv-item);
+  border-radius: 10px;
+}
+.search-bar__appeared {
+  display: block;
+}
+
+/*# sourceMappingURL=search-bar.css.map */
