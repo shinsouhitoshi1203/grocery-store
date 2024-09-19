@@ -3367,6 +3367,12 @@ html[theme=dark] {
   --product-meta-bg: #171C28;
 }
 
+html[theme=dark] {
+  --bg-pagefav: #171C28;
+  --bg-shadow-pagefav: rgba(23, 28, 40, 0.20);
+  --seperator-pagefav: #292E39;
+}
+
 html[theme=light] {
   --body-bg: #f6f6f6;
   --scrollbar: #0071DC;
