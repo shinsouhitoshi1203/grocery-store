@@ -468,3 +468,74 @@ function searchHandler() {
     var o=document.querySelector('html').getAttribute('theme'); document.querySelector('html').setAttribute('theme',o=='light'?'dark':'light')
     var o=document.querySelector('.search-bar'); o.classList.toggle("search-bar__appeared")
 }
+
+
+function navigate(type="") {
+    let url = "";
+    switch (type) {
+        case 'cart':
+            url = './cart.html';
+            break;
+        case 'fav':
+            url = './fav.html';
+            break;
+        case 'cart':
+            url = './cart.html';
+            break;
+        default:
+            url = "./index.html"
+            break;
+    }
+    window.location.href = url;
+}
+
+/// forms
+function triggerTextFocusList(targetClass) {
+    let classNoDot = targetClass.slice(1);
+    function findParent(o) {
+        let node = o;
+        while (![...node.classList].includes(classNoDot)) {
+            node = node.parentNode;
+        }
+        return node;
+    }
+    function removeAll(nodeList) {
+        nodeList.forEach(element=>{element.classList.remove(`${classNoDot}--focus`)})
+    }
+    function add(node) {
+        node.classList.add(`${classNoDot}--focus`)
+    }
+    let nodeList = document.querySelectorAll(targetClass);
+    if (nodeList) {
+        nodeList.forEach(element=>{
+            element.addEventListener("click", (e)=> {
+                var realNode = e.target;
+                if (![...e.target.classList].includes(classNoDot)) realNode = findParent(realNode);
+                let nodeList = document.querySelectorAll(targetClass);
+                removeAll(nodeList);
+                add(element);
+                
+                e.stopPropagation();
+            })
+            element.addEventListener("focusout",()=>removeAll(nodeList));
+        })
+    }
+}
+
+function tickCheckbox(targetClass=".checkbox") {
+    let nodeList = document.querySelectorAll(targetClass);
+    if (nodeList) {
+        nodeList.forEach(element=>{
+            let nodeReal = element.querySelector("input");
+            nodeReal.addEventListener("change", (e)=> {
+                if (nodeReal.checked) {
+                    nodeReal.nextElementSibling.classList.add("checkbox__pseudo--checked")
+                } else {
+                    nodeReal.nextElementSibling.classList.remove("checkbox__pseudo--checked")
+                }
+                e.stopPropagation();
+            })
+        })
+    }
+    
+}

@@ -1,0 +1,121 @@
+.favourite-page__item-price, .favourite-page__heading, .favourite-page__item-name, .favourite-page__item-per, .favourite-page__action button {
+  line-height: 1.42;
+}
+
+.favourite-page__item-per, .favourite-page__action button {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.favourite-page__heading, .favourite-page__item-name {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.favourite-page__item-price {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.favourite-page {
+  padding: 30px;
+  border-radius: 20px;
+  background: var(--bg-pagefav);
+  box-shadow: 0px 20px 60px 10px var(--bg-shadow-pagefav);
+}
+.favourite-page__heading {
+  margin-bottom: 6px;
+}
+.favourite-page__seperator {
+  width: 100%;
+  height: 1px;
+  background: var(--seperator-pagefav);
+}
+.favourite-page__check {
+  flex-shrink: 0;
+}
+.favourite-page__item-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+.favourite-page__item-real {
+  flex-grow: 1;
+}
+.favourite-page__item-real > * {
+  flex-shrink: 0;
+}
+.favourite-page__item-img {
+  max-width: 175px;
+}
+@media all and (max-width: 991.98px) {
+  .favourite-page__item-img {
+    max-width: 100px;
+  }
+}
+.favourite-page__item-img img {
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  height: auto;
+}
+.favourite-page__item-price {
+  text-align: right;
+}
+@media all and (max-width: 575.98px) {
+  .favourite-page__item-price {
+    text-align: left;
+  }
+}
+.favourite-page__item-per {
+  gap: 7px;
+  color: #9E9DA8;
+}
+.favourite-page__item-per span:last-child {
+  color: #67B044;
+}
+.favourite-page__item-combobox > * {
+  padding: 10px 20px;
+}
+.favourite-page__item-checkout {
+  margin-left: auto;
+  padding: 18px 40px;
+  border-radius: 50px;
+}
+@media all and (max-width: 1199.98px) {
+  .favourite-page__item-checkout {
+    margin-left: 0;
+  }
+}
+.favourite-page__action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.favourite-page__action .button__type-1 {
+  padding: 18px 40px;
+  border-radius: 50px;
+}
+
+@media all and (max-width: 767.98px) {
+  .favourite-page__item-a {
+    order: 1;
+  }
+  .favourite-page__item-b {
+    order: 4;
+  }
+  .favourite-page__item-c {
+    order: 2;
+  }
+  .favourite-page__item-d {
+    order: 3;
+  }
+  .favourite-page__item-e {
+    order: 5;
+  }
+}
+
+/*# sourceMappingURL=fav.css.map */

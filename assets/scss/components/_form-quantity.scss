@@ -1,0 +1,7 @@
+@use "./../abstracts" as a;
+.quantity {
+    display: inline-flex; gap: 10px;
+    @extend %md-15; border-radius: 6px;;
+    padding: 10px 20px;
+    border: 1px solid #D2D1D6;
+}

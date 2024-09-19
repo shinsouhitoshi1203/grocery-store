@@ -40,4 +40,11 @@
         &--liked &__unlike  {display: none;}
         &--liked &__like  {display: block;}
     }
+    &__type-6 {
+        @extend %md-16; color: #9E9DA8; @include a.flex(center, center, 10px);
+        padding: 10px 5px;
+        span {transition: color .3s;}
+        &:hover {color: var(--txt-caption);}
+    }
+    &__icon {@include a.square-icon(24px)}
 }

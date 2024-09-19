@@ -83,6 +83,15 @@ $gutters: (
     }
 }
 
+@mixin align($prefix){
+    $options: center, flex-start, flex-end, space-between, stretch;
+    @each $option in $options {
+        .row-align#{$prefix}-#{$option}{
+            align-items: $option; align-content: $option;
+        }
+    }
+}
+
 @mixin gutters($prefix){
     @each $i,$ratio in $gutters {
         .gx#{$prefix}-#{$i}, .g#{$prefix}-#{$i} {
@@ -132,6 +141,7 @@ $gutters: (
         @include offset($prefix);
         @include gutters($prefix);
         @include justify($prefix);
+        @include align($prefix);
 
     }
 }

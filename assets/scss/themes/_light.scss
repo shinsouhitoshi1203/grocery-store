@@ -64,7 +64,7 @@ html[theme="light"] {
     --rv-item: #FAFAFD;
     
     // breakcumbs
-    --bk: #F6F6F6;
+    --bk: #ffffff;
     --bk-regular: #9E9DA8;
     --bk-regular-hover: #6e69aa;
     --bk-current: #1A162E;
@@ -115,5 +115,12 @@ html[theme="light"] {
 html[theme="light"] {
     --bg-pageproduct: #Ffffff;
     --product-meta-bg: #F6F6F6;
+}
 
+
+// page/fav 
+html[theme="light"] {
+    --bg-pagefav: #Ffffff;
+    --bg-shadow-pagefav: rgba(237, 237, 246, 0.20);
+    --seperator-pagefav: #D2D1D6;
 }
