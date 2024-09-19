@@ -917,28 +917,71 @@
                     <img src="./icons/search.svg" class="webpage__icon" alt="Search items">
                 </button>
             </div>
-            <!-- <div class="ddd">
-                <div class="header__dashboard-item header__button-container header__button-container--long d-flex d-sm-none">
-                    <button class="header__button header__fav">
-                        <img src="./icons/heart.svg" class="webpage__icon" alt="Favourite items">
-                        <span class="d-inline d-md-none">03</span>
-                    </button>
-                    <div class="header__button-separate"></div>
-                    <button class="header__button header__cart">
-                        <img src="./icons/cart.svg" class="webpage__icon" alt="Cart">
-                        <span class="d-inline d-md-none">$65.42</span>
-                    </button>
+            <div class="action fav d-none d-block d-md-none" data-node="0" onmouseenter="actionOption(this, event, 'keep') " onmouseleave="actionOption(this,event,'remove')">
+                <div class="fav__inner">
+                    <div class="row fav__heading row-jc-space-between">
+                        <div class="col-5 fav__heading-title">You have 3 item</div>
+                        <div class="col-3"><a href="#!" class="hyperlink hyperlink__type-1">See All</a></div>
+                    </div>
+                    <div class="row row-cols-3">
+                        <div class="col fav-item">
+                            <div class="row gy-2">
+                                <div class="col-12">
+                                    <img src="./products/ec3nc/cafe-01-md.png" alt="">
+                                </div>
+                                <div class="col-12">
+                                    <p class="fav__product-name">Lavazza Coffee Blends </p>
+                                    <p class="fav__product-price">$329.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col fav-item">
+                            <div class="row gy-2">
+                                <div class="col-12">
+                                    <img src="./products/ec3nc/cafe-01-md.png" alt="">
+                                </div>
+                                <div class="col-12">
+                                    <p class="fav__product-name">Coffee Beans Espresso</p>
+                                    <p class="fav__product-price">$39.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col fav-item">
+                            <div class="row gy-2">
+                                <div class="col-12">
+                                    <img src="./products/ec3nc/cafe-01-md.png" alt="">
+                                </div>
+                                <div class="col-12">
+                                    <p class="fav__product-name">Qualità Oro Mountain</p>
+                                    <p class="fav__product-price">$47.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div> -->
-            <!-- <a href="#!" class="header__dashboard-item header__user-avatar">
-                <img src="./users/img/0000.png" alt="Vanessa Kinnegral">
-            </a> -->
-            <!-- <button class="header__dashboard-item button button__type-2 header__sign-in d-block d-sm-none">
-                Sign in
-            </button>
-            <button class="header__dashboard-item button button__type-1 header__sign-up d-block d-sm-none">
-                Sign up
-            </button> -->
+            </div>
+            <div class="action cart d-none d-block d-md-none" data-node="1" onmouseenter="actionOption(this, event, 'keep') " onmouseleave="actionOption(this,event,'remove')">
+                <div class="cart__inner">
+                    <div class="cart__property">
+                        <span>Subtotal:</span>
+                        <span>$415.99</span>
+                    </div>
+                    <div class="cart__property">
+                        <span>Texes:</span>
+                        <span>Free</span>
+                    </div>
+                    <div class="cart__property">
+                        <span>Shipping</span>
+                        <span>$10.00</span>
+                    </div>
+                    <div class="cart__property cart__property--total">
+                        <span>Total Price</span>
+                        <span>$425.99</span>
+                    </div>
+                    <div class="cart__seperator"></div>
+                    <button class="button button__type-1 cart__checkout">Check Out All</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

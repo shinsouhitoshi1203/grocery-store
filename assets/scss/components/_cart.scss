@@ -1,0 +1,17 @@
+@use "./../abstracts" as a;
+.cart {
+    position: absolute; right: 0; padding-top: 500px;font-size: 2.2rem;; width: 600px;
+    &__inner {
+        border-radius: 20px; padding: 30px;
+        background: var(--megamenu); box-shadow: 0px 40px 90px 20px var(--megamenu-shadow);
+        &::before {
+            content: url(./../../../icons/megamenu-arrow-down.svg); display: block; margin-left: 450px; margin-top: -50px; filter: var(--megamenu-arrow); position: absolute;
+        }
+    }
+    &__property {
+        display: flex; justify-content: space-between; margin-bottom: 30px;
+        &--total {@extend %md-22;}
+    }
+    &__seperator {width: 100%; height: 1px; background: #D2D1D6; margin: 30px 0;}
+    &__checkout {padding: 18px 40px; border-radius: 50px!important; margin-left: auto; }
+}

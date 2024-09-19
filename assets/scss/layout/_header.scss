@@ -39,7 +39,7 @@
     &__dashboard {
         @include a.flex-center($g: 20px);
         border-radius: 8px;
-        &-item {border-radius: inherit;}
+        &-item {border-radius: inherit;    z-index: 11111111;}
     }
     &__user-avatar {
         @include a.square-icon(50px);
@@ -64,7 +64,7 @@
         @include a.flex-center(center);
         &--long {@include a.flex-center()}         
     }
-    &__search {padding: 0; @include a.square-icon(100%, $center: true)}
+    &__search {padding: 0; @include a.square-icon(100%, $center: true);    z-index: 11111111;}
     &__button-separate {width: 2px; height: 30px; background: var(--seperator);}
     &__sign {
         &-up {padding: 12px 18px;color: initial;}

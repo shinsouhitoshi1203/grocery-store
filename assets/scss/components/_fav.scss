@@ -1,0 +1,25 @@
+@use "./../abstracts" as a;
+.fav {
+    position: absolute; right: 0; padding-top: 450px;
+    &__inner {
+        border-radius: 20px; padding: 30px;
+        background: var(--megamenu); box-shadow: 0px 40px 90px 20px var(--megamenu-shadow);
+        &::before {
+            content: url(./../../../icons/megamenu-arrow-down.svg); display: block; margin-left: 270px; margin-top: -45px; filter: var(--megamenu-arrow); position: absolute;
+        }
+    }
+    &__heading {
+        margin-bottom: 30px;
+        &-title {@extend %md-22}
+        & *:has(a) {display: flex; justify-content: flex-end;}
+        a {font-size: 2.2rem; color: #0071DC;}
+    }
+    img {
+        max-width: 175px;
+        &:hover {background: #bdbdbd;}
+    }
+    &-item {max-width: 180px;}
+
+    &__product-name {font-size: 1.4rem;}
+    &__product-price {@extend %md-15; font-size: 1.5rem; }
+}

@@ -3,6 +3,8 @@
 @forward "./slideshow";
 @forward "./category";
 @forward "./products";
+
+
 // include components
 @forward "./hyperlink";
 @forward "./breakcumbs";
@@ -11,6 +13,10 @@
 @forward "./review";
 @forward "./five-star";
 @forward "./search-bar";
+@forward "./search-bar";
+@forward "./fav";
+@forward "./cart";
+
 // include form components;
 @forward "./form-range";
 @forward "./form-textbox";

@@ -260,6 +260,64 @@ function subMenuOption(e,event, action="") {
     }
 }
 
+// toggle megamenu by javascript
+function actionOption(e,event, action="", fromInner=false) {
+
+    // please always add references to the following constants before debugging. 
+    const breakpoint = 767 - 0.02; 
+    const classToTarget = "action";
+    const classShow = `d-none`;
+
+    // prevent from javascript propagation
+    function isDirectlyTarget(event, className="") {
+        return (event.target.parentNode.classList.contains(className)) ? true : false;
+    }
+
+    function toggle(e, event) {
+        if (isDirectlyTarget(event, classToTarget)){
+            e.classList.toggle(classShow);
+        }
+    }
+
+    // switch the menu off manually ONLY IN desktop
+    function switchOff (e, event) {
+        let o = document.querySelectorAll(`.${classToTarget}`)[e.getAttribute("data-node")]        
+        if (o) o.classList.add(classShow);
+    }
+
+    function switchOn (e, event) {
+        let o = document.querySelectorAll(`.${classToTarget}`)[e.getAttribute("data-node")]        
+        if (o) o.classList.remove(classShow);
+    }
+    // only keep for the desktop version
+    function keep(e) {
+        var i = Number.parseInt(e.getAttribute("data-node"));
+        document.querySelectorAll(`.${classToTarget}`)[i].classList.remove(classShow)
+    }
+    if (window.innerWidth < breakpoint) {
+        switch (action) {
+            case 'toggle':
+                //toggle(e, event); do nothing rn
+                break;
+        }
+    } else {
+        switch (action) {
+            case 'add':
+                switchOn (e, event)
+                break;
+            case 'remove':
+                switchOff(e, event);
+                break;
+            case 'keep':
+                keep(e);
+                break;
+        }
+    }
+    
+    event.stopPropagation();
+}
+
+
 
 function productItem(name="",desc="",price="",rate="",thumb="",url="") {
     this.productName = name;

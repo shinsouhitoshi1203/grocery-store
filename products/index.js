@@ -25,7 +25,7 @@ var li = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (true) {
+    if (false) {
         li = [
             ...li, {
                 target : ".header__dashboard",
