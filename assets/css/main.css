@@ -231,6 +231,13 @@ main {
   min-height: calc(100vh - 562px);
 }
 
+.common-container {
+  padding: 30px;
+  border-radius: 20px;
+  background: var(--bg-pagefav);
+  box-shadow: 0px 20px 60px 10px var(--bg-shadow-pagefav);
+}
+
 .container-fluid, .container {
   width: 100%;
   margin-left: auto;
@@ -493,6 +500,10 @@ main {
   align-content: stretch;
 }
 
+.row-flex-0 > * {
+  flex: 0 0;
+}
+
 @media (max-width: 1399.98px) {
   .container {
     max-width: 1170px;
@@ -678,6 +689,9 @@ main {
   .row-align-xxl-stretch {
     align-items: stretch;
     align-content: stretch;
+  }
+  .row-flex-xxl-0 > * {
+    flex: 0 0;
   }
 }
 @media (max-width: 1199.98px) {
@@ -866,6 +880,9 @@ main {
     align-items: stretch;
     align-content: stretch;
   }
+  .row-flex-xl-0 > * {
+    flex: 0 0;
+  }
 }
 @media (max-width: 991.98px) {
   .container {
@@ -1052,6 +1069,9 @@ main {
   .row-align-lg-stretch {
     align-items: stretch;
     align-content: stretch;
+  }
+  .row-flex-lg-0 > * {
+    flex: 0 0;
   }
 }
 @media (max-width: 767.98px) {
@@ -1240,6 +1260,9 @@ main {
     align-items: stretch;
     align-content: stretch;
   }
+  .row-flex-md-0 > * {
+    flex: 0 0;
+  }
 }
 @media (max-width: 575.98px) {
   .container {
@@ -1426,6 +1449,9 @@ main {
   .row-align-sm-stretch {
     align-items: stretch;
     align-content: stretch;
+  }
+  .row-flex-sm-0 > * {
+    flex: 0 0;
   }
 }
 .d-flex {

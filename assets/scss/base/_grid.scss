@@ -103,6 +103,15 @@ $gutters: (
     }
 }
 
+@mixin col-by-real-size($prefix) {
+    
+    
+        .row-flex#{$prefix}-0 > *{
+            flex: 0 0;
+        }
+    
+}
+
 // container
 .container {
     @extend %container-base;
@@ -140,8 +149,9 @@ $gutters: (
         @include col($prefix);
         @include offset($prefix);
         @include gutters($prefix);
+        // additions
         @include justify($prefix);
         @include align($prefix);
-
+        @include col-by-real-size($prefix);
     }
 }

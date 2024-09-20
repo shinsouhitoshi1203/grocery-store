@@ -17,12 +17,6 @@
   font-weight: 700;
 }
 
-.favourite-page {
-  padding: 30px;
-  border-radius: 20px;
-  background: var(--bg-pagefav);
-  box-shadow: 0px 20px 60px 10px var(--bg-shadow-pagefav);
-}
 .favourite-page__heading {
   margin-bottom: 6px;
 }
