@@ -75,7 +75,7 @@ $gutters: (
 }
 
 @mixin justify($prefix){
-    $options: center, flex-start, flex-end, space-between;
+    $options: center, flex-start, flex-end, space-between, stretch;
     @each $option in $options {
         .row-jc#{$prefix}-#{$option}{
             justify-content: $option;

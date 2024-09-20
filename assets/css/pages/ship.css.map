@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../../scss/abstracts/_mixin.scss","../../scss/pages/ship.scss"],"names":[],"mappings":"AAkCA;EAAY;;;AAOZ;EAAQ;EAAmB;;;AAK3B;EAAO;EAAmB;;;AC1ClB;EAA2B;;AAE/B;EACI;EAAiB;;AACjB;EAAU;EAAoB;;AAG9B;EAAQ;;AACR;EAAQ;EAAa;;AAIzB;EACI;EAAe;EAAgB;EAAkB;EAAmB","file":"ship.css"}

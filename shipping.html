@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store / shipping page</title>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#77DAE600">
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/font_settings.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/pages/fav.css">
+    <link rel="stylesheet" href="./assets/css/pages/ship.css">
+    <!-- script -->
+    
+    <script src="./assets/scripts/component.js"></script>
+    <script src="./assets/scripts/theme.js"></script>
+    <script src="./cart/index.js"></script>
+    <!-- meta information -->
+</head>
+<body>
+    <header class="header"></header>
+    <div class="container">
+        <main class="main">
+            <div class="search-bar">
+                <div class="txtbox txtbox__type-3 search-bar__real">
+                    <input type="text" class="txtbox__type-3--real" placeholder="search">
+                    <img src="./icons/search.svg" class="txtbox__icon" alt="">
+                </div>
+            </div>
+            <div class="breakcumbs bk">
+                <a href="./index.html" class="bk__item" title="home">
+                    <span>home</span>
+                    <img src="./icons/arrow-right.svg" alt="" class="bk__icon-next">
+                </a>
+				<a href="./cart.html" class="bk__item" title="checkout">
+                    <span>checkout</span>
+                    <img src="./icons/arrow-right.svg" alt="" class="bk__icon-next">
+                </a>
+                <a href="./cart.html" class="bk__item bk__item--last" title="shipping">
+                    <span>shipping</span>
+                </a>
+            </div>
+
+            <div class="row gy-lg-3">
+            	<div class="col-9 col-xxl-8 col-xl-8 col-lg-12">
+            		<article class="favourite-page ship common-container">
+            			<div class="row row-cols-1 gy-3">
+							<div class="col">
+								<h1 class="ship__title">1. Shipping, arrives between Mon, May 16—Tue, May 24</h1>
+							</div>
+							<div class="col">
+            					<div class="favourite-page__seperator"></div>
+            				</div>
+							<section class="col ">
+								<div class="row row-cols-1 gy-3 ">
+									<div class="col d-flex row-jc-space-between row-align-center ship__address">
+										<div class="ship__address-title">
+											<h2 class="ship__title-section">Shipping address</h2>
+											<p>Where should we deliver your order?</p>
+										</div>
+										<button class="button button__type-1 ship__address-button">
+											<img src="./icons/plus.svg" alt="" class="button__icon">
+											<span>Add a new address</span>
+										</button>
+		            				</div>
+									<div class="col d-flex row-jc-stretch row-align-flex-start ship__address-item">
+										<label class="checkbox ship__address-check">
+											<input type="checkbox" name="checkbox-dcdEE" class="checkbox__real" hidden>
+											<span class="checkbox__pseudo"></span>
+										</label>
+										<div class="ship__address-meta d-flex row-jc-space-between row-align-flex-end ">
+											<div class="ship__address-meta-heading">
+												<h2 class="ship__title-section">Imran Khan</h2>
+												<p>Museum of Rajas, Sylhet Sadar, Sylhet 3100.</p>
+												<ul class="ship__method">
+													<li>Shipping</li>
+													<li>Delivery from store</li>
+												</ul>
+											</div>
+											<button class="button__type-6">
+												<img src="./icons/edit.svg" alt="" class="webpage__icon button__icon">
+												<span>Edit</span>
+											</button>
+										</div>
+									</div>
+									<div class="col d-flex row-jc-stretch row-align-flex-start ship__address-item">
+										<label class="checkbox ship__address-check">
+											<input type="checkbox" name="checkbox-ddvEE" class="checkbox__real" hidden>
+											<span class="checkbox__pseudo"></span>
+										</label>
+										<div class="ship__address-meta d-flex row-jc-space-between row-align-flex-end ">
+											<div class="ship__address-meta-heading">
+												<h2 class="ship__title-section">Imran Khan</h2>
+												<p>Al Hamra City (10th Floor), Hazrat Shahjalal Road, Sylhet, Sylhet, Bangladesh</p>
+												<ul class="ship__method">
+													<li>Shipping</li>
+													<li>Delivery from store</li>
+												</ul>
+											</div>
+											<button class="button__type-6">
+												<img src="./icons/edit.svg" alt="" class="webpage__icon button__icon">
+												<span>Edit</span>
+											</button>
+										</div>
+									</div>
+								</div>
+							
+							</section>
+            				<section class="col">
+            					<div class="row row-cols-1 gy-3">
+									<div class="col">
+		            					<h2 class="ship__title-section">Items Details</h2>
+		            				</div>
+	            					<div class="col">
+		            					<section class="favourite-page__item-real row  gy-3 product-item-without-big-button">
+		            						<div class="col favourite-page__item-img d-sm-none">
+		            							<img src="./products/ec3nc/cafe-01-md.png" alt="Coffee Beans - Espresso Arabica and Robusta Beans">
+		            						</div>
+		            						<div class="col">
+		            							<div class="row gx-2 gy-2 row-jc-space-between row-align-center">
+		            								<div class="col-8 col-sm-12 favourite-page__item-a">
+		            									<a href="./product.html">
+		            										<h2 class="favourite-page__item-name">Coffee Beans - Espresso Arabica and Robusta Beans</h2>
+		            									</a>
+		            								</div>
+		            								<div class="col-4 col-sm-12 favourite-page__item-b">
+		            									<p class="favourite-page__item-price">$9999.99</p>
+		            								</div>
+		            								<div class="col-12 favourite-page__item-per d-flex row-jc-flex-start favourite-page__item-c">
+		            									<span>$47.00</span>
+		            									<span>|</span>
+		            									<span>In Stock</span>
+		            								</div>
+		            								<div class="col-12 col-xl-12  favourite-page__item-d">
+		            									<div class="row gx-3 gy-3 row-jc-space-between ">
+		            										<div class="col-4 col-xxl-8 col-xl-12 col-lg-9 ">
+		            											<div class="row gx-3 gy-3 row-cols-2 row-jc-sm-flex-start">
+		            												<!-- <div class="row gx-3 gy-3 row-cols-lg-2 row-jc-sm-flex-start"> -->
+		            												<div class="col ">
+		            													<div class="combobox combobox__type-2 favourite-page__item-combobox">
+		            														<div class="combobox__value combobox__type-2--first">
+		            															<span>500g</span>
+		            															<img src="./icons/arrow-down.svg" alt="" class="webpage__icon">
+		            														</div>
+		            													</div>
+		            												</div>
+		            												<div class="col ">
+		            													<div class="quantity">
+		            														<button class="button" title="remove">
+		            															<img src="./icons/minus.svg" class="webpage__icon" alt="">
+		            														</button>
+		            														<span>99</span>
+		            														<button class="button" title="add">
+		            															<img src="./icons/plus.svg" class="webpage__icon" alt="">
+		            														</button>
+		            													</div>
+		            												</div>
+		            											</div>
+		            										</div>
+		            										<div class="col-3 col-xxl-6 col-lg-8 col-sm-11">
+		            											<div class="row gx-3 gy-3 row-jc-sm-flex-start row-cols-2 row-flex-0">
+		            												<div class="col col-lg-4  col-lg-6 col-sm-4 d-flex row-align-center row-jc-center row-jc-lg-flex-start">
+		            													<button class="button__type-6">
+		            														<span class="button__icon">
+		            															<img src="./icons/heart-color.svg" alt="">
+		            														</span>
+		            														<span>Save</span>
+		            													</button>
+		            												</div>
+		            												<div class="col col-lg-4 col-lg-6 col-sm-4 d-flex row-align-center row-jc-center">
+		            													<button class="button__type-6">
+		            														<span class="button__icon webpage__icon">
+		            															<img src="./icons/trash.svg" alt="">
+		            														</span>
+		            														<span>Delete</span>
+		            													</button>
+		            												</div>
+		            											</div>
+		            										</div>
+		            									</div>
+		            								</div>
+		            							</div>
+		            						</div>
+		            					</section>
+		            				</div>
+		            				<div class="col">
+		            					<div class="favourite-page__seperator"></div>
+		            				</div>
+		            				<div class="col">
+		            					<section class="favourite-page__item-real row  gy-3 product-item-without-big-button">
+		            						<div class="col favourite-page__item-img d-sm-none">
+		            							<img src="./products/ec3nc/cafe-01-md.png" alt="Coffee Beans - Espresso Arabica and Robusta Beans">
+		            						</div>
+		            						<div class="col">
+		            							<div class="row gx-2 gy-2 row-jc-space-between row-align-center">
+		            								<div class="col-8 col-sm-12 favourite-page__item-a">
+		            									<a href="./product.html">
+		            										<h2 class="favourite-page__item-name">Coffee Beans - Espresso Arabica and Robusta Beans</h2>
+		            									</a>
+		            								</div>
+		            								<div class="col-4 col-sm-12 favourite-page__item-b">
+		            									<p class="favourite-page__item-price">$9999.99</p>
+		            								</div>
+		            								<div class="col-12 favourite-page__item-per d-flex row-jc-flex-start favourite-page__item-c">
+		            									<span>$47.00</span>
+		            									<span>|</span>
+		            									<span>In Stock</span>
+		            								</div>
+		            								<div class="col-12 col-xl-12  favourite-page__item-d">
+		            									<div class="row gx-3 gy-3 row-jc-space-between ">
+		            										<div class="col-4 col-xxl-8 col-xl-12 col-lg-9 ">
+		            											<div class="row gx-3 gy-3 row-cols-2 row-jc-sm-flex-start">
+		            												<div class="col ">
+		            													<div class="combobox combobox__type-2 favourite-page__item-combobox">
+		            														<div class="combobox__value combobox__type-2--first">
+		            															<span>500g</span>
+		            															<img src="./icons/arrow-down.svg" alt="" class="webpage__icon">
+		            														</div>
+		            													</div>
+		            												</div>
+		            												<div class="col ">
+		            													<div class="quantity">
+		            														<button class="button" title="remove">
+		            															<img src="./icons/minus.svg" class="webpage__icon" alt="">
+		            														</button>
+		            														<span>99</span>
+		            														<button class="button" title="add">
+		            															<img src="./icons/plus.svg" class="webpage__icon" alt="">
+		            														</button>
+		            													</div>
+		            												</div>
+		            											</div>
+		            										</div>
+		            										<div class="col-3 col-xxl-6 col-lg-8 col-sm-11">
+		            											<div class="row gx-3 gy-3 row-jc-sm-flex-start row-cols-2 row-flex-0">
+		            												<div class="col col-lg-4  col-lg-6 col-sm-4 d-flex row-align-center row-jc-center row-jc-lg-flex-start">
+		            													<button class="button__type-6">
+		            														<span class="button__icon">
+		            															<img src="./icons/heart-color.svg" alt="">
+		            														</span>
+		            														<span>Save</span>
+		            													</button>
+		            												</div>
+		            												<div class="col col-lg-4 col-lg-6 col-sm-4 d-flex row-align-center row-jc-center">
+		            													<button class="button__type-6">
+		            														<span class="button__icon webpage__icon">
+		            															<img src="./icons/trash.svg" alt="">
+		            														</span>
+		            														<span>Delete</span>
+		            													</button>
+		            												</div>
+		            											</div>
+		            										</div>
+		            									</div>
+		            								</div>
+		            							</div>
+		            						</div>
+		            					</section>
+		            				</div>
+		            				<div class="col">
+		            					<div class="favourite-page__seperator"></div>
+		            				</div>
+		            				<div class="col">
+		            					<section class="favourite-page__item-real row  gy-3 product-item-without-big-button">
+		            						<div class="col favourite-page__item-img d-sm-none">
+		            							<img src="./products/ec3nc/cafe-01-md.png" alt="Coffee Beans - Espresso Arabica and Robusta Beans">
+		            						</div>
+		            						<div class="col">
+		            							<div class="row gx-2 gy-2 row-jc-space-between row-align-center">
+		            								<div class="col-8 col-sm-12 favourite-page__item-a">
+		            									<a href="./product.html">
+		            										<h2 class="favourite-page__item-name">Coffee Beans - Espresso Arabica and Robusta Beans</h2>
+		            									</a>
+		            								</div>
+		            								<div class="col-4 col-sm-12 favourite-page__item-b">
+		            									<p class="favourite-page__item-price">$9999.99</p>
+		            								</div>
+		            								<div class="col-12 favourite-page__item-per d-flex row-jc-flex-start favourite-page__item-c">
+		            									<span>$47.00</span>
+		            									<span>|</span>
+		            									<span>In Stock</span>
+		            								</div>
+		            								<div class="col-12 col-xl-12  favourite-page__item-d">
+		            									<div class="row gx-3 gy-3 row-jc-space-between ">
+		            										<div class="col-5 col-xxl-8 col-xl-12 col-lg-9 col-lg-9 ">
+		            											<div class="row gx-3 gy-3 row-cols-2 row-jc-sm-flex-start">
+		            												<div class="col ">
+		            													<div class="combobox combobox__type-2 favourite-page__item-combobox">
+		            														<div class="combobox__value combobox__type-2--first">
+		            															<span>500g</span>
+		            															<img src="./icons/arrow-down.svg" alt="" class="webpage__icon">
+		            														</div>
+		            													</div>
+		            												</div>
+		            												<div class="col ">
+		            													<div class="quantity">
+		            														<button class="button" title="remove">
+		            															<img src="./icons/minus.svg" class="webpage__icon" alt="">
+		            														</button>
+		            														<span>99</span>
+		            														<button class="button" title="add">
+		            															<img src="./icons/plus.svg" class="webpage__icon" alt="">
+		            														</button>
+		            													</div>
+		            												</div>
+		            											</div>
+		            										</div>
+		            										<div class="col-3 col-xxl-6 col-lg-8 col-sm-11">
+		            											<div class="row gx-3 gy-3 row-jc-sm-flex-start row-cols-2 row-flex-0">
+		            												<div class="col col-lg-4  col-lg-6 col-sm-4 d-flex row-align-center row-jc-center row-jc-lg-flex-start ">
+		            													<button class="button__type-6">
+		            														<span class="button__icon">
+		            															<img src="./icons/heart-color.svg" alt="">
+		            														</span>
+		            														<span>Save</span>
+		            													</button>
+		            												</div>
+		            												<div class="col col-lg-4 col-lg-6 col-sm-4 d-flex row-align-center row-jc-center">
+		            													<button class="button__type-6">
+		            														<span class="button__icon webpage__icon">
+		            															<img src="./icons/trash.svg" alt="">
+		            														</span>
+		            														<span>Delete</span>
+		            													</button>
+		            												</div>
+		            											</div>
+		            										</div>
+		            									</div>
+		            								</div>
+		            							</div>
+		            						</div>
+		            					</section>
+		            				</div>
+	            				</div>
+            				</section>
+
+            			</div>
+            			<div class="favourite-page__action row-align-flex-end d-lg-none">
+            				<button class="button button__type-6" onclick="navigate('')">
+            					<img src="./icons/arrow-left.svg" alt="" class="webpage__icon button__icon">
+            					<span>Continue Shopping</span>
+            				</button>
+            				<button class="button button__type-1 favourite-page__item-checkout">Continue</button>
+            			</div>
+            		</article>
+            	</div>
+            	<div class="col-3 col-xxl-4 col-xl-4 col-lg-12">
+            		<div class="common-container">
+                        <div class="order">
+                            <div class="row row-cols-1 gy-3">
+                                <div class="col">
+                                    <div class="order__name">
+                                        <span>Subtotal </span>
+                                        <span class="order__name--note">(items)</span>
+                                    </div>
+                                    <span class="order__cost">3</span>
+                                </div>
+                                <div class="col">
+                                    <div class="order__name">
+                                        <span>Price</span>
+                                        <span class="order__name--note">(Total)</span>
+                                    </div>
+                                    <span class="order__cost">$191.65</span>
+                                </div>
+                                <div class="col">
+                                    <div class="order__name">
+                                        <span>Shipping</span>
+                                    </div>
+                                    <span class="order__cost">$10.00</span>
+                                </div>
+                                <div class="col">
+                                    <div class="favourite-page__seperator"></div>
+                                </div>
+                                <div class="col">
+                                    <div class="order__name">
+                                        <span>Estimated Total</span>
+                                    </div>
+                                    <span class="order__cost">$201.65</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+						<div class="d-flex row-jc-center "><button onclick="navigate('pay')" class="button button__type-1 order__checkout d-none d-lg-flex">Continue to checkout</button></div>
+                    </div>
+            	</div>
+            </div>
+        </main>
+    </div>
+    <footer class="footer"></footer>
+</body>
+</html>

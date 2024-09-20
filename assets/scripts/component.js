@@ -482,6 +482,9 @@ function navigate(type="") {
         case 'cart':
             url = './cart.html';
             break;
+        case 'shipping':
+            url = './shipping.html';
+            break;
         default:
             url = "./index.html"
             break;
