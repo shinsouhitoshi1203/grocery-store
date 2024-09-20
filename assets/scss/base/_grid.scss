@@ -87,7 +87,7 @@ $gutters: (
     $options: center, flex-start, flex-end, space-between, stretch;
     @each $option in $options {
         .row-align#{$prefix}-#{$option}{
-            align-items: $option; align-content: $option;
+            align-items: $option!important; align-content: $option!important;
         }
     }
 }

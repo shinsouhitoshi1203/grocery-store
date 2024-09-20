@@ -38,14 +38,14 @@
                     <span>home</span>
                     <img src="./icons/arrow-right.svg" alt="" class="bk__icon-next">
                 </a>
-                <a href="./fav.html" class="bk__item bk__item--last" title="Coffee">
-                    <span>favourite</span>
+                <a href="./cart.html" class="bk__item bk__item--last" title="Coffee">
+                    <span>checkout</span>
                 </a>
             </div>
 
             <div class="row gy-lg-3">
             	<div class="col-9 col-xxl-8 col-xl-8 col-lg-12">
-            		<article class="favourite-page common-container">
+            		<div class="favourite-page common-container">
             			<div class="row row-cols-1 gy-3">
             				<div class="col">
             					<section class="favourite-page__item-real row  gy-3 product-item-without-big-button">
@@ -105,7 +105,7 @@
             												</div>
             												<div class="col col-lg-4 col-lg-6 col-sm-4 d-flex row-align-center row-jc-center">
             													<button class="button__type-6">
-            														<span class="button__icon">
+            														<span class="button__icon webpage__icon">
             															<img src="./icons/trash.svg" alt="">
             														</span>
             														<span>Delete</span>
@@ -179,7 +179,7 @@
             												</div>
             												<div class="col col-lg-4 col-lg-6 col-sm-4 d-flex row-align-center row-jc-center">
             													<button class="button__type-6">
-            														<span class="button__icon">
+            														<span class="button__icon webpage__icon">
             															<img src="./icons/trash.svg" alt="">
             														</span>
             														<span>Delete</span>
@@ -253,7 +253,7 @@
             												</div>
             												<div class="col col-lg-4 col-lg-6 col-sm-4 d-flex row-align-center row-jc-center">
             													<button class="button__type-6">
-            														<span class="button__icon">
+            														<span class="button__icon webpage__icon">
             															<img src="./icons/trash.svg" alt="">
             														</span>
             														<span>Delete</span>
@@ -267,22 +267,95 @@
             						</div>
             					</section>
             				</div>
-            				<div class="col">
+            				<div class="col d-lg-none">
             					<div class="favourite-page__seperator"></div>
             				</div>
             			</div>
-            			<div class="favourite-page__action">
+            			<div class="favourite-page__action row-align-flex-end d-lg-none">
             				<button class="button button__type-6" onclick="navigate('')">
             					<img src="./icons/arrow-left.svg" alt="" class="webpage__icon button__icon">
             					<span>Continue Shopping</span>
             				</button>
-            				<button class="button button__type-1" onclick="navigate('cart')">All Check Out</button>
+            				<div class="order order--minified">
+                                <div class="row row-cols-1">
+                                    <div class="col">
+                                        <div class="order__name">
+                                            <span>Price</span>
+                                            <span class="order__name--note">(Total)</span>
+                                        </div>
+                                        <span class="order__cost">$191.65</span>
+                                    </div>
+                                    <div class="col">
+                                        <div class="order__name">
+                                            <span>Shipping</span>
+                                        </div>
+                                        <span class="order__cost">$10.00</span>
+                                    </div>
+                                    <div class="col">
+                                        <div class="favourite-page__seperator"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="order__name">
+                                            <span style="font-weight: 700;">Estimated Total</span>
+                                        </div>
+                                        <span class="order__cost">$201.65</span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
             			</div>
-            		</article>
+            		</div>
             	</div>
             	<div class="col-3 col-xxl-4 col-xl-4 col-lg-12">
             		<div class="common-container">
-                        .order-payment
+                        <div class="order">
+                            <div class="row row-cols-1 gy-3">
+                                <div class="col">
+                                    <div class="order__name">
+                                        <span>Subtotal </span>
+                                        <span class="order__name--note">(items)</span>
+                                    </div>
+                                    <span class="order__cost">3</span>
+                                </div>
+                                <div class="col">
+                                    <div class="order__name">
+                                        <span>Price</span>
+                                        <span class="order__name--note">(Total)</span>
+                                    </div>
+                                    <span class="order__cost">$191.65</span>
+                                </div>
+                                <div class="col">
+                                    <div class="order__name">
+                                        <span>Shipping</span>
+                                    </div>
+                                    <span class="order__cost">$10.00</span>
+                                </div>
+                                <div class="col">
+                                    <div class="favourite-page__seperator"></div>
+                                </div>
+                                <div class="col">
+                                    <div class="order__name">
+                                        <span>Estimated Total</span>
+                                    </div>
+                                    <span class="order__cost">$201.65</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="d-flex row-jc-center "><button onclick="navigate('checkout')" class="button button__type-1 order__checkout">Continue to checkout</button></div>
+                    </div>
+                    <div class="common-container send-gift">
+                        
+  
+                                <div class="send-gift__img">
+                                    <img src="./icons/gift.svg" alt="Send this order as a gift.">
+                                </div>
+
+                            <div class="send-gift__heading">
+                                <p class="send-gift__title">Send this order as a gift.</p>
+                                <p>Available items will be shipped to your gift recipient.</p>
+                            </div>
+
                     </div>
             	</div>
             </div>
