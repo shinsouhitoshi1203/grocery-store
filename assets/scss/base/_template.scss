@@ -36,7 +36,13 @@ main {min-height: calc(100vh - 562px);}
 
 .common-container {
     padding: 30px;border-radius: 20px; 
-    background: var(--bg-pagefav);
+    background: var(--container-1);
     box-shadow: 0px 20px 60px 10px var(--bg-shadow-pagefav);
+    color: var(--container-text);
+}
+
+.common-container-2 {
+    padding: 20px;border-radius: 20px; 
+    background: var(--container-2);
     color: var(--container-text);
 }

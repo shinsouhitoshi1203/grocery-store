@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store / shipping page</title>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#77DAE600">
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/font_settings.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/pages/fav.css">
+    <!-- script -->
+    
+    <script src="./assets/scripts/component.js"></script>
+    <script src="./assets/scripts/theme.js"></script>
+    <script src="./cart/index.js"></script>
+    <!-- meta information -->
+</head>
+<body>
+    <header class="header"></header>
+    <div class="container">
+        <main class="main">
+            <div class="search-bar">
+                <div class="txtbox txtbox__type-3 search-bar__real">
+                    <input type="text" class="txtbox__type-3--real" placeholder="search">
+                    <img src="./icons/search.svg" class="txtbox__icon" alt="">
+                </div>
+            </div>
+            <div class="breakcumbs bk">
+                <a href="./index.html" class="bk__item" title="home">
+                    <span>home</span>
+                    <img src="./icons/arrow-right.svg" alt="" class="bk__icon-next">
+                </a>
+				<a href="./cart.html" class="bk__item" title="checkout">
+                    <span>checkout</span>
+                    <img src="./icons/arrow-right.svg" alt="" class="bk__icon-next">
+                </a>
+                <a href="./shipping.html" class="bk__item bk__item" title="shipping">
+                    <span>shipping</span>
+                    <img src="./icons/arrow-right.svg" alt="" class="bk__icon-next">
+                </a>
+				<a href="./payment.html" class="bk__item bk__item--last" title="payment">
+                    <span>payment method</span>
+                </a>
+            </div>
+
+            <div class="row gy-lg-3">
+				<!-- main -->
+            	<div class="col-8 col-xxl-8 col-xl-8 col-lg-12">
+            		<article class="favourite-page payment common-container">
+            			<div class="row row-cols-1 gy-3">
+							<div class="col payment__heading d-flex row-jc-space-between row-align-center">
+								<h2 class="payment__title">1. Shipping, arrives between Mon, May 16—Tue, May 24</h2>
+								<button class="button button__type-6">
+									<img src="./icons/edit.svg" alt="" class="button__real webpage__icon">
+									<span>Edit</span>
+								</button>
+							</div>
+							<div class="col">
+								<section class="common-container-2 d-flex row-align-center row-jc-space-between">
+									<div class="payment__heading-2">
+										<h3>Imran Khan</h3>
+										<p>Museum of Rajas, Sylhet Sadar, Sylhet 3100.</p>
+									</div>
+									<div class="payment__check">
+										<label class="checkbox">
+											<input type="checkbox" name="checkbox-dcdEE" class="checkbox__real" hidden>
+											<span class="checkbox__pseudo"></span>
+										</label>
+									</div>
+								</section>
+							</div>
+							<div class="col">
+								<section class="common-container-2 d-flex row-align-center row-jc-space-between">
+									<div class="payment__heading-2">
+										<h3>Imran Khan</h3>
+										<p>Museum of Rajas, Sylhet Sadar, Sylhet 3100.</p>
+									</div>
+									<div class="payment__button">
+										<button class="button button__type-2">View details</button>
+									</div>
+								</section>
+							</div>
+            			</div>
+            		</article>
+					<article class="favourite-page payment common-container">
+            			<div class="row row-cols-1 gy-3">
+							<div class="col payment__heading d-flex row-jc-space-between row-align-center">
+								<h2 class="payment__title">2. Shipping method</h2>
+							</div>
+							<div class="col">
+								<div class="favourite-page__seperator"></div>
+							</div>
+							<div class="col payment__heading-2">
+								<h2 class="">Availeble Shipping method</h2>
+							</div>
+							<div class="col">
+								<div class="row row-cols-1 gy-3">
+									<div class="col">
+										<section class="common-container-2 payment__ship">
+											<div class="payment__ship-meta">
+												<img src="./icons/brand/1.svg" alt="fedex">
+												<div>
+													<h3>Fedex Delivery</h3>
+													<p>Delivery: 2-3 days work</p>
+												</div>
+											</div>
+											<div class="payment__ship-action">
+												<label class="checkbox">
+													<input type="checkbox" name="checkbox-ffcde" class="checkbox__real" hidden>
+													<span style="order: 2;" class="checkbox__pseudo"></span>
+													<span style="order: 1;">Free</span>
+												</label>
+											</div>
+										</section>
+									</div>
+									<div class="col">
+										<section class="common-container-2 payment__ship">
+											<div class="payment__ship-meta">
+												<img src="./icons/brand/2.svg" alt="fedex">
+												<div>
+													<h3>DHL Delivery</h3>
+													<p>Delivery: 2-3 days work</p>
+												</div>
+											</div>
+											<div class="payment__ship-action">
+												<label class="checkbox checkbox__unselect">
+													<input type="checkbox" name="checkbox-ffcde" disabled class="checkbox__real" hidden>
+													<span style="order: 2;" class="checkbox__pseudo"></span>
+													<span style="order: 1;" class="">$12.00</span>
+												</label>
+											</div>
+										</section>
+									</div>
+								</div>
+							</div>
+            			</div>
+            		</article>
+            	</div>
+				<!-- aside bar -->
+            	<div class="col-4 col-xxl-4 col-xl-4 col-lg-12">
+            		<div class="common-container">
+						<section class="row row-cols-1 gy-3">
+							<div class="col">
+								<h2 class="payment__title">Payment Details</h2>
+								<p>Complete your purchase item by providing your payment details order.</p>
+							</div>
+							<div class="col payment__heading-2">
+								<h3 class="payment__field-name"><label for="payment-field-1">Email Address</label></h3>
+								<div class="txtbox txtbox__type-3">
+									<input type="text" name="payment-field-1" placeholder="example@gmail.com" id="payment-field-1" class="txtbox__type-3--real">
+								</div>
+							</div>
+							<div class="col payment__heading-2">
+								<h3 class="payment__field-name"><label for="payment-field-2">Card Holder</label></h3>
+								<div class="txtbox txtbox__type-3">
+									<input type="text" name="payment-field-2" placeholder="example@gmail.com" id="payment-field-2" class="txtbox__type-3--real">
+								</div>
+							</div>
+							<div class="col payment__heading-2">
+								<h3 class="payment__field-name"><label for="payment-field-3">Card Details</label></h3>
+								<div class="txtbox txtbox__type-3">
+									<input type="text" name="payment-field-3" placeholder="example@gmail.com" id="payment-field-3" class="txtbox__type-3--real">
+								</div>
+							</div>
+							<div class="col payment__heading-2">
+								<div class="txtbox txtbox__type-4">
+									<input type="text" name="payment-field-4" placeholder="CVV" id="payment-field-4" class="txtbox__type-4--real">
+									<div class="seperator"></div>
+									<input type="text" name="payment-field-4" placeholder="Month / Year" id="payment-field-4" class="txtbox__type-4--real">
+								</div>
+							</div>
+							<div class="col"></div>
+						</section>
+                        <div class="order">
+                            <div class="row row-cols-1 gy-3">
+                                <div class="col">
+                                    <div class="order__name">
+                                        <span>Subtotal </span>
+                                        <span class="order__name--note">(items)</span>
+                                    </div>
+                                    <span class="order__cost">3</span>
+                                </div>
+                                <div class="col">
+                                    <div class="order__name">
+                                        <span>Price</span>
+                                        <span class="order__name--note">(Total)</span>
+                                    </div>
+                                    <span class="order__cost">$191.65</span>
+                                </div>
+                                <div class="col">
+                                    <div class="order__name">
+                                        <span>Shipping</span>
+                                    </div>
+                                    <span class="order__cost">$10.00</span>
+                                </div>
+                                <div class="col">
+                                    <div class="favourite-page__seperator"></div>
+                                </div>
+                                <div class="col">
+                                    <div class="order__name">
+                                        <span>Estimated Total</span>
+                                    </div>
+                                    <span class="order__cost">$201.65</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+						<div class="d-flex row-jc-center "><button onclick="navigate('pay-real')" class="button button__type-1 order__checkout d-flex">Pay $465.98</button></div>
+                    </div>
+            	</div>
+            </div>
+        </main>
+    </div>
+    <footer class="footer"></footer>
+</body>
+</html>

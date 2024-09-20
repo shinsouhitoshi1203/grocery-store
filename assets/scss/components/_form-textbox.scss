@@ -28,5 +28,21 @@
         }
     }
 
+    &__type-4 { // similar to type 3 but with two textboxes
+        @extend %md-18;
+        @include a.padding(12px, 12px); 
+        @include a.flex(stretch, null, 12px);
+        background: inherit; color: var(--txtbox-3-unfocus);
+        & > * {flex-shrink: 0}
+        &--real {flex: 1 0; min-width: 0;; color: inherit;}
+        img {filter: var(--txtbox-3-unfocus-icon)};
+        .seperator {background: var(--txtbox-3-unfocus); width: 1px; flex-shrink: 0;}
+        &--focus {
+            color: var(--txtbox-3-focus);
+            img {filter: var(--txtbox-3-focus-icon)};
+            .seperator {background: var(--txtbox-3-focus)}
+        }
+    }
+
     &__icon { @include a.square-icon(24px); }
 }

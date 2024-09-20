@@ -1,0 +1,35 @@
+@use "./../abstracts" as a;
+.payment {
+    margin-bottom: 30px;
+
+    
+
+    &__heading {
+        gap: 10px; flex-wrap: wrap;
+        button {font-size: 1.8rem; font-weight: 400;}
+        
+        &-2 {
+            h2,h3 {margin-bottom: 7px;@extend %md-18;font-size: 1.8rem;}
+        }
+        
+    }
+    &__check .checkbox {transform: scale(1.25);}
+
+
+    
+
+    /// ship method
+    &__ship {
+        width: 100%;@include a.flex(center, space-between, 20px);
+        &-meta {
+            @include a.flex(center, null, 20px); flex: 1 0;
+            h3 {@extend %b-24; font-size: 1.8rem; margin-bottom: 7px; color: var(--txt-caption);}
+            img {width: 70px;}
+        }
+    }
+
+
+    // headings
+    &__title {@extend %md-22;} 
+    &__field-name {margin-bottom: 20px!important;}
+}

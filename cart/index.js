@@ -42,7 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         ]
     }
-    loadElements(li);tickCheckbox();
+    loadElements(li);
+    tickCheckbox();
+    triggerTextFocusList(".txtbox__type-3");
+    triggerTextFocusList(".txtbox__type-4");
+    
     addEventGroup(document.querySelectorAll(".button__type-3"), "click", (o)=>{o.target.classList.toggle("button__type-3--selected")})
 })
 

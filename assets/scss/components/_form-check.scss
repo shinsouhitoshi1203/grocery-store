@@ -13,4 +13,7 @@
         @extend %md-15;
     }
     &:hover &__pseudo:not(.checkbox__pseudo--checked) {background: #858585;}
+
+
+    &__unselect {filter: brightness(0) saturate(100%) invert(69%) sepia(12%) saturate(194%) hue-rotate(206deg) brightness(89%) contrast(91%);}
 }

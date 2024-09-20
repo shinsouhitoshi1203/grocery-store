@@ -485,6 +485,9 @@ function navigate(type="") {
         case 'shipping':
             url = './shipping.html';
             break;
+        case 'pay':
+            url = './payment.html';
+            break;
         default:
             url = "./index.html"
             break;
