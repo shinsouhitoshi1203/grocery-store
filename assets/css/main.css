@@ -3603,6 +3603,11 @@ html[theme=dark] {
   --seperator-pagefav: #292E39;
 }
 
+html[theme=dark] {
+  --new-card: #B9BABE;
+  --info-icon: #171C28;
+}
+
 html[theme=light] {
   --body-bg: #f6f6f6;
   --scrollbar: #0071DC;
@@ -3928,20 +3933,23 @@ html[theme=light] {
 }
 .dashboard__info-meta {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: stretch;
   gap: 10px;
 }
 @media all and (max-width: 767.98px) {
   .dashboard__info-meta {
-    align-items: flex-start;
+    align-items: center;
   }
 }
 .dashboard__info-meta .icon {
   padding: 15px;
-  background: var(--info-icon);
+  width: 54px;
+  height: 54px;
   border-radius: 8px;
+  background: var(--info-icon);
   flex-shrink: 0;
+  aspect-ratio: 1/1;
 }
 .dashboard__info-meta h3 {
   margin-bottom: 5px;
