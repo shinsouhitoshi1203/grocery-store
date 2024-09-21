@@ -10,7 +10,8 @@
         &:hover {background: #ffc226}
     }
     &__type-2 { // plain button
-        color: var(--text-caption); transition: color .3s;
+        color: var(--text-caption); transition: color .3s; text-align: left; 
+        span {@include a.linelimit(1);}
         &:hover {color: #77DAE6}
     }
     &__type-3 { // toggle buttons

@@ -1,0 +1,28 @@
+@use "./../abstracts" as a;
+%bdtlr {border-top-left-radius: 20px;border-top-right-radius: 20px;}
+%bdtlr-0 {border-top-left-radius: 0;border-top-right-radius: 0;}
+.account {
+    &__header {
+        @extend %bdtlr;
+        position: relative;
+        background: url(./../../../img/bg.png) center / cover no-repeat; padding: 40px 20px 20px; @include a.flex(center, center);
+
+        &-wrapper{@extend %bdtlr;position: absolute; top: 0;left: 0;width: 100%;height: 100%; background: linear-gradient(180deg, rgba(26, 22, 46, 0.00) 0%, #1A162E 100%);}
+        &-real {
+            @extend %bdtlr; position: relative; z-index: 1; @include a.flex(center, center); flex-direction: column; text-align: center; color: #fff;
+            img {@include a.square-icon(116px, 50%); border: 5px solid rgba(255, 255, 255, 0.20);box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08); margin-bottom: 20px;}
+            h1 {font-size: 1.8rem; margin-bottom: 10px;}
+            p {@extend %md-15;}
+        }
+    }
+
+    &__action {
+        &-list {@extend %bdtlr-0;}
+        &-title {margin-bottom: 16px;@extend %md-18;}
+        &-ul {
+            list-style-type: none; display: grid; grid-gap: 10px;
+            @include a.responsive(md) {display: flex; flex-wrap: wrap; gap: 10px 30px;}
+            @include a.responsive(sm) {flex-direction: column;}
+        }
+    }
+}

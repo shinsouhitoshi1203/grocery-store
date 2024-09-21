@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store / Your Account</title>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#77DAE600">
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/font_settings.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <!-- script -->
+    
+    <script src="./assets/scripts/component.js"></script>
+    <script src="./assets/scripts/theme.js"></script>
+    <script src="./account/index.js"></script>
+</head>
+<body>
+    <header class="header"></header>
+    <div class="container">
+        <main class="main">
+            <div class="row gy-md-3" style="--gutter-y: 20px">
+                <!-- account by using js -->
+                <div class="col-4 col-lg-6 col-md-12 account"></div>
+                <!--  -->
+                <div class="col-8 col-lg-6 col-md-12">
+                    <div class="common-container">
+                        <div class="row row-cols-1 gy-3">
+                            <div class="col">
+                                <div class="dashboard__heading">
+                                    <h2>My Wallet</h2>
+                                    <p>Payment methods</p>
+                                </div>
+                                <div class="row row-cols-3 row-cols-lg-2 row-cols-sm-1 gy-3 dashboard__card">
+                                    <div class="col"><img src="./users/cards/1.svg" alt=""></div>
+                                    <div class="col"><img src="./users/cards/2.svg" alt=""></div>
+                                    <div class="col">
+                                        <button class="button dashboard__new-card">
+                                            <div class="button__inner">
+                                                <img src="./icons/plus.svg" class="webpage__icon button__icon" alt="">
+                                                <span>Add New Card</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col dashboard__info">
+                                <div class="dashboard__heading">
+                                    <h2>Account info</h2>
+                                    <p>Addresses, contact information and password</p>
+                                </div>
+                                <div class="row row-cols-2 row-cols-lg-1 gy-2 gx-2">
+                                    <div class="col">
+                                        <section class="common-container-3 dashboard__info-item">
+											<div class="dashboard__info-meta">
+												<div class="icon">
+                                                    <img src="./icons/mail.svg" alt="" class="webpage__icon">
+                                                </div>
+												<div>
+													<h3>Email Address</h3>
+													<p>tarek97.ta@gmail.com</p>
+												</div>
+											</div>
+										</section>
+                                    </div>
+                                    <div class="col">
+                                        <section class="common-container-3 dashboard__info-item">
+											<div class="dashboard__info-meta">
+												<div class="icon">
+                                                    <img src="./icons/phone.svg" alt="" class="webpage__icon">
+                                                </div>
+												<div>
+													<h3>Phone Number</h3>
+													<p>+000 11122 2345 657</p>
+												</div>
+											</div>
+										</section>
+                                    </div>
+                                    <div class="col">
+                                        <section class="common-container-3 dashboard__info-item">
+											<div class="dashboard__info-meta">
+												<div class="icon">
+                                                    <img src="./icons/location.svg" alt="" class="webpage__icon">
+                                                </div>
+												<div>
+													<h3>Add an address</h3>
+													<p>Bangladesh Embassy, Washington, DC 20008</p>
+												</div>
+											</div>
+										</section>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="dashboard__heading">
+                                    <h2>Lists</h2>
+                                    <p>2 items - Primary</p>
+                                </div>
+                                <div class="row row-cols-1 gy-2 gx-0">
+                                    <div class="col">
+                                        <div class="row gx-2">
+                                            <div class="col dashboard__product-img">
+                                                <img src="./products/ec3nc/cafe-01-md.png" alt="Coffee Beans - Espresso Arabica and Robusta Beans">
+                                            </div>
+                                            <section class="col">
+                                                <h3 class="dashboard__product-name">Coffee Beans - Espresso Arabica and Robusta Beans</h3>
+                                                <div class="dashboard__product-action">
+                                                    <span>$47.00</span>
+                                                    <button class="button button__type-1 dashboard__product-add" onclick="navigate('cart')">Add to cart</button>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    <div class="col"><div class="webpage__seperator"></div></div>
+                                    <div class="col">
+                                        <div class="row gx-2">
+                                            <div class="col dashboard__product-img">
+                                                <img src="./products/ec3nc/cafe-01-md.png" alt="Lavazza Coffee Blends - Try the Italian Espresso">
+                                            </div>
+                                            <section class="col">
+                                                <h3 class="dashboard__product-name">Lavazza Coffee Blends - Try the Italian Espresso</h3>
+                                                <div class="dashboard__product-action">
+                                                    <span>$53.00</span>
+                                                    <button class="button button__type-1 dashboard__product-add" onclick="navigate('cart')">Add to cart</button>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </main>
+    </div>
+    <footer class="footer"></footer>
+</body>
+</html>

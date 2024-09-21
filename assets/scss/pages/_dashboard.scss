@@ -1,0 +1,38 @@
+@use "./../abstracts" as a;
+.dashboard {
+    &__heading {
+        margin-bottom: 16px;
+        h2 {@extend %b-24;margin-bottom: 12px;}
+    }
+    &__card {img:hover{filter: brightness(1.2);}}
+    &__new-card {
+        color: var(--new-card); width: 100%; height: 100%; 
+        border-radius: 10px; border: 1px dashed currentColor;
+        .button__inner {display: grid; justify-items: center;padding: 10px 20px;}
+        img {margin-bottom: 14px; display: inline-block;}
+        span {font-size: 1.4rem; font-weight: 500;}
+        &:hover {filter: brightness(.8);}
+    }
+
+    &__info {
+        &-item {width: 100%; height: 100%;}
+        &-meta {
+            @include a.responsive(md) {align-items: flex-start;}
+            @include a.flex(flex-start, stretch, 10px);
+            .icon {padding: 15px; background: var(--info-icon); border-radius: 8px;flex-shrink: 0; }
+            h3 {margin-bottom: 5px; @extend %md-16;}
+            p {@include a.linelimit(1);}
+        }
+    }
+
+    &__product {
+        &-img {max-width: 108px; img {height: auto;}}
+        &-name {margin-bottom: 10px;@extend %md-16;}
+        &-action {
+            @include a.flex-center(flex-start,20px); flex-wrap: wrap; 
+            span {@extend %md-22;}
+            button {padding: 10px 20px; border-radius: 20px;}
+        }
+        
+    }
+}
